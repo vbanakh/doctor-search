@@ -1,0 +1,43 @@
+<section class="section">
+    <article class="container">
+        <div class="card-grid">
+            <div class="card-doctor" *ngFor="let doc of doctor">
+                <div class="docInfo">
+                    <div class="up">
+                        <div class="photoDoctor">
+                            <a class="docImage"
+                            [style.backgroundImage]="'url('+ doc.photo +')'"></a>
+                        </div>
+                        <div class="doctorInfo">
+                            <div class="nameDoctor">
+                               {{ doc.nameUA | titlecase}} {{ doc.lastnameUA | titlecase}}
+                            </div>
+                            <div class="speciality">
+                                {{ doc.speciality.nameUA }}
+                            </div>
+                            <div class="dodatcovo"></div>
+                        </div>
+                    </div>
+                    <div class="down">
+                        <div class="clinic">
+                            <div class="clinicImage">
+                                <img src="assets/images/lacation-logo.png" alt="" style="height: 25px; width: 25px;">
+                            </div>
+                            <dic class="clinicLocation">
+                                <div class="clinicName">
+                                    {{ doc.clinic.nameUA }}
+                                </div>
+                                <div class="address">
+                                    <div> {{ doc.clinic.address }}, каб.{{ doc.office }}</div>
+                                </div>
+                            </dic> 
+                        </div>
+                    </div>
+                </div>
+                <div class="buttonDoc">
+                    <button type="button" class="docButton" [routerLink]="[ '/doctor-detail/', doc.id]"> ЗАПИСАТИСЯ НА ПРИЙОМ</button>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>

@@ -1,0 +1,65 @@
+<section>
+    <article class="searchContainer">
+        <div class="wrap">
+            <div class="homeText">
+                <!-- Cервіс пошуку лікарів. <br> -->
+                <h1> Знайдіть свого лікаря та запишіться на прийом</h1>
+            </div>
+            <div class="searchBox">
+                <form>
+                    <div class="radioChoose">
+                        <div class="item">
+                            <p>Пошук за: </p>
+                        </div>
+                        <div class="item">
+                            <label for="speciality"
+                                [ngStyle]="{'border-color': param === 'speciality.nameUA' ? '#ffff': '#00B4CC'}">спеціальністю
+                                <input type="radio" name="param" id="speciality" value="speciality.nameUA"
+                                    [(ngModel)]="param" (change)="checkWork()" checked>
+                            </label>
+                        </div>
+                        <div class="item">
+                            <label for="name"
+                                [ngStyle]="{'border-color': param === 'lastnameUA' ? '#ffff': '#00B4CC'}">прізвищем
+                                <input type="radio" name="param" id="name" value="lastnameUA" [(ngModel)]="param"
+                                    (change)="checkWork()">
+                            </label>
+                        </div>
+                        <div class="item">
+                            <label for="clinic"
+                                [ngStyle]="{'border-color': param === 'clinic.nameUA' ? '#ffff': '#00B4CC'}">клінікою
+                                <input type="radio" name="param" id="clinic" value="clinic.nameUA" [(ngModel)]="param"
+                                    (change)="checkWork()">
+                            </label></div>
+                    </div>
+                    <!-- <div class="search">
+                        <input type="text" class="searchTerm" [(ngModel)]="searchWord" name="searchWord"
+                            [attr.placeholder]="paramSetting">
+                        <button type="submit" class="searchButton" [routerLink]="[ '/doctors', param, searchWord]" (click)="getSearchDoc()">
+                            <fa-icon [icon]="iconSearch"></fa-icon>
+                        </button>
+                    </div> -->
+                    <div class="ng-autocomplete">
+                        <div class="search">
+                            <ng-autocomplete   class="searchTerm" [data]="specialities" [placeHolder]="paramSetting"
+                                [searchKeyword]="keyword" [(ngModel)]="searchWord" name="searchWord"
+                                [itemTemplate]="itemTemplate" [notFoundTemplate]="notFoundTemplate"
+                                notFoundText="Не знайдено">
+                            </ng-autocomplete>
+                            <button type="button" class="searchButton" [routerLink]="[ '/doctors', param, searchWord]"
+                                (click)="getSearchDoc()">
+                                <fa-icon [icon]="iconSearch"></fa-icon> знайти лікаря
+                            </button>
+                        </div>
+                        <ng-template #itemTemplate let-item>
+                            <a [innerHTML]="item" [style.z-index]="5"></a>
+                        </ng-template>
+                        <ng-template #notFoundTemplate let-notFound>
+                            <div [innerHTML]="notFound"></div>
+                        </ng-template>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </article>
+</section>

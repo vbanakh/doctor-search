@@ -1,0 +1,39 @@
+@import '../../../mixins';
+
+.docImage{
+  @include doc-img;
+    img{
+        width: 100%;
+        height: 100%;
+        margin-right: 20px;
+    }
+    span:hover{
+        cursor: pointer;
+    }
+    span:hover svg{
+        color: red;
+    }
+}
+
+table{
+  font-size: 12px;
+}
+thead th {
+  @include table-admin(14px);
+  span {
+    visibility: hidden;
+  }
+  &.active {
+    color: #000;
+    span {
+      visibility: visible;
+    }
+  }
+ }
+
+  .addBut{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+  }

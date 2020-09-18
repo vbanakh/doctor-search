@@ -1,0 +1,81 @@
+@mixin table-admin($th-fs){
+    cursor: pointer;
+    margin-right: 15px;
+    margin-left: 15px;
+    font-size: $th-fs;
+}
+
+@mixin doc-img{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@mixin transition($property) {
+    -webkit-transition: $property;
+    -o-transition: $property;
+    -moz-transition:  $property;
+    -ms-transition:  $property;
+    transition: $property;
+}
+
+@mixin opacity($val) {
+    -moz-opacity: $val;
+    -webkit-opacity: $val;
+    -khtml-opacity: $val;
+    opacity: $val;
+}
+
+@mixin border-radius($prop){
+    -webkit-border-radius: $prop;
+    -moz-border-radius: $prop;
+    border-radius: $prop;
+}
+
+ @mixin transform($value) {
+  -webkit-transform: $value;
+  transform: $value;
+}
+
+
+ @mixin  login-btn{
+    border-radius: 20px;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+ }
+
+ @mixin grey-box-shadow {
+    -moz-box-shadow: inset 0 1.75em rgba(255, 255, 255, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 1px rgba(255, 255, 255, 0.3), 0 0 2px rgba(0, 0, 0, 0.15), 0 3px 5px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: inset 0 1.75em rgba(255, 255, 255, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 1px rgba(255, 255, 255, 0.3), 0 0 2px rgba(0, 0, 0, 0.15), 0 3px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 1.75em rgba(255, 255, 255, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 1px rgba(255, 255, 255, 0.3), 0 0 2px rgba(0, 0, 0, 0.15), 0 3px 5px rgba(0, 0, 0, 0.15);
+ }
+
+ @mixin search-btn{
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    outline: none;
+ }
+
+ @mixin background-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+ }
+
+ @mixin flex-center($flex-direction) {
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-box;
+	align-items: center;
+	justify-content: center;
+    flex-direction: $flex-direction;
+    -ms-flex-direction: $flex-direction;
+ }

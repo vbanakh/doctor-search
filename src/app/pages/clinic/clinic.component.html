@@ -1,0 +1,67 @@
+<section>
+    <article class="filterContainer">
+        <div class="filter">
+            <div class="word">
+                <p>Форма власності:</p>
+            </div>
+            <div class="buttons">
+                <form>
+                    <div class="radioChoose">
+                        <div class="item">
+                            <label for="all">всі
+                                <input type="radio" name="checkFilter" id="all" value="all" [(ngModel)]="checkFilter"
+                                    checked (change)="filterClinic()">
+                            </label>
+                        </div>
+                        <div class="item">
+                            <label for="state">державні
+                                <input type="radio" name="checkFilter" id="state" value="state"
+                                    [(ngModel)]="checkFilter" (change)="filterClinic()">
+                            </label>
+                        </div>
+                        <div class="item">
+                            <label for="private">приватні
+                                <input type="radio" name="checkFilter" id="private" value="private"
+                                    [(ngModel)]="checkFilter" (change)="filterClinic()">
+                            </label></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </article>
+    <article class="container">
+        <div class="card-grid">
+            <div class="card-clinic" *ngFor="let c of clinic | paginate: { itemsPerPage: 6, currentPage: p }">
+                <div class="clInfo">
+                    <div class="up">
+                        <div class="photoClinic">
+                            <a class="clImage">
+                                <img src="assets/images/hospital-2206985-1841178.png" alt=""
+                                    style="height: 150px; width: 150px; opacity: .8;">
+                            </a>
+                        </div>
+                        <div class="own" *ngIf="c.ownership === 'private'">
+                            <p>Приватна клініка</p>
+                        </div>
+                    </div>
+                    <div class="down">
+                        <div class="clInfo">
+                            <div class="nameClinic">
+                                {{ c.nameUA}}
+                            </div>
+                            <div class="address">
+                                <div> {{ c.address }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttonCl">
+                    <button class="clButton" [routerLink]="[ '/clinic-doctors', c.id ]">Лікарі клініки</button>
+                </div>
+            </div>
+        </div>
+    </article>
+    <div class="pag">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</section>

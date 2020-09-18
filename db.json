@@ -1,0 +1,776 @@
+{
+  "cities": [
+    {
+      "nameEN": "Lviv",
+      "nameUA": "Львів",
+      "id": 1
+    }
+  ],
+  "districts": [
+    {
+      "nameEN": "Halytsʹkyy",
+      "nameUA": "Галицький",
+      "id": 1
+    },
+    {
+      "nameEN": "Zaliznychnyy",
+      "nameUA": "Залізничний",
+      "id": 2
+    },
+    {
+      "nameEN": "Lychakivsky",
+      "nameUA": "Личаківський",
+      "id": 3
+    },
+    {
+      "nameEN": "Frankivsky",
+      "nameUA": "Франківський",
+      "id": 4
+    },
+    {
+      "nameEN": "Shevchenkivsky",
+      "nameUA": "Шевченківський",
+      "id": 5
+    },
+    {
+      "nameEN": "Sykhivsky",
+      "nameUA": "Сихівський",
+      "id": 6
+    }
+  ],
+  "clinics": [
+    {
+      "nameEN": "CNE OF LRC CENTER OF SPORTS MEDICINE AND REHABILITATION",
+      "nameUA": "КНП ЛОР \"Центр спортивної медицини і реабілітації\"",
+      "address": "місто Львів, вул. Коновальця, 47, кабінет 3",
+      "ownership": "state",
+      "id": 3
+    },
+    {
+      "nameEN": "CNE \"DENTAL POLYCLINIC № 4\"",
+      "nameUA": "КНП \"СТОМАТОЛОГІЧНА ПОЛІКЛІНІКА № 4 \"",
+      "address": "місто Львів, вул. Симоненка, 6А",
+      "ownership": "state",
+      "id": 5
+    },
+    {
+      "nameEN": "CNE OF LRC \"LVIV REGIONAL SKIN AND VENEROLOGICAL DISPENSARY\"",
+      "nameUA": "КНП ЛОР \"ЛЬВІВСЬКИЙ ОБЛАСНИЙ ШКІРНО-ВЕНЕРОЛОГІЧНИЙ ДИСПАНСЕР",
+      "address": "місто Львів, вул. Євгена Коновальця 1",
+      "ownership": "state",
+      "id": 6
+    },
+    {
+      "nameEN": "CNE \"3rd city polyclinic of Lviv\"",
+      "nameUA": "КНП \"3-я міська поліклініка м. Львова\"\n",
+      "address": "місто Львів, вул. Повітряна, 99",
+      "ownership": "state",
+      "id": 7
+    },
+    {
+      "nameEN": "CNE \"1st city polyclinic of Lviv\"",
+      "nameUA": "КНП \"1-А МІСЬКА ПОЛІКЛІНІКА М. ЛЬВОВА\"",
+      "address": "місто Львів, вул. Руська, 20",
+      "ownership": "state",
+      "id": 8
+    },
+    {
+      "nameEN": "CNE \"4th CITY CLINICAL HOSPITAL OF LVIV\"",
+      "nameUA": "КНП \"4-А МІСЬКА ПОЛІКЛІНІКА М. ЛЬВОВА\" ",
+      "address": "місто Львів, просп. Червоної Калини, 68",
+      "ownership": "state",
+      "id": 10
+    },
+    {
+      "nameEN": "CNE \"LVIV 1ST CITY CLINICAL HOSPITAL NAMED AFTER PRINCE LEV\"",
+      "nameUA": "КНП \"ЛЬВІВСЬКА 1-А МІСЬКА КЛІНІЧНА ЛІКАРНЯ ІМЕНІ КНЯЗЯ ЛЕВА\"",
+      "address": "місто Львів, вул. Мазепи, 25",
+      "ownership": "state",
+      "id": 11
+    },
+    {
+      "nameEN": "CNE \"2nd CITY CLINICAL HOSPITAL OF LVIV\"",
+      "nameUA": "КНП \"2-а МІСЬКА КЛІНІЧНА ЛІКАРНЯ ЛЬВОВА\"",
+      "address": "місто Львів, вул. Симоненка, 4",
+      "ownership": "state",
+      "id": 12
+    },
+    {
+      "nameEN": "CNE \"5th CITY CLINICAL HOSPITAL OF LVIV\"",
+      "nameUA": "КНП \"5-А МІСЬКА КЛІНІЧНА ЛІКАРНЯ М. ЛЬВОВА\"",
+      "address": "місто Львів, вул. Чупринки Генерала, 61",
+      "ownership": "state",
+      "id": 13
+    },
+    {
+      "nameEN": "CNE \"TENTH CITY HOSPITAL OF LVIV\"",
+      "nameUA": "КНП \"ДЕСЯТА МІСЬКА ЛІКАРНЯ М. ЛЬВОВА\"",
+      "address": "місто Львів, вул. Бой-Желенського, 14 ",
+      "ownership": "state",
+      "id": 14
+    },
+    {
+      "nameEN": "CNE \"3d CITY CLINICAL HOSPITAL OF LVIV\"",
+      "nameUA": "КНП \"3-Я МІСЬКА КЛІНІЧНА ЛІКАРНЯ М. ЛЬВОВА\"",
+      "address": "місто Львів, вул. Рапопорта, 6",
+      "ownership": "state",
+      "id": 15
+    },
+    {
+      "nameEN": "CNE \"5-A CITY CLINICAL POLYCLINIC OF LVIV\"",
+      "nameUA": "КНП  \"5-А МІСЬКА КЛІНІЧНА ПОЛІКЛІНІКА М.ЛЬВОВА\"",
+      "address": "місто Львів, вул. Виговського Івана, 32",
+      "ownership": "state",
+      "id": 16
+    },
+    {
+      "nameEN": "CNE \"6-th CITY CLINICAL POLYCLINIC OF LVIV\"",
+      "nameUA": "КНП \"6-А МІСЬКА ПОЛІКЛІНІКА М. ЛЬВОВА\"",
+      "address": "місто Львів, вул. Медової Печери, 1",
+      "ownership": "state",
+      "id": 17
+    },
+    {
+      "nameEN": "CNE OF LRC \"LVIV REGIONAL CLINICAL PSYCHONEUROLOGICAL DISPENSARY\"",
+      "nameUA": "КНП ЛОР \"ЛЬВІВСЬКИЙ ОБЛАСНИЙ КЛІНІЧНИЙ ПСИХОНЕВРОЛОГІЧНИЙ ДИСПАНСЕР\"",
+      "address": "місто Львів, вул. Коциловського, 32",
+      "ownership": "state",
+      "id": 18
+    },
+    {
+      "nameEN": "CNE OF LRC \"LVIV REGIONAL CLINICAL DIAGNOSTIC CENTER\"",
+      "nameUA": "КНП ЛОР \"ЛЬВІВСЬКИЙ ОБЛАСНИЙ КЛІНІЧНИЙ ДІАГНОСТИЧНИЙ ЦЕНТР\"",
+      "address": " місто Львів, вул. Пекарська, 69Б",
+      "ownership": "state",
+      "id": 19
+    },
+    {
+      "nameEN": "Leoderm",
+      "nameUA": "Леодерм",
+      "address": "місто Львів, просп. Червоної калини, 29А",
+      "ownership": "private",
+      "id": 20
+    },
+    {
+      "nameEN": "MEDICOVER",
+      "nameUA": "МЦ Медікавер",
+      "address": "м. Львів, вул. Стрийська, 204",
+      "ownership": "private",
+      "id": 21
+    },
+    {
+      "nameEN": "CNE OF LRC \"Lviv regional specialized center of radiation protection of the population\"",
+      "nameUA": "КНП ЛОР \"Львівський обласний спеціалізований центр радіаційного захисту населення\"",
+      "address": "місто Львів, вул. Морозна, 31А",
+      "ownership": "state",
+      "id": 22
+    },
+    {
+      "nameEN": "CNE OF LRC \"Western Ukrainian Specialized Children's Medical Center\"",
+      "nameUA": "КНП ЛОР \"Західноукраїнський спеціалізований дитячий медичний центр\"",
+      "address": "місто Львів, вул. Дністерська, 27",
+      "ownership": "state",
+      "id": 23
+    },
+    {
+      "nameEN": "CNE OF LRC \"Lviv State Oncological Regional Medical and Diagnostic Center\"",
+      "nameUA": "КНП ЛОР \"Львівський державний онкологічний регіональний лікувально-діагностичний центр\"",
+      "address": "м. Львів, вул. Гашека 2-а",
+      "ownership": "state",
+      "id": 24
+    }
+  ],
+  "specialities": [
+    {
+      "nameEN": "therapist",
+      "nameUA": "терапевт",
+      "id": 1
+    },
+    {
+      "nameEN": "pediatrician",
+      "nameUA": "педіатр",
+      "id": 2
+    },
+    {
+      "nameEN": "surgeon",
+      "nameUA": "хірург",
+      "id": 3
+    },
+    {
+      "nameEN": "dentist",
+      "nameUA": "стоматолог",
+      "id": 4
+    },
+    {
+      "nameEN": "family doctor",
+      "nameUA": "сімейний лікар",
+      "id": 6
+    },
+    {
+      "nameEN": "gynecologist",
+      "nameUA": "гінеколог",
+      "id": 7
+    },
+    {
+      "nameEN": "urologist",
+      "nameUA": "уролог",
+      "id": 8
+    },
+    {
+      "nameEN": "cardiologist",
+      "nameUA": "кардіолог",
+      "id": 9
+    },
+    {
+      "nameEN": "psychotherapist",
+      "nameUA": "психотерапевт",
+      "id": 11
+    },
+    {
+      "nameEN": "psychiatrist",
+      "nameUA": "психіатр",
+      "id": 12
+    },
+    {
+      "nameEN": "physiotherapist",
+      "nameUA": "фізіотерапевт",
+      "id": 13
+    },
+    {
+      "nameEN": "dermatovenerologist",
+      "nameUA": "дерматовенеролог",
+      "id": 14
+    },
+    {
+      "nameEN": "ophthalmologist",
+      "nameUA": "офтальмолог",
+      "id": 15
+    },
+    {
+      "nameEN": "oncologist",
+      "nameUA": "онколог",
+      "id": 16
+    },
+    {
+      "nameEN": "sports medicine doctor",
+      "nameUA": "лікар з спортивної медицини",
+      "id": 17
+    },
+    {
+      "nameEN": "obstetrician",
+      "nameUA": "акушер",
+      "id": 18
+    },
+    {
+      "nameEN": "otolaryngologist",
+      "nameUA": "отоларинголог",
+      "id": 19
+    },
+    {
+      "nameEN": "immunologist",
+      "nameUA": "імунолог",
+      "id": 20
+    },
+    {
+      "nameEN": "radiologist",
+      "nameUA": "рентгенолог",
+      "id": 21
+    },
+    {
+      "nameEN": "endocrinologist",
+      "nameUA": "ендокринолог",
+      "id": 22
+    },
+    {
+      "nameEN": "gastroenterologist",
+      "nameUA": "гастроентеролог",
+      "id": 23
+    },
+    {
+      "nameEN": "neurologist",
+      "nameUA": "невропатолог",
+      "id": 24
+    },
+    {
+      "nameEN": "rheumatologist",
+      "nameUA": "ревматолог",
+      "id": 25
+    },
+    {
+      "nameEN": "proctologist",
+      "nameUA": "проктолог",
+      "id": 26
+    },
+    {
+      "nameEN": "reflexologist",
+      "nameUA": "рефлексотерапевт",
+      "id": 27
+    },
+    {
+      "nameEN": "pulmonologist",
+      "nameUA": "пульмонолог",
+      "id": 28
+    },
+    {
+      "nameEN": "allergist",
+      "nameUA": "алерголог",
+      "id": 29
+    },
+    {
+      "nameEN": "orthopaedist",
+      "nameUA": "ортопед",
+      "id": 30
+    }
+  ],
+  "doctors": [
+    {
+      "id": 1,
+      "nameEN": "vasyl vasyliovych",
+      "lastnameEN": "valyltsiv",
+      "nameUA": "василь васильович",
+      "lastnameUA": "васильців",
+      "speciality": {
+        "nameEN": "dermatovenerologist",
+        "nameUA": "дерматовенеролог",
+        "id": 14
+      },
+      "clinic": {
+        "nameEN": "CNE \"3d CITY CLINICAL HOSPITAL OF LVIV\"",
+        "nameUA": "КНП \"3-Я МІСЬКА КЛІНІЧНА ЛІКАРНЯ М. ЛЬВОВА\" ",
+        "address": "місто Львів, вул. Рапопорта, 6",
+        "ownership": "state",
+        "id": 15
+      },
+      "city": {
+        "nameEN": "Lviv",
+        "nameUA": "Львів",
+        "id": 1
+      },
+      "district": {
+        "nameEN": "Frankivsky",
+        "nameUA": "Франківський",
+        "id": 4
+      },
+      "office": "301",
+      "phoneNumber": 978822333,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/doctorsearch-b3561.appspot.com/o/images%2Fdoc-14.jpeg?alt=media&token=95826a42-40e3-4a5e-b1c2-ed3d412fa48b"
+    },
+    {
+      "id": 2,
+      "nameEN": "ivan ivanovych",
+      "lastnameEN": "ivanov",
+      "nameUA": "іван іванович",
+      "lastnameUA": "іванов",
+      "speciality": {
+        "nameEN": "dentist",
+        "nameUA": "стоматолог",
+        "id": 4
+      },
+      "clinic": {
+        "nameEN": "CNE \"DENTAL POLYCLINIC № 4\"",
+        "nameUA": "КНП \"СТОМАТОЛОГІЧНА ПОЛІКЛІНІКА № 4 \"",
+        "address": "місто Львів, вул. Симоненка, 6А",
+        "ownership": "state",
+        "id": 5
+      },
+      "city": {
+        "nameEN": "Lviv",
+        "nameUA": "Львів",
+        "id": 1
+      },
+      "district": {
+        "nameEN": "Frankivsky",
+        "nameUA": "Франківський",
+        "id": 4
+      },
+      "office": "222",
+      "phoneNumber": 632244888,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/doctorsearch-b3561.appspot.com/o/images%2Fdoc-stomatologisr.jpeg?alt=media&token=d6bbc4a9-188c-45fd-8e01-11609395ec8e"
+    },
+    {
+      "id": 4,
+      "nameEN": "pavlo pavlovych",
+      "lastnameEN": "pavliv",
+      "nameUA": "павло павлович",
+      "lastnameUA": "павлів",
+      "speciality": {
+        "nameEN": "physiotherapist",
+        "nameUA": "фізіотерапевт",
+        "id": 13
+      },
+      "clinic": {
+        "nameEN": "CNE OF LRC CENTER OF SPORTS MEDICINE AND REHABILITATION",
+        "nameUA": "КНП ЛОР \"Центр спортивної медицини і реабілітації\"",
+        "address": "місто Львів, вул. Коновальця, 47, кабінет 3",
+        "ownership": "state",
+        "id": 3
+      },
+      "city": {
+        "nameEN": "Lviv",
+        "nameUA": "Львів",
+        "id": 1
+      },
+      "district": {
+        "nameEN": "Lychakivsky",
+        "nameUA": "Личаківський",
+        "id": 3
+      },
+      "office": "122",
+      "phoneNumber": 976677888,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/doctorsearch-b3561.appspot.com/o/images%2Fdoc-5.jpeg?alt=media&token=376058d1-4579-4239-a31e-efe89ba5577d"
+    },
+    {
+      "nameEN": "olena ivanivna",
+      "lastnameEN": "oleshko",
+      "nameUA": "олена іванівна",
+      "lastnameUA": "олешко",
+      "speciality": {
+        "nameEN": "pediatrician",
+        "nameUA": "педіатр",
+        "id": 2
+      },
+      "clinic": {
+        "nameEN": "CNE \"4th CITY CLINICAL HOSPITAL OF LVIV\"",
+        "nameUA": "КНП \"4-А МІСЬКА ПОЛІКЛІНІКА М. ЛЬВОВА\" ",
+        "address": "місто Львів, просп. Червоної Калини, 68",
+        "ownership": "state",
+        "id": 10
+      },
+      "city": {
+        "nameEN": "Lviv",
+        "nameUA": "Львів",
+        "id": 1
+      },
+      "district": {
+        "nameEN": "Lychakivsky",
+        "nameUA": "Личаківський",
+        "id": 3
+      },
+      "office": "301",
+      "phoneNumber": 971112233,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/doctorsearch-b3561.appspot.com/o/images%2Fdoctor12.jpeg?alt=media&token=0d4a75e9-0b88-4427-b1cb-59bfb8cefca7",
+      "id": 5
+    },
+    {
+      "nameEN": "sofia ivanivna",
+      "lastnameEN": "savciv",
+      "nameUA": "софія іванівна",
+      "lastnameUA": "савців",
+      "speciality": {
+        "nameEN": "otolaryngologist",
+        "nameUA": "отоларинголог",
+        "id": 19
+      },
+      "clinic": {
+        "nameEN": "CNE \"3rd city polyclinic of Lviv\"",
+        "nameUA": "КНП \"3-я міська поліклініка м. Львова\"\n",
+        "address": "місто Львів, вул. Повітряна, 99",
+        "ownership": "state",
+        "id": 7
+      },
+      "city": {
+        "nameEN": "Lviv",
+        "nameUA": "Львів",
+        "id": 1
+      },
+      "district": {
+        "nameEN": "Zaliznychnyy",
+        "nameUA": "Залізничний",
+        "id": 2
+      },
+      "office": "333",
+      "phoneNumber": 935463223,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/doctorsearch-b3561.appspot.com/o/images%2Fdoc-11.jpeg?alt=media&token=f59276be-8098-471e-8f43-79cb2d8baa92",
+      "id": 7
+    },
+    {
+      "nameEN": "petro petrovych",
+      "lastnameEN": "petriv",
+      "nameUA": "петро петрович",
+      "lastnameUA": "петрів",
+      "speciality": {
+        "nameEN": "surgeon",
+        "nameUA": "хірург",
+        "id": 3
+      },
+      "clinic": {
+        "nameEN": "CNE \"DENTAL POLYCLINIC № 4\"",
+        "nameUA": "КНП \"СТОМАТОЛОГІЧНА ПОЛІКЛІНІКА № 4 \"",
+        "address": "місто Львів, вул. Симоненка, 6А",
+        "ownership": "state",
+        "id": 5
+      },
+      "city": {
+        "nameEN": "Lviv",
+        "nameUA": "Львів",
+        "id": 1
+      },
+      "district": {
+        "nameEN": "Frankivsky",
+        "nameUA": "Франківський",
+        "id": 4
+      },
+      "office": "205",
+      "phoneNumber": 987698765,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/doctorsearch-b3561.appspot.com/o/images%2Fdoc-2.jpeg?alt=media&token=803d024e-cbc4-42b9-9f9c-34789462847a",
+      "id": 8
+    },
+    {
+      "nameEN": "iryna olegivna",
+      "lastnameEN": "iryshko",
+      "nameUA": "ірина олегівна",
+      "lastnameUA": "іришко",
+      "speciality": {
+        "nameEN": "ophthalmologist",
+        "nameUA": "офтальмолог",
+        "id": 15
+      },
+      "clinic": {
+        "nameEN": "CNE OF LRC \"Lviv regional specialized center of radiation protection of the population\"",
+        "nameUA": "КНП ЛОР \"Львівський обласний спеціалізований центр радіаційного захисту населення\"",
+        "address": "місто Львів, вул. Морозна, 31А",
+        "ownership": "state",
+        "id": 22
+      },
+      "city": {
+        "nameEN": "Lviv",
+        "nameUA": "Львів",
+        "id": 1
+      },
+      "district": {
+        "nameEN": "Sykhivsky",
+        "nameUA": "Сихівський",
+        "id": 6
+      },
+      "office": "333",
+      "phoneNumber": 987586754,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/doctorsearch-b3561.appspot.com/o/images%2Fdoc-img-9.jpeg?alt=media&token=2398b68c-41d3-439c-be62-c5c58e34527c",
+      "id": 9
+    },
+    {
+      "id": 10,
+      "nameEN": "veronika victorivna",
+      "lastnameEN": "varonuk",
+      "nameUA": "вероніка вікторівна",
+      "lastnameUA": "варонюк",
+      "speciality": {
+        "nameEN": "therapist",
+        "nameUA": "терапевт",
+        "id": 1
+      },
+      "clinic": {
+        "nameEN": "CNE \"3rd city polyclinic of Lviv\"",
+        "nameUA": "КНП \"3-я міська поліклініка м. Львова\"\n",
+        "address": "місто Львів, вул. Повітряна, 99",
+        "ownership": "state",
+        "id": 7
+      },
+      "city": {
+        "nameEN": "Lviv",
+        "nameUA": "Львів",
+        "id": 1
+      },
+      "district": {
+        "nameEN": "Zaliznychnyy",
+        "nameUA": "Залізничний",
+        "id": 2
+      },
+      "office": "204",
+      "phoneNumber": 6758483393,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/doctorsearch-b3561.appspot.com/o/images%2Fdoc-img-6.jpeg?alt=media&token=042980e6-3a17-4461-b57c-fa33458f6b62"
+    },
+    {
+      "nameEN": "tetyana oleksiyivna",
+      "lastnameEN": "mykytenko",
+      "nameUA": "тетяна олексіївна",
+      "lastnameUA": "микитенко",
+      "speciality": {
+        "nameEN": "family doctor",
+        "nameUA": "сімейний лікар",
+        "id": 6
+      },
+      "clinic": {
+        "nameEN": "CNE \"1st city polyclinic of Lviv\"",
+        "nameUA": "КНП \"1-А МІСЬКА ПОЛІКЛІНІКА М. ЛЬВОВА\"",
+        "address": "місто Львів, вул. Руська, 20",
+        "ownership": "state",
+        "id": 8
+      },
+      "city": {
+        "nameEN": "Lviv",
+        "nameUA": "Львів",
+        "id": 1
+      },
+      "district": {
+        "nameEN": "Zaliznychnyy",
+        "nameUA": "Залізничний",
+        "id": 2
+      },
+      "office": "333",
+      "phoneNumber": 634567892,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/doctorsearch-b3561.appspot.com/o/images%2Fdoc-img-7.jpeg?alt=media&token=b40b2aed-dfc2-4492-be2d-56d62930a6a9",
+      "id": 11
+    },
+    {
+      "nameEN": "anton antonovych",
+      "lastnameEN": "antoniv",
+      "nameUA": "антон антонович",
+      "lastnameUA": "антонів",
+      "speciality": {
+        "nameEN": "cardiologist",
+        "nameUA": "кардіолог",
+        "id": 9
+      },
+      "clinic": {
+        "nameEN": "CNE \"3d CITY CLINICAL HOSPITAL OF LVIV\"",
+        "nameUA": "КНП \"3-Я МІСЬКА КЛІНІЧНА ЛІКАРНЯ М. ЛЬВОВА\" ",
+        "address": "місто Львів, вул. Рапопорта, 6",
+        "ownership": "state",
+        "id": 15
+      },
+      "city": {
+        "nameEN": "Lviv",
+        "nameUA": "Львів",
+        "id": 1
+      },
+      "district": {
+        "nameEN": "Shevchenkivsky",
+        "nameUA": "Шевченківський",
+        "id": 5
+      },
+      "office": "244",
+      "phoneNumber": 734567654,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/doctorsearch-b3561.appspot.com/o/images%2Fdoc-img-5.jpeg?alt=media&token=ae07dcf5-8e20-4ee0-8072-c1bddf0e5ea2",
+      "id": 12
+    },
+    {
+      "nameEN": "olha stepanivna",
+      "lastnameEN": "lyutyk",
+      "nameUA": "ольга степанівна",
+      "lastnameUA": "лютик",
+      "speciality": {
+        "nameEN": "psychotherapist",
+        "nameUA": "психотерапевт",
+        "id": 11
+      },
+      "clinic": {
+        "nameEN": "CNE OF LRC \"LVIV REGIONAL CLINICAL PSYCHONEUROLOGICAL DISPENSARY\"",
+        "nameUA": "КНП ЛОР \"ЛЬВІВСЬКИЙ ОБЛАСНИЙ КЛІНІЧНИЙ ПСИХОНЕВРОЛОГІЧНИЙ ДИСПАНСЕР\"",
+        "address": "місто Львів, вул. Коциловського, 32",
+        "ownership": "state",
+        "id": 18
+      },
+      "city": {
+        "nameEN": "Lviv",
+        "nameUA": "Львів",
+        "id": 1
+      },
+      "district": {
+        "nameEN": "Frankivsky",
+        "nameUA": "Франківський",
+        "id": 4
+      },
+      "office": "111",
+      "phoneNumber": 976547878,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/doctorsearch-b3561.appspot.com/o/images%2Fdoc-img-8.jpeg?alt=media&token=230328ef-6bf1-4750-b9dc-2e06b0005dc6",
+      "id": 13
+    },
+    {
+      "nameEN": "natalia vasylivna",
+      "lastnameEN": "narepekha",
+      "nameUA": "наталія василівна",
+      "lastnameUA": "нарепеха",
+      "speciality": {
+        "nameEN": "psychotherapist",
+        "nameUA": "психотерапевт",
+        "id": 11
+      },
+      "clinic": {
+        "nameEN": "CNE \"1st city polyclinic of Lviv\"",
+        "nameUA": "КНП \"1-А МІСЬКА ПОЛІКЛІНІКА М. ЛЬВОВА\"",
+        "address": "місто Львів, вул. Руська, 20",
+        "ownership": "state",
+        "id": 8
+      },
+      "city": {
+        "nameEN": "Lviv",
+        "nameUA": "Львів",
+        "id": 1
+      },
+      "district": {
+        "nameEN": "Frankivsky",
+        "nameUA": "Франківський",
+        "id": 4
+      },
+      "office": "345",
+      "phoneNumber": 988888888,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/doctorsearch-b3561.appspot.com/o/images%2Fdoc-img-4.jpeg?alt=media&token=4478f654-adab-4901-82f2-deb17d5d7994",
+      "id": 14
+    },
+    {
+      "nameEN": "volodymyr petrovych",
+      "lastnameEN": "dolhert",
+      "nameUA": "володимир петрович",
+      "lastnameUA": "долгерт",
+      "speciality": {
+        "nameEN": "family doctor",
+        "nameUA": "сімейний лікар",
+        "id": 6
+      },
+      "clinic": {
+        "nameEN": "CNE \"4th CITY CLINICAL HOSPITAL OF LVIV\"",
+        "nameUA": "КНП \"4-А МІСЬКА ПОЛІКЛІНІКА М. ЛЬВОВА\" ",
+        "address": "місто Львів, просп. Червоної Калини, 68",
+        "ownership": "state",
+        "id": 10
+      },
+      "city": {
+        "nameEN": "Lviv",
+        "nameUA": "Львів",
+        "id": 1
+      },
+      "district": {
+        "nameEN": "Sykhivsky",
+        "nameUA": "Сихівський",
+        "id": 6
+      },
+      "office": "213",
+      "phoneNumber": 975556664,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/doctorsearch-b3561.appspot.com/o/images%2Fdoc-img-2.jpeg?alt=media&token=95fb7341-e80c-48ac-ae9a-bebd3af0e8a6",
+      "id": 15
+    },
+    {
+      "id": 16,
+      "nameEN": "oleh kostyantynovych",
+      "lastnameEN": "furtak",
+      "nameUA": "олег костянтинович",
+      "lastnameUA": "фуртак",
+      "speciality": {
+        "nameEN": "oncologist",
+        "nameUA": "онколог",
+        "id": 16
+      },
+      "clinic": {
+        "nameEN": "CNE OF LRC \"Lviv State Oncological Regional Medical and Diagnostic Center\"",
+        "nameUA": "КНП ЛОР \"Львівський державний онкологічний регіональний лікувально-діагностичний центр\"",
+        "address": "м. Львів, вул. Гашека 2-а",
+        "ownership": "state",
+        "id": 24
+      },
+      "city": {
+        "nameEN": "Lviv",
+        "nameUA": "Львів",
+        "id": 1
+      },
+      "district": {
+        "nameEN": "Lychakivsky",
+        "nameUA": "Личаківський",
+        "id": 3
+      },
+      "office": "412",
+      "phoneNumber": 678967543,
+      "photo": "https://firebasestorage.googleapis.com/v0/b/doctorsearch-b3561.appspot.com/o/images%2Fdoc-img-12.jpeg?alt=media&token=901af571-3d5c-4475-994a-a8320ab6e5cd"
+    }
+  ],
+  "appointments": []
+}

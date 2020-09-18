@@ -1,0 +1,258 @@
+$btnBoxColor: linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
+$btnColorHover: #4281df;
+$mainFont: "Montserrat-Regular";
+
+.text-center {
+    width: 100%;
+    text-align: center;
+}
+.text-title {
+    margin: 1em 0 0;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1.5em;
+    text-transform: uppercase;
+}
+.formWrapper{
+    max-width: 1920px;
+    padding: 60px 0;
+    margin: 0 auto;
+}
+.formWrapperTitle{
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-bottom: 30px;
+    color: #585f73;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+}
+.wrapper{
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+.wrapperImg, .feedbackForm{
+    width: 50%;
+    padding: 0 20px 0 calc(8.33333% + 20px);
+}
+.formContainer{
+    position: relative;
+    width: 100%;
+    line-height: 18px;
+}
+.inputContainer{
+    margin-bottom: 25px;
+}
+.containerInput, .inputBox{
+    position: relative;
+    line-height: 18px;
+}
+.box{
+    margin-bottom: 10px;
+    color: #9b9fab;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+}
+.inputBox{
+    position: relative;
+}
+
+.input{
+    display: block;
+    width: 100%;
+    height: 46px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-right: 37px;
+    padding-left: 9px;
+    border: 1px solid #d7dae0;
+    border-radius: 2px;
+    color: #585f73;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.emailPhone:first-child{
+    margin-right: 20px;
+}
+.emailPhone{
+    display: inline-block;
+    width: calc(50% - 10px);
+    vertical-align: top;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+}
+.textarea {
+	position: relative;
+}
+.labelTextArea{
+    margin-bottom: 10px;
+    color: #9b9fab;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.labelTextArea::after{
+    content: "*";
+}
+.box::after{
+    content: "*";
+}
+.textareaText{
+    display: block;
+    overflow: -moz-scrollbars-none;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 14px 37px 14px 9px;
+    border: 1px solid #d7dae0;
+    border-radius: 2px;
+    color: #585f73;
+    font-size: 16px;
+    line-height: 22px;
+    outline: none;
+    -ms-overflow-style: none;
+    resize: none;
+}
+.allFields{
+    margin-top: -15px;
+    margin-bottom: 25px;
+    color: #585f73;
+    font-size: 14px;
+}
+
+
+.buttonDoc{
+    background: $btnBoxColor;
+    display: flex;
+    width: 100%;
+}
+
+.buttonDoc .docButton{
+    display: inline-block;
+    justify-content: center;
+    font-family: $mainFont,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    display: inline-block;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: 3px;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 1.125em 1.875em;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+    width: 100%;
+    background-color: hsla(0,0%,85%,.35);
+    line-height: 1;
+    padding: 1.125em 1em;
+
+   
+}
+.buttonDoc .docButton:focus, .buttonDoc .docButton:hover {
+    background-color: $btnColorHover;  
+}
+
+.pageContactsContent{
+    width: 900px;
+    margin: 50px auto;
+}
+.phoneContainer{
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin: 20px auto 0;
+    -webkit-box-pack: end;
+    -ms-flex-pack: space-between;
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.phones {
+    margin: 0 auto;
+    @media screen and (min-width: 970px){
+        min-width: 295px;
+    }   
+}
+
+.phones__title{
+    margin: 0 0 30px;
+    color: #585f73;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 25px;
+    text-align: center;
+}
+.phones__list {
+    overflow: hidden;
+    padding: 15px 0 5px;
+    display: flex;
+    flex-flow: column wrap;
+    height: 110px;
+    justify-content: center;
+}
+@media screen and (min-width: 970px){
+    .phones__list{
+        padding: 15px 230px 5px;
+    }
+}
+.phones__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    color: #585f73;
+    margin-bottom: 15px;
+    font-family: Open Sans,Helvetica,Arial,sans-serif;
+    font-weight: 600;
+    text-align: center;
+    font-size: 16px;
+    white-space: nowrap;
+    @media screen and (min-width: 600px){
+    width: 50%;
+   
+}
+}
+
+.phoneIcon{
+font-size: 16px;
+margin-right: 20px;
+line-height: 30px;
+vertical-align: middle;
+}

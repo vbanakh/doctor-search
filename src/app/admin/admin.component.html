@@ -1,0 +1,32 @@
+<div class="admin">
+    <aside class="aside">
+        <ul class="asideList">
+          <li class="asideItem">
+            <a [routerLink]="[ 'admin-appointment' ]" class="asideLink">Записи</a>
+          </li>
+          <li class="asideItem">
+            <a [routerLink]="[ 'admin-city' ]" class="asideLink">Місто</a>
+          </li>
+          <li class="asideItem">
+            <a [routerLink]="[ 'admin-district' ]"  class="asideLink">Район</a>
+          </li>
+          <li class="asideItem">
+            <a [routerLink]="[ 'admin-clinic' ]"class="asideLink">Клініка</a>
+          </li>
+          <li class="asideItem">
+            <a [routerLink]="[ 'admin-speciality' ]" class="asideLink">Спеціальність</a>
+          </li>
+          <li class="asideItem">
+            <a [routerLink]="[ 'admin-doctor' ]" class="asideLink">Лікар</a>
+          </li>
+          <li class="asideItem">
+            <a (click)="logout()" class="asideLink">Вийти</a>
+          </li>
+        </ul>
+      </aside>
+    <section class="admin-section">
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+    </section>  
+</div> 

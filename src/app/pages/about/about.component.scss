@@ -1,0 +1,40 @@
+.aboutContainer{
+    min-height: 100vh;
+    width: 1170px;
+    margin-right: auto;
+    margin-left: auto;
+    color: #585f73;
+    @media screen and (max-width: 1200px){
+        width: 991px;
+    }
+}
+
+.textTitle h1{
+    text-align: center;
+    margin: 1em 0 0;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1.5em;
+    text-transform: uppercase;
+}
+.aboutContent{
+    width: 900px;
+    margin: 0 auto 50px;
+    font-size: 14px;
+    text-align: justify;
+}
+.aboutContent h2{
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: .5em;
+    color: rgba(0,0,0,.85);
+}
+.aboutContent p{
+    margin-bottom: 18px;
+}
+.aboutContent ul{
+    padding-left: 20px;
+    list-style: none
+}

@@ -1,0 +1,58 @@
+
+    <article class="container">
+        <div class="card-grid">
+            <div class="card-doctor" *ngFor="let app of appointment">
+                <div class="docInfo">
+                    <div class="up">
+                        <div class="photoDoctor">
+                            <a class="docImage"
+                            [style.backgroundImage]="'url('+ app.doctorApp.photo +')'"></a>
+                        </div>
+                        <div class="alignBlok">
+                            <div class="doctorInfo">
+                                <div class="nameDoctor">
+                                    {{ app.doctorApp.nameUA}} {{ app.doctorApp.lastnameUA}}
+                                </div>
+                                <div class="speciality">
+                                    {{ app.doctorApp.speciality.nameUA }}
+                                </div>
+                                <div class="dodatcovo"></div>
+                            </div>
+                            <div class="down">
+                                <div class="clinic">
+                                    <div class="clinicImage">
+                                        <img src="assets/images/lacation-logo.png" alt="" style="height: 25px; width: 25px;">
+                                    </div>
+                                    <dic class="clinicLocation">
+                                        <div class="clinicName">
+                                            {{ app.doctorApp.clinic.nameUA }}
+                                        </div>
+                                        <div class="address">
+                                            <div> {{ app.doctorApp.clinic.address }}, каб.{{ app.doctorApp.office }}</div>
+                                        </div>
+                                    </dic> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="appTimeStatus">
+                        <div class="appInfo">
+                            <span>Дата візиту</span>
+                            <div class="dateApp">
+                                <div>{{ app.dateUser | date:'d/MM/y'}} о {{  app.dateApp | date:'hh:mm'  }} год </div>
+                            </div>
+                        </div>
+                        <div class="appInfo">
+                            <span>Статус запису</span>
+                            <div class="statusApp">
+                                <div>{{ app.status }} </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttonDoc">
+                    <button type="button" class="docButton" [routerLink]="[ '/doctor-detail/', app.doctorApp.id]"> ЗАПИСАТИСЯ НА ПРИЙОМ</button>
+                </div>
+            </div>
+        </div>
+    </article>

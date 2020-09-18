@@ -1,0 +1,96 @@
+$mainFont: "Montserrat-Regular";
+
+.footerContainer{
+  height: 432px;
+  width: 100vw;
+  color: rgb(233, 168, 66);
+  background:linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
+  display: flex;
+  justify-content: space-around;
+  font-family: $mainFont;
+  color: #FFFFFF;
+}
+
+.links{
+  height: 214px;
+  width: 233px;
+  margin: 109px 0;
+  display: flex;
+  flex-direction: column;
+}
+.contacts{
+  height: 214px;
+  width: 333px;
+  margin: 109px 109px 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.imgFooter img{
+  height: 100%;
+  width: 400px;
+  margin: 0 auto;
+  display: block;
+}
+.logo img{
+  width: 80px;
+  height: 60px;
+  display: block;
+  -webkit-transition: opacity .250s linear;
+  -o-transition: opacity .250s linear;
+  transition: opacity .250s linear; 
+}
+
+ li span{
+  display: block;
+  color: #FFFFFF;
+  font-size: 14px;
+  line-height: 30px;
+  font-weight: bold;
+  text-align: left;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  li{
+    mix-blend-mode: normal;
+    display: flex;
+    justify-content: column;
+    a{
+      display: block;
+      color: #FFFFFF;
+      font-size: 14px;
+      line-height: 30px;
+      font-weight: bold;
+      text-align: left;
+      text-decoration: none;
+      span:hover {
+        color: #E0461B;
+        transition: color 400ms ease-out;
+      }
+    }
+  }
+}
+
+.workTime{
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.phone{
+  display: flex;
+  height: 30px;
+  width: 100%;
+  span{
+    margin-left: 10px;
+  }
+}
+.phoneIcon{
+font-size: 16px;
+margin-right: 10px;
+line-height: 30px;
+vertical-align: middle;
+}
+
+

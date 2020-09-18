@@ -1,0 +1,84 @@
+<header class="header">
+  <div class="leftSide">
+    <div id="logo">
+      <a [routerLink]="[ '/home']">
+        <img src="assets/images/helsi-logo.svg">
+      </a>
+    </div>
+  </div>
+  <div class="navigation">
+    <nav>
+      <ul>
+        <li>
+          <a [routerLink]="[ '/clinic']">
+            <span>Клініки</span>
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="[ '/reform']">
+            <span>Медична реформа</span>
+          </a>
+
+        </li>
+        <li>
+          <a [routerLink]="[ '/about']">
+            <span>Про нас</span>
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="[ '/contacts']">
+            <span>Контакти</span>
+          </a>
+        </li>
+      </ul>
+      <div *ngIf="!loginStatus" class="headerBtn">
+        <a (click)="loginModal(loginForm)" >
+            <span>Увійти</span> </a>
+      </div>
+      <div *ngIf="loginStatus" class="headerBtn">
+        <a  [routerLink]="[ '/'+loginUrl ]" >
+          <span>{{ loginName | titlecase }}</span> </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<ng-template #loginForm>
+    <div class="modal-body">
+      <div class="container" id="container">
+  <div class="form-container sign-up-container">
+    <form novalidate (ngSubmit)="registerUser()">
+      <h2>Створити акаунт</h2>
+      <input type="text" placeholder="Ім'я*" id="firstName" #userFirstName="ngModel"[(ngModel)]="firstName" name="firstName" required/>
+      <input type="text" placeholder="Прізвище*" id="lastName" #userLastName="ngModel" [(ngModel)]="lastName" name="lastName" required>
+      <input type="email" placeholder="Емейл*" id="userEmail" #emailUser="ngModel" [(ngModel)]="userEmail" name="userEmail" required/>
+      <input type="password" placeholder="Пароль*" id="userPassword" #passUser="ngModel" [(ngModel)]="userPassword" name="userPassword" required />
+      <button class="signIN" type="submit" [disabled]="userFirstName.invalid || userLastName.invalid || emailUser.invalid || passUser.invalid">Зареєструватися</button>
+    </form>
+  </div>
+  <div class="form-container sign-in-container">
+    <form novalidate (ngSubmit)="loginUser()">
+      <h2>Увійти</h2>
+      <input type="email" placeholder="Емейл*" id="userEmail" #emailUser="ngModel" [(ngModel)]="userEmail" name="userEmail" required />
+      <input type="password" placeholder="Пароль*" id="userPassword" #passUser="ngModel" [(ngModel)]="userPassword" name="userPassword" required/>
+      <button class="signIN" [disabled]="emailUser.invalid || passUser.invalid">Увійти</button>
+    </form>
+  </div>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <h1>З поверненням!</h1>
+        <p>Щоб підтримувати зв’язок з нами, увійдіть, ввівши свої особисті дані</p>
+        <button type="submit" class="ghost" id="signIn" (click)="signInClick()">Увійти</button>
+      </div>
+      <div class="overlay-panel overlay-right">
+        <h1>Доброго дня!</h1>
+        <p>Введіть свої особисті дані</p>
+        <button class="ghost" id="signUp" (click)="signUpClick()">Зареєструватися</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </ng-template>
+

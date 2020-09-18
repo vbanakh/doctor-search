@@ -1,0 +1,112 @@
+<div class="card mt-2 ml-3">
+    <div class="card-header d-flex justify-content-between bg-transparent ">
+        <div class="pt-2 text-primiry">Clinic</div>
+        <div>
+            <form>
+                <input class="btn btn-success" type="button" value="add Clinic" (click)="openModal(template)">
+            </form>
+        </div>
+    </div>
+    <div class="card-body bg-transparent">
+        <form>
+            <div class="form-group">
+                <label for="filter"></label>
+                <input type="text" class="form-control" id="filter" placeholder="filter clinic ..." name="searchParam"
+                    [(ngModel)]="searchParam">
+            </div>
+        </form>
+        <hr>
+        <table class="table">
+            <thead class="thead">
+                <tr class="table-primary">
+                    <th [class.active]="order === 'id' " (click)="setOrder('id')">ID<span
+                            [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+                    </th>
+                    <th [class.active]="order === 'nameEN' " (click)="setOrder('nameEN')">Name EN<span
+                            [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+                    </th>
+                    <th [class.active]="order === 'nameUA' " (click)="setOrder('nameUA')">Name UA<span
+                            [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+                    </th>
+                    <th [class.active]="order === 'address' " (click)="setOrder('address')">Address<span
+                            [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+                    </th>
+                    <th [class.active]="order === 'ownership' " (click)="setOrder('ownership')">Ownership<span
+                            [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+                    </th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr
+                    *ngFor="let clinic of adminClinic| orderBy: order:reverse:'case-insensitive' | searchClinic: searchParam">
+                    <td>{{ clinic.id }}</td>
+                    <td>{{ clinic.nameEN }}</td>
+                    <td>{{ clinic.nameUA }}</td>
+                    <td>{{ clinic.address }}</td>
+                    <td>{{ clinic.ownership }}</td>
+                    <td>
+                        <input type="button" value="delete" class="btn btn-danger"
+                            (click)="openModalDelete(deleteBtn, clinic)">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<ng-template #template>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Add Clinic</h4>
+        <button class="btn btn-outline-secondary pull-right" (click)="closeModal()">x</button>
+    </div>
+    <div class="modal-body">
+        <form novalidate (ngSubmit)="addClinic()">
+            <div class="form-row">
+                <div class="col">
+                    <label for="nameEN">Name clinic EN*</label>
+                    <textarea rows="3" [(ngModel)]="nameEN" #nameClEN="ngModel" name="nameEN" type="text" id="nameEN"
+                        class="form-control mb-3" placeholder="name en here..." required>
+                    </textarea>
+                </div>
+                <div class="col">
+                    <label for="nameUA">Name clinic UA*</label>
+                    <textarea rows="3" [(ngModel)]="nameUA" name="nameUA" id="nameUA" class="form-control mb-3"
+                        placeholder="name ua here..." #nameClUA="ngModel" required>
+                    </textarea>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <label for="address">Address*</label>
+                    <input [(ngModel)]="address" name="address" type="text" id="address" class="form-control mb-3"
+                        placeholder="address here..." #nameAddress="ngModel" required>
+                </div>
+                <div class="col">
+                    <label for="ownership">Ownership*</label>
+                    <select name="ownership" id="ownership" [(ngModel)]="ownership"  #nameOwner="ngModel" class="custom-select mb-3" required>
+                        <option value="private">приватна</option>
+                        <option value="state">державна</option>
+                    </select>
+                </div>
+            </div>
+            <div class="addBtn d-flex justify-content-center">
+                <button class="btn btn-success col-3" type="submit" [disabled]="nameOwner.invalid || nameAddress.invalid || nameClUA.invalid || nameClEN.invalid">Add</button>
+            </div>
+        </form>
+    </div>
+</ng-template>
+
+
+<ng-template #deleteBtn>
+    <div class="modal-body">
+        <form>
+            <button class="btn btn-dark col-5 mr-3 ml-4" (click)="closeModalDelete()">Dismiss</button>
+            <button class="btn btn-danger col-5 " (click)="deleteClinic(delete)">Delete</button>
+        </form>
+    </div>
+</ng-template>
+
+
+
+

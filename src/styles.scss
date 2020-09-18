@@ -1,1 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import './variables';
+@import './mixins';
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url(assets/fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Montserrat-extra-bold";
+  src: url(assets/fonts/Montserrat/Montserrat-ExtraBold.ttf);
+}
+
+@font-face {
+  font-family: "Montserrat-bold";
+  src: url(assets/fonts/Montserrat/Montserrat-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(assets/fonts/Montserrat/Montserrat-ExtraLight.ttf);
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+input,
+textarea,
+select {
+  font-weight: 400;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  // -webkit-border-radius: 0;
+  // border-radius: 0;
+  // background: none;
+  // border: none;
+  margin: 0;
+  width: 100%;
+}
+
+textarea {
+  display: block;
+  resize: none;
+  overflow: auto;
+}

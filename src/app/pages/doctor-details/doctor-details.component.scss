@@ -1,0 +1,379 @@
+$mainFont : "Montserrat-Regular";
+$contW: 60%;
+$imgW: 5%;
+$formW: 95%;
+$switchAT: 1.2s;
+$inputW: 100%;
+$btnH: 36px;
+
+
+.wrapper{
+    display: flex;
+    overflow: hidden;
+    min-width: 300px;
+    min-height: 50vh;
+    -ms-flex-direction: column;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    padding-top: 63px;
+    z-index: 2;
+    .doctorCardBig{
+        width: 80%;
+        min-height: 260px;
+        border-bottom: 3px solid #fff;
+        margin-right: 0;
+        margin-bottom: 20px;
+        margin-left: 0;
+        background-color: #fafbfb;
+        -webkit-box-shadow: 0 5px 10px 0 rgba(0,0,0,.25);
+        box-shadow: 0 5px 10px 0 rgba(0,0,0,.25);
+        font-family: Open Sans;
+        -webkit-transition: box-shadow .1s linear;
+        -o-transition: .1s linear box-shadow;
+        transition: box-shadow .1s linear;
+        .doctorDetails{
+            position: relative;
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: flex;
+            width: 100%;
+            -ms-flex-direction: row;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            flex-direction: row;
+            -ms-flex-pack: justify;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            padding-bottom: 15px;
+            border: 3px solid #fff;
+            border-bottom: 0;
+            color: #585f73;
+            text-decoration: none;
+            .doctorPhotoContainer{
+                display: -webkit-box;
+                display: flex;
+                -ms-flex-direction: column;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                flex-direction: column;
+                .docPhoto{
+                    height: 250px;
+                    width: 250px;
+                }
+            }
+        }
+    }
+}
+.wrapperThanks{
+    display: flex;
+    min-width: 300px;
+    min-height: 90vh;
+}
+
+
+
+.doctocInfo{
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.blok:first-child {
+    padding: 5px 3px 0 15px;
+}
+.blok{
+    overflow: hidden;
+    -ms-flex: 1 1 auto;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    padding: 10px 3px 0 10px;
+    font-size: 12px;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-pack: start;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    overflow: hidden;
+    -ms-flex: 1 1 auto;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    padding: 10px 3px 0 10px;
+    font-size: 14px;
+}
+
+.doctorCardHead{
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-evenly;
+    width: 100%;
+    .doctorCardHead__main{
+        display: -ms-flexbox;
+        display: -webkit-box;
+        display: flex;
+        width: 65%;
+        -ms-flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+    }
+    
+}
+.doctorName{
+    margin: 10px 0 0;
+    color: #585f73;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 30px;
+    font-family: "Montserrat-bold", sans-serif;
+}
+.doctorSpeciality{
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 18px;
+    padding: 10px 0;
+    line-height: 21px;
+    font-family: $mainFont, sans-serif;
+}
+.doctorCardHead__button{
+    margin: 15px 15px 0 0;
+    padding: 10px;
+    
+}
+
+.clinicPhoto{
+    width: 75px;
+    height: 75px;
+    -ms-flex-positive: 0;
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -ms-flex-item-align: center;
+    align-self: center;
+    margin-right: 10px;
+}
+
+.clinicContact{
+    align-content: center;
+    margin-left: 10px;
+    align-self: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-direction: normal;
+}
+
+.clinicContactRow{
+    -webkit-box-orient: horizontal;
+    flex-direction: row;
+    font-family: $mainFont, sans-serif;
+}
+.label{
+    padding-right: .5rem;
+    color: #9b9fab;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: $mainFont, sans-serif;
+}
+
+.doctorCardHead__button, .formButton{
+    background: linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
+    display: flex;
+    width: 250px;
+    height: 50px;
+    padding: 0;
+    border-radius: 3px;
+    border: none;
+}
+.doctorCardHead__button button, .formButton button{
+    display: inline-block;
+    justify-content: center;
+    height:inherit;
+    font-family: $mainFont, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    display: inline-block;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: 3px;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+    width: 100%;
+    background-color: rgba(217, 217, 217, 0.35);
+}
+.buttonAlign{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.doctorCardHead__button button:hover, .formButton button:hover{
+    background-color: #4281df;
+}
+.wrapperForm{
+    display: flex;
+    overflow: hidden;
+    min-width: 300px;
+    min-height: 50vh;
+    -ms-flex-direction: column;
+    align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    padding-top: 63px;
+    // background-color: #fff;
+}
+input, button {
+    border: none;
+    outline: none;
+    background: none;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+.formContainer{
+    overflow: hidden;
+    position: relative;
+    width: $contW;
+    height: 750px;
+    margin: 0 auto 100px;
+    border: 1px solid rgba(205, 205, 205, 0.35);   
+    background: #ffff;
+    display: flex;
+    
+}
+form {
+    position: relative;
+    width: $formW;
+    height: 100%;
+    padding: 20px 30px 0;
+    label {
+        display: block;
+        width: 90%;
+        margin: 25px auto 0;
+        text-align: center;
+      }
+      label span {
+        font-size: 12px;
+        color: #989595;
+        text-transform: uppercase;
+        font-family: $mainFont;
+      }
+      label timepicker{
+          display: flex;
+          justify-content: center;
+          margin-top: 10px;
+          
+      }
+      
+    input {
+        display: block;
+        width: 100%;
+        margin-top: 5px;
+        padding-bottom: 5px;
+        font-size: 16px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+        text-align: center;
+    }
+}
+.sub-cont{
+    width: $imgW;
+    height: 100%;
+    background: #fff;
+}
+
+.imageRight{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
+}
+
+h2{
+    margin: 10px auto;
+    color: #585f73;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 30px;
+    font-family: "Montserrat-bold", sans-serif;
+    text-align: center;
+}
+
+.thanksBox{
+    border: none;
+    border-radius: 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); 
+    width: 30%;
+    min-height: 100px;
+    text-align: center;
+    background: linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
+    color: #ffff;
+    padding-top: 15px;
+    font-family: $mainFont;
+    font-size: 20px;
+} 
+    
+
+.thanksBox .thanks{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.fadeIn {
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+    -webkit-animation-name: fadeIn;
+            animation-name: fadeIn;
+    -webkit-animation-duration: 300ms;
+            animation-duration: 300ms;
+    -webkit-animation-delay: .4s;
+            animation-delay: .4s;
+  }
+  
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+

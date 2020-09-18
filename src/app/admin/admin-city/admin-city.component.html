@@ -1,0 +1,79 @@
+<div class="card mt-2 ml-3">
+    <div class="card-header d-flex justify-content-between bg-transparent ">
+        <div class="pt-2 text-primiry">City</div>
+        <div>
+            <form>
+                <input class="btn btn-success" type="button" value="Add City" (click)="openModal(template)">
+            </form>
+        </div>
+    </div>
+    <div class="card-body bg-transparent">
+        <form>
+            <div class="form-group">
+                <label for="filter"></label>
+                <input type="text" class="form-control" id="filter" placeholder="filter city ..."  name="searchParam" [(ngModel)]="searchParam">
+            </div>
+        </form>
+        <hr>
+        <table class="table">
+            <thead class="thead">
+                <tr class="table-primary">
+                    <th [class.active]="order === 'id' " (click)="setOrder('id')">
+                        ID <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+                    </th>
+                    <th [class.active]="order === 'nameEN' " (click)="setOrder('nameEN')">
+                        Name EN <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+                    </th>
+                    <th [class.active]="order === 'nameUA' " (click)="setOrder('nameUA')">
+                        Name UA <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+                    </th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let city of adminCity | orderBy: order:reverse:'case-insensitive'| searchCity: searchParam">
+                    <td>{{ city.id }}</td>
+                    <td>{{ city.nameEN }}</td>
+                    <td>{{ city.nameUA }}</td>
+                    <td>
+                        <input type="button" value="delete" class="btn btn-danger" (click)="openModalDelete(deleteBtn, city)">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+  
+  <ng-template #template>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Add city</h4>
+        <button type="button" class="btn btn-outline-secondary pull-right" (click)="closeModal()">x</button>
+    </div>
+    <div class="modal-body">
+        <form novalidate (ngSubmit)="addCity()">
+            <div class="form-row">
+                <div class="col">
+                    <input [(ngModel)]="nameEN" name="nameEN" type="text" id="nameEN" class="form-control"
+                        placeholder="name en here..." #eNname="ngModel" required>
+                </div>
+                <div class="col">
+                    <input [(ngModel)]="nameUA" name="nameUA" type="text" id="nameUA" class="form-control"
+                        placeholder="name ua here..." #uAname="ngModel" required>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-success col-3 mt-3" [disabled]="eNname.invalid || uAname.invalid">Add</button>
+            </div>
+        </form>
+    </div>
+  </ng-template>
+  
+  
+  <ng-template #deleteBtn>
+    <div class="modal-body">
+        <form>
+            <button class="btn btn-dark col-5 mr-3 ml-4" (click)="closeModalDelete()">Dismiss</button>
+            <button class="btn btn-danger col-5 " (click)="deleteCity(delete)">Delete</button>
+        </form>
+    </div>
+  </ng-template>

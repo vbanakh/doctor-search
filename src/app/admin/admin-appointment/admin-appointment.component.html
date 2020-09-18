@@ -1,0 +1,112 @@
+
+<div class="card mt-2">
+    <div class="card-header bg-transparent">
+        <div class="pt-2">Appointment</div>
+    </div>
+    <div class="card-body bg-transparent">
+        <table class="table  table-bordered">
+            <thead>
+                <tr class="table-primary">
+                    <th scope="col">ID</th>
+                    <th scope="col">Patient name</th>
+                    <th scope="col">Patient phone</th>
+                    <th scope="col">Doctor Name</th>
+                    <th scope="col">Date of making an appointment</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Detail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let app of adminAppointment | sortDate">
+                    <td>{{ app.id }}</td>
+                    <td>{{ app.firstName }} {{ app.lastName }}</td>
+                    <td>{{ app.phone }}</td>
+                    <td>{{ app.doctorApp.nameUA }} {{app.doctorApp.lastnameUA}}</td>
+                    <td>{{ app.dateApp | date:' dd.MM.yyyy, HH:mm' }}</td>
+                    <td>{{ app.status }}</td>
+                    <td>
+                        <input type="button" value="details" class="btn btn-info" (click)="openDetailsModal(detailsForm, app)">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<ng-template #detailsForm>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Запис № {{ app.id}}</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <table class="table table-borderless table-light table-sm">
+            <tbody>
+                <tr>
+                    <th scope="row">Номер запису</th>
+                    <td>{{app.id}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Статус запису</th>
+                    <td>{{ app.status}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Змінити cтатус запису</th>
+                    <td>
+                        <select name="appStatus" [(ngModel)]="appStatus" (change)= updateStatus() class="custom-select custom-select-sm">
+                            <option selected disabled hidden [ngValue]="undefined">змінити статус...</option>
+                            <option value="новий">новий</option>
+                            <option value="в очікуванні">в очікуванні</option>
+                            <option value="виконано">виконано</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Пацієнт</th>
+                    <td>{{ app.firstName }} {{ app.lastName }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Телефон пацієнта</th>
+                    <td>{{ app.phone  }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Емейл пацієнта</th>
+                    <td>{{ app.email  }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <table class="table  table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Name doctor</th>
+                    <th scope="col">Speciality</th>
+                    <th scope="col">Clinic</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ app.doctorApp.nameUA}}</td>
+                    <td>{{ app.doctorApp.speciality.nameUA}}</td>
+                    <td>{{ app.doctorApp.clinic.nameUA }}</td>
+                    <td>{{ app.doctorApp.city.nameUA  }}</td>
+                    <td>{{ app.dateUser | date:'d/MM/y'}} о {{  app.dateApp | date:'hh:mm'  }} год</td>
+                </tr>
+                <tr>
+                    <th scope="row">Коментар</th>
+                    <td [attr.colspan]="countCol">
+                        <textarea name="userComplaint" [(ngModel)]=" userComplaint" id="" cols="30" rows="5">{{ app.complaint }}</textarea>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-dark" type="button" (click)="modalRef.hide()">Close</button>
+        <button  class="btn btn-success" type="button" (click)="confirmApp()">Confirm</button>
+    </div>
+</ng-template>

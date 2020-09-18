@@ -1,0 +1,41 @@
+<section class="profileSection">
+  <article class="profileImage">
+    <div class="imageProfile">
+      <div class="userIcon">
+        <img src="assets/images/userIcon.png" alt="" style="width: 200px;height: 200px; border-radius: 50%;">
+      </div>
+    </div>
+    <div class="dataUser">
+      <div class="userName">
+        <span>{{  firstName  }} {{ lastName }} </span>
+      </div>
+      <div class="userEmail">
+        <span>{{  email  }}</span>
+      </div>
+    </div>
+  </article>
+  <article class="userDate">
+    <div class="dataContainer">
+    </div>
+  </article>
+  <div class="rowAlign">
+    <article class="profileNav">
+      <aside class="aside">
+        <ul class="asideList">
+          <li class="asideItem">
+            <a  class="asideLink">Ваші дані</a>
+          </li>
+          <li class="asideItem">
+            <a [routerLink]="[ '/appointment']" class="asideLink">Візити</a>
+          </li>
+          <li class="asideItem">
+            <a class="asideLink"  (click)="signOut()">Вийти</a>
+          </li>
+        </ul>
+      </aside>
+    </article>
+    <div class="profileData">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</section>

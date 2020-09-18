@@ -1,0 +1,17 @@
+@import '../../../mixins';
+
+table{
+  font-size: 14px;
+}
+thead th {
+  @include table-admin(14px);
+  span {
+    visibility: hidden;
+  }
+  &.active {
+    color: #000;
+    span {
+      visibility: visible;
+    }
+  }
+ }

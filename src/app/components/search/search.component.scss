@@ -1,0 +1,122 @@
+@import '../../../mixins';
+@import '../../../variables';
+
+.wrap{
+    width: 50%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .homeText{
+      height: 200px;
+      margin: 5px 0 5px;
+      display: flex;
+      flex-direction: column;
+      opacity: .7;
+      h1{
+        font-size: 40px;
+        font-family: $mainFont;
+        font-weight: bolder;
+        text-align: center;
+        margin-top: 0px;
+      }
+    }
+  }
+.ng-autocomplete{
+  width:100%;
+  height: 100%;
+}
+.search{ 
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+
+    width: 100%;
+    z-index: 2;
+  }
+ 
+  .searchTerm{
+    width: 70%;
+    height: 100%;
+    max-width: 500px;    
+    border: 3px solid $searchBtnColor;
+    border-right: none;
+    height: 46px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+    background: #fff;
+  }
+  
+  .searchButton {
+    @include search-btn;
+    width: 200px;
+    height: 46px;
+    border: 1px solid $searchBtnColor;
+    background: $searchBtnColor;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+
+   .radioChoose {
+    @include transition(all .15s ease 0s);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+  }
+ 
+  .radioChoose .item {
+    width: 20%;
+  }
+  p{
+    @include search-btn;
+    width: 97%;
+    height: 50px;
+    line-height: 20px;
+    font-size: 16px;
+    padding-top: .75em;
+  }
+  
+  .radioChoose label {
+    @include transition(all 100ms ease);
+    @include grey-box-shadow;
+    @include search-btn;
+    cursor: pointer;
+    width: 97%;
+    margin: 0 auto;
+    height: 40px;
+    line-height: 20px;
+    font-size: 14px;
+    border: 2px solid $searchBtnColor;
+    border-radius: 5px;
+    color: #00B4CC;
+    padding-top: 8px;
+  }
+
+  .radioChoose .item label:hover {
+    background-color: rgba(0, 180, 204, 0.5);
+    color: rgb(137, 134, 134);
+    transform: translate(0, 0.15em);
+    -webkit-transform: translate3d(0, 0.15em, 0);
+  }
+  input:focus, input:active {
+    transform: translate(0, 0em);
+    -webkit-transform: translate3d(0, 0em, 0);
+    background-color: rgba(0, 180, 204, 0.5);
+    color: #fff;
+    outline: 0;
+  }
+  .radioChoose .item label:active,   .radioChoose .item label:focus{
+    // color: rgb(137, 134, 134);
+    color: #fff;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.3);
+    transform: translate(0, 0.15em);
+    -webkit-transform: translate3d(0, 0.15em, 0);
+  }

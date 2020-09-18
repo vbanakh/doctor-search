@@ -1,0 +1,258 @@
+$mainFont: "Montserrat-Regular";
+$btnBoxColor: linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
+$btnColorHover: #4281df;
+
+.section{
+    width: 100vw;
+    height: 160vh;
+    display: flex;  
+    flex-grow: 1;
+    background-color: #fafbfb;
+}
+.container{
+    width: 100vw;
+    margin-top: 50vh;
+    min-height: 100%;
+    display: flex;  
+    flex-direction: row;
+    justify-content: center;
+}
+
+.docInfo{
+    display: flex;
+    flex-direction: column;
+    font-family: $mainFont;
+}
+.card-doctor{
+    display: flex;
+    width: calc(30% - 15px);
+    min-width: 340px;
+    max-width: 383px;
+    min-height: 350px;
+    max-height: 400px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin: 25px 15px;
+    background-color: #fff;
+    // background-color: rgb(250, 251, 251);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px 0px;
+    transition: box-shadow 0.1s linear 0s;
+}
+.card-doctor:hover{
+    transform:scale(1.1);
+    transition: 0.2s;  
+}
+.up{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.down{
+    min-height: 150px;
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+}
+.clinic{
+    font-size: 12px; 
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    width: inherit;
+}
+.address{
+    font-size: 10px;  
+}
+.clinicLocation{
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+    padding: 0 5px;
+    overflow: hidden;
+    text-align: start;
+}
+.photoDoctor{
+    height: 150px;
+    width: 150px;
+    position: relative;
+    overflow: hidden;
+    -ms-flex-positive: 0;
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    border: 1px solid #fafbfb;
+    margin: 15px;
+    z-index: 1;
+    .docImage{
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: block;
+        width: 100%;
+        -webkit-background-size: cover;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+}
+.card-grid {
+    height: 100vh;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 15px 0;
+    justify-content: flex-start;
+
+}
+.card:not(.card-grid_column) {
+    margin-right: -5px;
+    margin-left: -5px;
+}
+@media screen and (max-width: 1205px){
+    .card-grid {
+        -ms-flex-pack: start;
+        -webkit-box-pack: start;
+        justify-content: flex-start;
+    }
+}
+
+
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    color: #fff;
+    background: #1890ff;
+}
+
+.doctor-card__wrapper {
+    -ms-flex: 1 1 auto;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+}
+a {
+    color: #63aeff;
+    text-decoration: none;
+}
+
+[role=button], a, area, button, input:not([type=range]), label, select, summary, textarea {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+a{
+    color: #1890ff;
+    text-decoration: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    -webkit-transition: color .3s;
+    transition: color .3s;
+    -webkit-text-decoration-skip: objects;
+}
+
+.buttonDoc{
+    background: $btnBoxColor;
+    display: flex;
+    width: 100%;
+}
+
+.buttonDoc .docButton{
+    display: inline-block;
+    justify-content: center;
+    font-family: $mainFont,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    display: inline-block;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: 3px;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 1.125em 1.875em;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+    width: 100%;
+    background-color: hsla(0,0%,85%,.35);
+    line-height: 1;
+    padding: 1.125em 1em;
+
+   
+}
+.buttonDoc .docButton:focus, .buttonDoc .docButton:hover {
+    background-color: $btnColorHover;  
+}
+.doctorInfo{
+    margin: 15px;
+}
+.nameDoctor{
+    font-size: 16px;
+    font-family: "Montserrat-extra-bold";
+}
+.speciality{
+    font-size: 14px;
+    text-align: center; 
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    color: rgb(103, 195, 243);
+    vertical-align: top;
+}
+
+.clinicImage {
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid #d6d6d6;
+    margin-right: 10px;
+    margin-left: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    color: #67C3F3;
+    @media (min-width: 1024px){
+        width: 48px;
+        height: 48px;
+        margin-right: 1.5rem; 
+        .icon {
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+        
+    }
+}
+.pag{
+    width: 100vw;
+    height: 100%;
+    // margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #fafbfb;;
+}

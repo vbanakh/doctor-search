@@ -1,0 +1,43 @@
+@import '../../../mixins';
+@import '../../../variables';
+
+#to_top {
+    height: 49px;
+    width: 49px;
+    display: none;
+    position: fixed;
+    right: 2em;
+    bottom: 4em;
+    border: none;
+    padding: 12px;
+    background-color: rgb(104, 179, 201);
+    z-index: 900;
+    outline: none;
+    color: white;
+    @include  transition(all 0.3s ease 0s);
+    @include opacity(0.65);
+    @include border-radius(50%);
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+input, button {
+    outline: none;
+}
+
+#to_top:active {
+    box-shadow: none;
+}
+
+#to_top:hover {
+    @include opacity(0.9);
+    box-shadow: 0 0 4px 2px rgba(255, 255, 255, 0.3);
+}
+
+#to_top .icon{
+    @include search-btn;
+    width: 25px;
+    height: 25px;
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: 900;
+}

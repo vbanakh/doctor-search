@@ -1,0 +1,35 @@
+1. Doctors search
+2. src/
+        app/
+            components/
+                header
+                footer 
+            pages/
+                home
+                town?
+                clinic
+                about
+                contacts
+                reform
+                doctors
+            shared/
+                guards/
+                interfaces/
+                models/
+                pipes/
+                services/
+            admin/
+                admin-town
+                admin-region
+                admin-clinic
+                admin-speciality
+                admin-doctors
+            login
+            profile
+3. Функціонал:
+- логінування
+- реєстрування
+- вибір лікаря
+- адміністрування
+- перегляд лікаря
+- фільтри 

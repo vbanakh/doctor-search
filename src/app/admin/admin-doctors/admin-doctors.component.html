@@ -1,0 +1,322 @@
+<div class="card mt-2 ml-3">
+  <div class="card-header d-flex justify-content-between bg-transparent">
+    <div class="pt-2">Лікарі</div>
+    <div>
+      <form>
+        <input class="btn btn-success" type="button" value="Додати лікаря" (click)="openModalDoctor(doctorModal)">
+      </form>
+    </div>
+  </div>
+  <div class="card-body bg-transparent">
+    <form>
+      <div class="form-group">
+        <label for="filter"></label>
+        <input type="text" class="form-control" id="filter" placeholder="filter doctor..." [(ngModel)]="searchDoc"
+          name="searchDoc">
+      </div>
+    </form>
+    <hr>
+    <div>
+      <table class="table mt-3 table-sm table-responsive">
+        <thead>
+          <tr class="table-primary">
+            <th [class.active]="order === 'id' " (click)="setOrder('id')">ID<span [hidden]="reverse">▼</span><span
+                [hidden]="!reverse">▲</span></th>
+            <th [class.active]="order === 'nameEN' " (click)="setOrder('nameEN')">Name EN<span
+                [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span></th>
+            <th [class.active]="order === 'nameUA' " (click)="setOrder('nameUA')">Name UA<span
+                [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span></th>
+            <th [class.active]="order === 'speciality.nameUA' " (click)="setOrder('speciality.nameUA')">Speciality<span
+                [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span></th>
+            <th [class.active]="order === 'clinic.nameUA' " (click)="setOrder('clinic.nameUA')">Clinic<span
+                [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span></th>
+            <th [class.active]="order === 'city.nameUA' " (click)="setOrder('city.nameUA')">City<span
+                [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span></th>
+            <th [class.active]="order === 'district.nameUA' " (click)="setOrder('district.nameUA')">District<span
+                [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span></th>
+            <th [class.active]="order === 'ofice' " (click)="setOrder('ofice')">Office<span
+                [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span></th>
+            <th [class.active]="order === 'phoneNumber' " (click)="setOrder('phoneNumber')">Phone<span
+                [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span></th>
+            <th scope="col">Image</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr *ngFor="let doc of adminDoctors | orderBy: order:reverse:'case-insensitive' | searchDoctor: searchDoc">
+            <td>{{ doc.id }}</td>
+            <td>{{ doc.nameEN }} {{ doc.lastnameEN }}</td>
+            <td>{{ doc.nameUA }} {{ doc.lastnameUA }}</td>
+            <td>{{ doc.speciality.nameUA }}</td>
+            <td>{{ doc.clinic.nameUA }}</td>
+            <td>{{ doc.city.nameUA }}</td>
+            <td>{{ doc.district.nameUA }}</td>
+            <td>{{ doc.office }}</td>
+            <td>{{ doc.phoneNumber}}</td>
+            <td>
+              <img [src]="doc.photo" style="width: 50px; height: 50px;" alt="">
+            </td>
+            <td>
+              <input type="button" value="edit" class="btn btn-warning" (click)="openEditDoctor(editModal, doc)">
+            </td>
+            <td>
+              <input type="button" value="delete" class="btn btn-danger" (click)="openDeleteModal(deleteModal, doc)">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<ng-template #doctorModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Новий лікар</h4>
+    <button class="btn btn-outline-secondary pull-right" (click)="closeAddModal()">x</button>
+  </div>
+  <div class="modal-body">
+    <form novalidate (ngSubmit)="addDoctor()">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="nameEN">Ім'я та по-батькові лікаря EN*</label>
+          <input [(ngModel)]="docNameEN" #nameDocEN="ngModel" name="docNameEN" type="text" id="nameEN"
+            class="form-control" placeholder="ім'я лікаря та по-батькові EN.." required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="docLastNameEN">Прізвище лікаря EN*</label>
+          <input [(ngModel)]="docLastNameEN" #namelastDocEN="ngModel" name="docLastNameEN" type="text"
+            id="docLastNameEN" class="form-control" placeholder="прізвище лікаря EN.." required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="nameUA">Ім'я та по-батькові лікаря UA*</label>
+          <input [(ngModel)]="docNameUA" name="docNameUA" #nameDocUA="ngModel" type="text" id="nameUA"
+            class="form-control" placeholder="ім'я лікаря та по-батькові UA.." required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="doclastNameUA">Прізвище лікаря UA*</label>
+          <input [(ngModel)]="doclastNameUA" name="doclastNameUA" #nameLastDocUA="ngModel" type="text"
+            id="doclastNameUA" class="form-control" placeholder="прізвище лікаря UA.." required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="specialityNameEd">Оберіть спеціальність*</label>
+          <select [(ngModel)]="specialityName" name="specialityName" #nameSpec="ngModel" (change)="setSpeciality()"
+            class="custom-select" id="specialityChoose" required>
+            <option *ngFor="let spec of specialities">
+              {{ spec.nameEN }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="clinicChoose">Оберіть клініку*</label>
+          <select [(ngModel)]="clinicName" name="clinicName" (change)="setClinic()" class="custom-select"
+            id="clinicChoose" #nameClinic="ngModel" required>
+            <option *ngFor="let clinic of clinics">
+              {{ clinic.nameEN }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="cityName">Оберіть місто*</label>
+          <select [(ngModel)]="cityName" name="cityName" (change)="setCity()" class="custom-select" id="cityChoose"
+            #nameCity="ngModel" required>
+            <option *ngFor="let city of cities">
+              {{ city.nameEN }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="districtName">Оберіть район*</label>
+          <select [(ngModel)]="districtName" name="districtName" (change)="setDistrict()" class="custom-select"
+            id="districtChoose" #nameDistr="ngModel" required>
+            <option *ngFor="let dis of districts">
+              {{ dis.nameEN }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="office">Кабінет*</label>
+          <input [(ngModel)]="office" name="office" #nameOffice="ngModel" required type="text" id="office"
+            class="form-control" placeholder="кабінет..">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="phone">Телефон*</label>
+          <input [(ngModel)]="phone" name="phone" type="number" class="form-control" placeholder="номер телефону.."
+            #namePhone="ngModel" required>
+        </div>
+      </div>
+      <div class="custom-file" *ngIf="!imageStatus">
+        <input (change)="uploadFile($event)" type="file" class="custom-file-input" id="image" style="display:none;"
+          required>
+        <label class="custom-file-label text-muted" for="image">Оберіть фото...</label>
+      </div>
+      <div class="progress mb-3 mt-3" *ngIf="!imageStatus">
+        <div [style.width]="(uploadProgress | async) + '%'" class="progress-bar progress-bar-striped bg-primiry"
+          role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <div class="docImage mb-3 mt-3" *ngIf="imageStatus">
+        <img [src]="docImage" alt="">
+        <span (click)="deleteImage(deleteImageConfirm)">
+          <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+            <path fill-rule="evenodd"
+              d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+          </svg>
+        </span>
+      </div>
+      <div class="addBtn d-flex justify-content-center">
+        <button type="submit" class="btn btn-success col-3"
+          [disabled]="nameDocEN.invalid || nameDocUA.invalid || nameSpec.invalid || namelastDocEN.ivalid || nameLastDocUA.invalid || nameCity.invalid || nameDistr.invalid || nameClinic.invalid || nameOffice.invalid || namePhone.invalid">Add</button>
+      </div>
+    </form>
+  </div>
+</ng-template>
+
+<ng-template #deleteModal>
+  <div class="modal-body text-center">
+    <p>Are you sure you want to delete this doctor?</p>
+    <button type="button" class="btn btn-danger mr-3" (click)="deleteDoctor(docDEL)">Delete</button>
+    <button type="button" class="btn btn-success ml-3" (click)="dismissModal()">Dismiss</button>
+  </div>
+</ng-template>
+
+
+<ng-template #editModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Редагувати лікаря</h4>
+    <button class="btn btn-outline-secondary pull-right" (click)="closeEdModal()">x</button>
+  </div>
+  <div class="modal-body">
+    <form novalidate (ngSubmit)="updateDoctor()">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="nameENEd">Ім'я та по-батькові EN</label>
+          <input [(ngModel)]="docNameENEd" #nameDocENEd="ngModel" name="docNameENEd" type="text" id="nameENEd"
+            class="form-control" placeholder="ім'я та по-батькові EN.." required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="docLastNameENEd">Прізвище EN*</label>
+          <input [(ngModel)]="docLastNameENEd" #namelastDocENEd="ngModel" name="docLastNameENEd" type="text"
+            id="docLastNameENEd" class="form-control" placeholder="прізвище EN.." required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="nameUA">Ім'я та по-батькові UA</label>
+          <input [(ngModel)]="docNameUAEd" name="docNameUAEd" #nameDocUAEd="ngModel" type="text" id="nameUAEd"
+            class="form-control" placeholder="Ім'я та по-батькові UA.." required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="doclastNameUA">Прізвище UA*</label>
+          <input [(ngModel)]="doclastNameUAEd" name="doclastNameUAEd" #nameLastDocUAEd="ngModel" type="text"
+            id="doclastNameUAEd" class="form-control" placeholder="прізвище UA.." required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="specialityName">Оберіть спеціальність</label>
+          <select [(ngModel)]="specialityNameEd" name="specialityNameEd" (change)="setSpecialityEd()"
+            class="custom-select" id="specialityChoose" required #nameSpecEd="ngModel">
+            <option *ngFor="let spec of specialities">
+              {{ spec.nameEN }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="clinicNameEd">Оберіть клініку</label>
+          <select [(ngModel)]="clinicNameEd" name="clinicNameEd" (change)="setClinicEd()" class="custom-select"
+            id="clinicChoose" required #nameClinicEd="ngModel">
+            <option *ngFor="let clinic of clinics">
+              {{ clinic.nameEN }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="cityNameEd">Оберіть місто</label>
+          <select [(ngModel)]="cityNameEd" name="cityNameEd" (change)="setCityEd()" class="custom-select"
+            id="cityChoose" #nameCityEd="ngModel" required>
+            <option *ngFor="let city of cities">
+              {{ city.nameEN }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="districtNameEd">Оберіть район</label>
+          <select [(ngModel)]="districtNameEd" name="districtNameEd" (change)="setDistrictEd()" class="custom-select"
+            id="districtChoose" required #nameDistrEd="ngModel">
+            <option *ngFor="let dis of districts">
+              {{ dis.nameEN }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="officeEd">Кабінет</label>
+          <input [(ngModel)]="officeEd" name="officeEd" type="text" id="officeEd" class="form-control"
+            placeholder="кабінет №.." required #nameOfficeEd="ngModel">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="">Телефон</label>
+          <input [(ngModel)]="phoneEd" name="phoneEd" type="number" id="phoneEd" class="form-control"
+            placeholder="номер телефону." required #namePhoneEd="ngModel">
+        </div>
+      </div>
+      <div class="custom-file" *ngIf="!isEdit">
+        <input (change)="uploadFile($event)" type="file" class="custom-file-input" id="image" style="display:none;">
+        <label class="custom-file-label text-muted" for="image">Оберіть фото...</label>
+      </div>
+      <div class="progress mb-3 mt-3" *ngIf="!isEdit">
+        <div [style.width]="(uploadProgress | async) + '%'" class="progress-bar progress-bar-striped bg-primiry"
+          role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <div class="docImage mb-3 mt-3" *ngIf="isEdit">
+        <img [src]="editDocImage" alt="">
+        <span (click)="deleteEdImage(deleteEdImageConfirm)">
+          <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+            <path fill-rule="evenodd"
+              d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+          </svg>
+        </span>
+      </div>
+      <div class="addBut">
+        <button type="submit" class="btn btn-success"
+          [disabled]="nameDocENEd.invalid ||namelastDocENEd.ivalid || nameLastDocUAEd.invalid  || nameDocUAEd.invalid || nameSpecEd.invalid || nameCityEd.invalid || nameDistrEd.invalid || nameClinicEd.invalid || nameOfficeEd.invalid || namePhoneEd.invalid">Save</button>
+      </div>
+    </form>
+  </div>
+</ng-template>
+
+
+<ng-template #deleteImageConfirm>
+  <div class="modal-body text-center">
+    <p>Ви впевнені, що хочете видалити це зображення?</p>
+    <button type="button" class="btn btn-default" (click)="confirmImage()">Так</button>
+    <button type="button" class="btn btn-primary" (click)="declinImage()">Ні</button>
+  </div>
+</ng-template> 
+
+<ng-template #deleteEdImageConfirm>
+  <div class="modal-body text-center">
+    <p>Ви впевнені, що хочете видалити це зображення?</p>
+    <button type="button" class="btn btn-default" (click)="confirmEdImage()">Так</button>
+    <button type="button" class="btn btn-primary" (click)="declineEdImage()">Ні</button>
+  </div>
+</ng-template>

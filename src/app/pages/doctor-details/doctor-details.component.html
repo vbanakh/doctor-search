@@ -1,0 +1,141 @@
+<section class="section">
+    <article  class="wrapperThanks" *ngIf="!isAppointment">
+        <div class="thanksBox">
+            <div class="thanks fadeIn">
+                <span>Дякуємо, що обрали наш сервіс!</span>
+                <a routerLink="/home" style="color: #ffff">Знайти лікаря</a>
+            </div>
+        </div>
+    </article>
+    <article class="wrapper" *ngIf="isAppointment">
+        <div class="doctorCardBig">
+            <div class="doctorDetails">
+                <div class="doctorPhotoContainer">
+                    <div class="docPhoto">
+                        <div class="photoWrapper">
+                            <img class="docDetail" [src]="doctor?.photo" alt="" style="height: 250px; width: 250px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="doctocInfo">
+                    <div class="blok">
+                        <div class="doctorCardHead">
+                            <div class="doctorCardHead__main">
+                                <h3 class="doctorName">{{ doctor?.nameUA | titlecase }} {{ doctor?.lastnameUA | titlecase }}</h3>
+                                <div class="doctorSpeciality">
+                                    <span>{{ doctor?.speciality.nameUA | titlecase }}</span>
+                                </div>
+                            </div>
+                            <div class="doctorCardHead__button" *ngIf="doctor?.speciality.nameUA === 'сімейний лікар' ? true : false " >
+                                <button type="button">ЗАПОВНИТИ ДЕКЛАРАЦІЮ</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blok">
+                        <div class="clinicPhoto">
+                            <img src="assets/images/hospital.png" alt="" style="width: 75px; height: 75px;">
+                        </div>
+                        <div class="clinicContact">
+                            <div class="clinicContactRow">
+                                <span class="label">Організація:</span>
+                                <span class="clinicName">
+                                    <span>{{  doctor?.clinic.nameUA }}, кабінет {{ doctor?.office}}</span>
+                                </span>
+                            </div>
+                            <div class="clinicContactRow">
+                                <span class="label">Адреса:</span>
+                                <span class="clinicAddress">
+                                    <span>{{  doctor?.clinic.address }}</span>
+                                </span>
+                            </div>
+                            <div class="clinicContactRow">
+                                <span class="label">Телефон:</span>
+                                <span class="docPhone">
+                                    <span>+380{{  doctor?.phoneNumber }}</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="wrapperForm" *ngIf="isAppointment">
+        <h2>Введіть будь ласка дані</h2>
+        <div class="formContainer">
+            <form novalidate (ngSubmit)="addApp()">
+                <div>
+                    <label for="firstName">
+                        <span>Ваше ім'я*</span>
+                        <input type="text" name="firstName"  #nameUser="ngModel" id="firstName" [(ngModel)]="firstName" required>
+                    </label>
+                </div>
+                <div>
+                    <label for="lastName">
+                        <span>Ваше прізвище*</span>
+                        <input type="text" name="lastName" id="lastName" [(ngModel)]="lastName" required #lastNameUser="ngModel">
+                    </label>
+                </div>
+                <div>
+                    <label for="lastName">
+                        <span>Ваш емейл*</span>
+                        <input type="email" name="email" id="email" [(ngModel)]="email" required #emailUser="ngModel">
+                    </label>
+                </div>
+                <div>
+                    <label for="lastName">
+                        <span>Ваш телефон*</span>
+                        <input type="text" name="phone" id="phone" [(ngModel)]="phone" required #phoneUser="ngModel">
+                    </label>
+                </div>
+                <div>
+                    <label for="complaint">
+                        <span>Які у вас скарги</span>
+                        <textarea name="complaint" id="complaint" [(ngModel)]="complaint" rows="3"></textarea>
+                    </label>
+                </div>
+                <div>
+                    <label for="dateChoose">
+                        <span>Оберіть зручний для вас день*</span>
+                        <input type="text"
+                        autocomplete="off"
+                                placeholder="Клікніть, щоб обрати"
+                                bsDatepicker
+                                [bsConfig]="{ isAnimated: true,  dateInputFormat: 'DD/MM/YYYY', 
+                                            containerClass: 'theme-dark-blue',  
+                                            customTodayClass: 'custom-today-class', 
+                                            returnFocusToInput: true}"
+                                
+                                id="date"
+                                [minDate]="minDate"
+                                [maxDate]="maxDate"
+                                [daysDisabled]="[0]"
+                                [(ngModel)]="dateChoose"
+                                name="dateChoose"
+                                placement="top" 
+                                required
+                                 #dateUser="ngModel">
+                                
+                    </label>
+                </div>
+                <div class="timepicker"> 
+                    <label for="timeChoose">
+                        <span>Оберіть зручний для вас час прийому*</span>
+                        <timepicker [(ngModel)]="timeChoose" name="timeChoose" [showSpinners]="showSpinners" required autocomplete="off"
+                        #timeUser="ngModel"></timepicker>
+                    </label>
+                </div>
+                <div class="buttonAlign">
+                    <div class="formButton">
+                        <button type="submit" [disabled]="nameUser.invalid || lastNameUser.invalid || emailUser.invalid || phoneUser.invalid || dateUser.invalid || timeUser.invalid">ЗАПИСАТИСЯ НА ПРИЙОМ</button>
+                    </div>
+                </div>
+            </form>
+            <div class="sub-cont">
+                <div class="imageRight">
+                </div>
+            </div>
+        </div>
+        
+    </article>
+</section>
