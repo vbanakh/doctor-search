@@ -88,4 +88,10 @@ export class HeaderComponent implements OnInit {
       this.loginUrl = '';
     }
   }
+
+  // burger():void {
+  //   const element = document.getElementById("menu");
+  //   element.classList.toggle("menu");
+  //   element.classList.toggle("hidden");
+  // }
 }

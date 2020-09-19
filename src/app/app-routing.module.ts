@@ -22,6 +22,7 @@ import { ProfileGuard } from './shared/guards/profile.guard';
 import { AppointmentComponent } from './pages/profile/appointment/appointment.component';
 import { SearchComponent } from './components/search/search.component';
 import { ClinicDoctorsComponent } from './pages/clinic-doctors/clinic-doctors.component';
+import { UserComponent } from './pages/profile/user/user.component';
 
 
 const routes: Routes = [
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path: 'login-admin', component: LoginComponent},
   { path: 'profile', component: ProfileComponent, canActivate: [ProfileGuard], children:[
     { path: '', redirectTo: 'appointment', pathMatch: 'full' },
+    { path: 'user', component: UserComponent},
     { path: 'appointment', component: AppointmentComponent}
   ]},
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], children: [

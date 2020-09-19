@@ -52,6 +52,7 @@ import { SearchComponent } from './components/search/search.component';
 import { ClinicDoctorsComponent } from './pages/clinic-doctors/clinic-doctors.component';
 import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { UserComponent } from './pages/profile/user/user.component';
 
 
 
@@ -86,6 +87,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     AppointmentComponent,
     SearchComponent,
     ClinicDoctorsComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,

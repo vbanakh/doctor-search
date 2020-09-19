@@ -1,6 +1,6 @@
 <section class="section">
     <article>
-        <app-search (fromChild)="parentGetDoctors($event)"></app-search>
+        <app-search (fromChild)="parentGetDoctors($event)" [toWord]="fromParent" [toParam]="fromParentParam"></app-search>
     </article>
     <article class="container">
         <div class="card-grid">

@@ -32,13 +32,6 @@
                                     (change)="checkWork()">
                             </label></div>
                     </div>
-                    <!-- <div class="search">
-                        <input type="text" class="searchTerm" [(ngModel)]="searchWord" name="searchWord"
-                            [attr.placeholder]="paramSetting">
-                        <button type="submit" class="searchButton" [routerLink]="[ '/doctors', param, searchWord]" (click)="getSearchDoc()">
-                            <fa-icon [icon]="iconSearch"></fa-icon>
-                        </button>
-                    </div> -->
                     <div class="ng-autocomplete">
                         <div class="search">
                             <ng-autocomplete   class="searchTerm" [data]="specialities" [placeHolder]="paramSetting"
@@ -46,8 +39,7 @@
                                 [itemTemplate]="itemTemplate" [notFoundTemplate]="notFoundTemplate"
                                 notFoundText="Не знайдено">
                             </ng-autocomplete>
-                            <button type="button" class="searchButton" [routerLink]="[ '/doctors', param, searchWord]"
-                                (click)="getSearchDoc()">
+                            <button type="button" class="searchButton" [routerLink]="[ '/doctors', param, searchWord]" (click)="getSearchDoc()">
                                 <fa-icon [icon]="iconSearch"></fa-icon> знайти лікаря
                             </button>
                         </div>

@@ -1,0 +1,25 @@
+@import '../../../../variables';
+@import '../../../../mixins';
+
+.container{
+    width:70vw;
+    height: 30vh;
+}
+h2{
+    font-family: $mainFont;
+}
+.box{
+    display: flex;
+}
+.userImage{
+    height: 200px;
+    width: 200px;
+    .userIcon{
+        height: 100px;
+        width: 100px;
+    }
+}
+.data{
+    height: 200px;
+    width: 200px;
+}

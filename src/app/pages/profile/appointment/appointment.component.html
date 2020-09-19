@@ -11,7 +11,7 @@
                         <div class="alignBlok">
                             <div class="doctorInfo">
                                 <div class="nameDoctor">
-                                    {{ app.doctorApp.nameUA}} {{ app.doctorApp.lastnameUA}}
+                                    {{ app.doctorApp.nameUA | titlecase}} {{ app.doctorApp.lastnameUA | titlecase}}
                                 </div>
                                 <div class="speciality">
                                     {{ app.doctorApp.speciality.nameUA }}

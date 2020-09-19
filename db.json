@@ -772,5 +772,94 @@
       "photo": "https://firebasestorage.googleapis.com/v0/b/doctorsearch-b3561.appspot.com/o/images%2Fdoc-img-12.jpeg?alt=media&token=901af571-3d5c-4475-994a-a8320ab6e5cd"
     }
   ],
-  "appointments": []
+  "appointments": [
+    {
+      "firstName": "Petro",
+      "lastName": "Petriv",
+      "email": "pp@gmail.com",
+      "phone": "+38(063)-333-33-33",
+      "complaint": "головний біль",
+      "dateUser": "2020-09-29T18:32:28.000Z",
+      "timeUser": null,
+      "doctorApp": {
+        "id": 4,
+        "nameEN": "pavlo pavlovych",
+        "lastnameEN": "pavliv",
+        "nameUA": "павло павлович",
+        "lastnameUA": "павлів",
+        "speciality": {
+          "nameEN": "physiotherapist",
+          "nameUA": "фізіотерапевт",
+          "id": 13
+        },
+        "clinic": {
+          "nameEN": "CNE OF LRC CENTER OF SPORTS MEDICINE AND REHABILITATION",
+          "nameUA": "КНП ЛОР \"Центр спортивної медицини і реабілітації\"",
+          "address": "місто Львів, вул. Коновальця, 47, кабінет 3",
+          "ownership": "state",
+          "id": 3
+        },
+        "city": {
+          "nameEN": "Lviv",
+          "nameUA": "Львів",
+          "id": 1
+        },
+        "district": {
+          "nameEN": "Lychakivsky",
+          "nameUA": "Личаківський",
+          "id": 3
+        },
+        "office": "122",
+        "phoneNumber": 976677888,
+        "photo": "https://firebasestorage.googleapis.com/v0/b/doctorsearch-b3561.appspot.com/o/images%2Fdoc-5.jpeg?alt=media&token=376058d1-4579-4239-a31e-efe89ba5577d"
+      },
+      "dateApp": "2020-09-19T18:35:04.577Z",
+      "status": "новий",
+      "id": 1
+    },
+    {
+      "firstName": "Petro",
+      "lastName": "Petriv",
+      "email": "pp@gmail.com",
+      "phone": "+38(063)-333-33-33",
+      "complaint": "",
+      "dateUser": "2020-09-30T18:38:14.000Z",
+      "timeUser": null,
+      "doctorApp": {
+        "id": 4,
+        "nameEN": "pavlo pavlovych",
+        "lastnameEN": "pavliv",
+        "nameUA": "павло павлович",
+        "lastnameUA": "павлів",
+        "speciality": {
+          "nameEN": "physiotherapist",
+          "nameUA": "фізіотерапевт",
+          "id": 13
+        },
+        "clinic": {
+          "nameEN": "CNE OF LRC CENTER OF SPORTS MEDICINE AND REHABILITATION",
+          "nameUA": "КНП ЛОР \"Центр спортивної медицини і реабілітації\"",
+          "address": "місто Львів, вул. Коновальця, 47, кабінет 3",
+          "ownership": "state",
+          "id": 3
+        },
+        "city": {
+          "nameEN": "Lviv",
+          "nameUA": "Львів",
+          "id": 1
+        },
+        "district": {
+          "nameEN": "Lychakivsky",
+          "nameUA": "Личаківський",
+          "id": 3
+        },
+        "office": "122",
+        "phoneNumber": 976677888,
+        "photo": "https://firebasestorage.googleapis.com/v0/b/doctorsearch-b3561.appspot.com/o/images%2Fdoc-5.jpeg?alt=media&token=376058d1-4579-4239-a31e-efe89ba5577d"
+      },
+      "dateApp": "2020-09-19T18:38:49.928Z",
+      "status": "новий",
+      "id": 2
+    }
+  ]
 }
