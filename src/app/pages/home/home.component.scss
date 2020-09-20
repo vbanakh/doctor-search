@@ -1,23 +1,60 @@
-$mainFont: "Montserrat-Regular";
+
+@import '../../../mixins';
+@import '../../../variables';
 .sectionOne{
-    height:100vh;
-    width: 100vw;    
+    height:80vh;
+    width: 100vw; 
+    @media screen and (max-width: 1200px){
+      height: 66vh;
+    } 
+    @media screen and (max-width: 970px){
+      height: 57.5vh;
+    } 
+    @media screen and (max-width: 768px){
+    height: 100vh;
+  }
+  @media screen and (max-width: 540px){
+    // min-height: 440px;
+    height: 84vh;
+    // height: 147vh;
+    // padding-bottom: 15px;
+  }
+  @media screen and (max-width: 415px){
+    height: 80vh;
+    // padding-bottom: 15px;
 }
-.sectionWraper img{
-    width: 100vw;
-    height:100vh;
-    -ms-flex-align: center;
-    -webkit-box-align: center;
-    align-items: center;
-    -ms-flex-pack: center;
-    -webkit-box-pack: center;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1px;
-    display: -ms-flexbox;
-    display: -webkit-box;
+  @media screen and (max-width: 375px){
+      height: 60vh;
+      // padding-bottom: 15px;
+  }
+
+}
+.sectionWraper img{    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media screen and (max-width: 768px){
+      display: none;
+    }
 }
 
+.sectionWraperMob img{
+  display: none;
+  position: absolute;
+    top: -95px;
+    bottom: 0;
+    width: 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media screen and (max-width: 768px){
+      display: block;
+    }
+}
 // -------------- second section
   .wrapperColor {
       background-size: cover;
@@ -29,59 +66,154 @@ $mainFont: "Montserrat-Regular";
   .sectionThree{
       width: 100vw;
       height: 300px;
+      @media screen and (max-width: 970px) {
+        height: 600px;
+      }
+      @media screen and (max-width: 500px) {
+        min-height: 680px;
+      }
   }
-  .container{
-    width: 100vw;
-    height: 300px;
+  .containerStep{
+    display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
+    overflow: hidden;
+    -ms-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
     flex-direction: row;
-    .step{
-        height: 250px;
-        width: 250px;
-        margin: 50px 15px 0 15px;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-pack: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: 20px auto;
+    @media screen and (max-width: 1200px) {
+      max-width: 1000px;
+    }
+    @media screen and (max-width: 970px) {
+    max-width: 740px;
+    flex-wrap: wrap;
+    }
+    @media screen and (max-width: 720px){
+    max-width: 600px;
+    }
+    @media screen and (max-width: 500px) {
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
+  .step{
+        display: -ms-flexbox;
+        display: -webkit-box;
         display: flex;
+        -ms-flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
         flex-direction: column;
-        justify-content: center;
+        -ms-flex-align: center;
+        -webkit-box-align: center;
         align-items: center;
-        .stepImage{
-            height: 145px;
-            width: 145px;
-            margin-bottom: 5px;
+        margin: 30px 55px;
+        @media screen and (max-width: 1200px){
+          margin: 20px 30px;
+        } 
+        @media screen and (max-width: 500px) {
+          width: 140px;
+          margin: 15px;
         }
+        .stepImage{
+            width: 145px;
+            height: 145px;
+            margin-bottom: 10px;
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-size: 130px auto;
+            @media screen and (max-width: 1200px) {
+            // background-size: 120px auto;
+            width: 120px;
+            height: 120px;
+           }
+            @media screen and (max-width: 500px){
+              // background-size: 90px 90px;
+              width: 110px;
+              height: 110px;
+            }
+            @media screen and (max-width: 375px){
+              width: 90px;
+              height: 90px;
+            }
+          img{
+            width: 145px;
+            height: 145px;
+            margin-bottom: 10px;
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-size: 130px auto;
+            @media screen and (max-width: 1200px) {
+            // background-size: 120px auto;
+            width: 120px;
+            height: 120px;
+           }
+            @media screen and (max-width: 500px){
+                // background-size: 90px 90px;
+                width: 110px;
+                height: 110px;
+            }
+            @media screen and (max-width: 375px){
+              width: 90px;
+              height: 90px;
+            }
+        }
+        } 
         .stepText{
-            height: 105px;
-            width: 100%;
+            font-family: $mainFont, sans-serif;
+            display: inline-block;
+            max-width: 170px;
+            font-size: 16px;
+            text-align: center;
+            @media screen and (max-width: 600px){
+              max-width: 150px;
+            }
+            @media screen and (max-width: 375px){
+              max-width: 140px;
+            }
         }
         p{
             text-align: center;
         }
     }
+    :nth-child(odd){
+      @media screen and (max-width: 500px){
+          margin-right: 5px;
+          margin-left: 5px;
+      }
+    } 
+  }
+ 
+  .arrow::after{
+    position: relative;
+    top: -80px;
+    left: 190px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url(/../assets/images/step-arrow.svg) no-repeat;
+    background-size: contain;
+    content: "";
+    opacity: .7;
+    @media screen and (max-width: 1200px){
+      left: 165px;
+    }
+    @media screen and (max-width: 500px){
+      top: -80px;
+      left: 137px;
+    }
+    @media screen and (max-width: 375px){
+      top: -70px;
+      left: 120px;
+    } 
   }
 
-  .stepImage::after{
-    position: relative;
-    top: -80px;
-    left: 170px;
-    display: block;
-    width: 30px;
-    height: 30px;
-    background: url(/../assets/images/step-arrow.svg) no-repeat;
-    background-size: contain;
-    content: "";
-    opacity: .7;
-  }
-  :not(.stepImage:last-child)::after{
-    position: relative;
-    top: -80px;
-    left: 170px;
-    display: block;
-    width: 30px;
-    height: 30px;
-    background: url(/../assets/images/step-arrow.svg) no-repeat;
-    background-size: contain;
-    content: "";
-    opacity: .7;
-  }
 
 
   //-------------------four section
@@ -104,9 +236,23 @@ $mainFont: "Montserrat-Regular";
   .rightPart{
     display: -webkit-box;
     display: flex;
+    flex-direction: row;
+    justify-content: center;
     -ms-flex: 1 1 50%;
     -webkit-box-flex: 1;
     flex: 1 1 50%;
+    background-color: #63aeff;
+    @media screen and (max-width: 970px){
+      flex: 0 0 100%;
+      -ms-flex-align: center;
+      -webkit-box-align: center;
+      align-items: center;
+   }
+  }
+  .rightPartBox{
+    height: 100%;
+    width: 100%;
+   display: flex;
     -ms-flex-direction: column;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -116,6 +262,23 @@ $mainFont: "Montserrat-Regular";
     justify-content: center;
     padding: 0 60px;
     background-color: #63aeff;
+    @media screen and (max-width: 1124px) {
+    padding: 0 30px;
+}
+    @media screen and (max-width: 1024px){
+    padding: 30px;
+  }
+    @media screen and (max-width: 970px){
+      width: 60%;
+   }
+   @media screen and (max-width: 768px){
+    width: 65%;
+    @media screen and (max-width: 500px){
+      width: 90%;
+      padding: 30px 20px;
+      font-size: 16px;
+}
+}
 
   }
   .leftPart{
@@ -127,6 +290,9 @@ $mainFont: "Montserrat-Regular";
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
+    @media screen and (max-width: 970px){
+       display: none;
+    }
   }
 
 
@@ -137,6 +303,10 @@ $mainFont: "Montserrat-Regular";
     @media screen and (max-width: 1200px){
         font-size: 32px;
     }
+    @media screen and (max-width: 500px){
+    // padding: 30px 20px;
+    font-size: 16px;
+}
 }
 .item{
     margin-bottom: 30px;
@@ -148,6 +318,9 @@ $mainFont: "Montserrat-Regular";
     vertical-align: middle;
     margin-right: 50px;
     font-size: 22px;
+    @media screen and (max-width: 500px){
+      font-size: 16px;
+  }
 }
 
 

@@ -3,6 +3,9 @@
         <div class="sectionWraper">
             <img src="assets/images/section-wrapper.jpeg" alt="">
         </div>
+        <div class="sectionWraperMob">
+            <img src="assets/images/page-main__welcome-bg_mob.jpg" alt="">
+        </div>
         <app-search></app-search>
     </article>
     <!-- <article class="sectionTwo">
@@ -11,42 +14,42 @@
         </div>
     </article> -->
     <article class="sectionThree">
-        <div class="container">
+        <div class="containerStep">
             <div class="step">
-                <div class="stepImage">
-                    <img src="assets/images/1step.svg" alt="" style="height: 145px; width: 145px; background-size: cover;">
+                <div class="stepImage arrow">
+                    <img src="assets/images/1step.svg" alt="" >
                 </div>
                 <div class="stepText">
-                    <p>Знаходите лікаря</p>
+                    <p>Знаходите <br> лікаря</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="stepImage arrow">
+                    <img src="assets/images/2step.svg" alt="" >
+                </div>
+                <div class="stepText">
+                    <p>Обираєте зручний <br> для вас час</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="stepImage arrow">
+                    <img src="assets/images/3step.svg" alt="">
+                </div>
+                <div class="stepText">
+                    <p>Приходите до<br> поліклініки у <br> вказаний час</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="stepImage arrow">
+                    <img src="assets/images/4step.svg" alt="" >
+                </div>
+                <div class="stepText">
+                    <p>Потрапляєте <br> до лікаря <br> без черги</p>
                 </div>
             </div>
             <div class="step">
                 <div class="stepImage">
-                    <img src="assets/images/2step.svg" alt="" style="height: 145px; width: 145px; background-size: cover;">
-                </div>
-                <div class="stepText">
-                    <p>Обираєте зручний для вас час</p>
-                </div>
-            </div>
-            <div class="step">
-                <div class="stepImage">
-                    <img src="assets/images/3step.svg" alt="" style="height: 145px; width: 145px; background-size: cover;">
-                </div>
-                <div class="stepText">
-                    <p>Приходите у поліклініку у вказаний час</p>
-                </div>
-            </div>
-            <div class="step">
-                <div class="stepImage">
-                    <img src="assets/images/4step.svg" alt="" style="height: 145px; width: 145px; background-size: cover;">
-                </div>
-                <div class="stepText">
-                    <p>Потрапляєте до лікаря без черги</p>
-                </div>
-            </div>
-            <div class="step">
-                <div class="stepImage">
-                    <img src="assets/images/5step.svg" alt="" style="height: 145px; width: 145px; background-size: cover;">
+                    <img src="assets/images/5step.svg" alt="">
                 </div>
                 <div class="stepText">
                     <p>Слідкуєте за своєю електронною медичною карткою</p>
@@ -57,30 +60,32 @@
     <article class="sectionFour">
         <div class="leftPart"></div>
         <div class="rightPart">
-            <div class="title">Переваги для пацієнтів</div>
-            <div class="item">
-                <fa-icon [icon]="iconUsd" class="icons"></fa-icon>
-                <span>Безкоштовно</span>
-            </div>
-            <div class="item">
-                <fa-icon [icon]="iconSearch" class="icons"></fa-icon>
-                <span>Швидкий пошук і вибір ликаря</span>
-            </div>
-            <div class="item">
-               <fa-icon [icon]="iconTv" class="icons"></fa-icon>
-                <span>Запис на прийом on-line</span>
-            </div>
-            <div class="item">
-                <fa-icon [icon]="iconClock" class="icons"></fa-icon>
-                <span>Відсутність черг</span>
-            </div>
-            <div class="item">
-                <fa-icon [icon]="iconFlask" class="icons"></fa-icon>
-                <span>Миттєві результати аналізів</span>
-            </div>
-            <div class="item">
-                <fa-icon [icon]="iconNote" class="icons"></fa-icon>
-                <span>Доступ до призначень лікаря</span>
+            <div class="rightPartBox">
+                <div class="title">Переваги для пацієнтів</div>
+                <div class="item">
+                    <fa-icon [icon]="iconUsd" class="icons"></fa-icon>
+                    <span>Безкоштовно</span>
+                </div>
+                <div class="item">
+                    <fa-icon [icon]="iconSearch" class="icons"></fa-icon>
+                    <span>Швидкий пошук і вибір лікаря</span>
+                </div>
+                <div class="item">
+                   <fa-icon [icon]="iconTv" class="icons"></fa-icon>
+                    <span>Запис на прийом on-line</span>
+                </div>
+                <div class="item">
+                    <fa-icon [icon]="iconClock" class="icons"></fa-icon>
+                    <span>Відсутність черг</span>
+                </div>
+                <div class="item">
+                    <fa-icon [icon]="iconFlask" class="icons"></fa-icon>
+                    <span>Миттєві результати аналізів</span>
+                </div>
+                <div class="item">
+                    <fa-icon [icon]="iconNote" class="icons"></fa-icon>
+                    <span>Доступ до призначень лікаря</span>
+                </div>
             </div>
         </div>
     </article>

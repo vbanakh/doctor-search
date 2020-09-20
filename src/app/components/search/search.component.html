@@ -2,15 +2,17 @@
     <article class="searchContainer">
         <div class="wrap">
             <div class="homeText">
-                <!-- Cервіс пошуку лікарів. <br> -->
                 <h1> Знайдіть свого лікаря та запишіться на прийом</h1>
             </div>
             <div class="searchBox">
                 <form>
+                    <div class="titleDisplay">
+                        <p>Пошук за: </p>
+                    </div>
                     <div class="radioChoose">
-                        <div class="item">
+                        <div class="item buttonTitle">
                             <p>Пошук за: </p>
-                        </div>
+                        </div> 
                         <div class="item">
                             <label for="speciality"
                                 [ngStyle]="{'border-color': param === 'speciality.nameUA' ? '#ffff': '#00B4CC'}">спеціальністю

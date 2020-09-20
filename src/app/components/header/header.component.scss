@@ -153,13 +153,19 @@ nav ul li a:hover {
 
 h1 {
 	font-weight: bold;
-	margin: 0;
+  margin: 0;
+  @media screen and (max-width: 991px){
+    font-size: 1.5rem;
+   }
 }
 
 h2 {
   text-align: center;
   font-weight: bold;
-	margin: 0;
+  margin: 0;
+  @media screen and (max-width: 991px){
+   font-size: 24px;
+  }
 }
 
 p {
@@ -187,20 +193,30 @@ p {
 
 button.ghost {
   @include login-btn;
+  cursor: pointer;
+  -webkit-appearance: none;
+    -moz-appearance: none;
   background-color: transparent;
   outline: none;
-  border-color: #FFFFFF;
+  border: 2px solid $white;
+  @media screen and (max-width: 991px){
+    padding: 8px 20px;
+  }
 }
 
 form {
-	background-color: #FFFFFF;
+	background-color: $white;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	padding: 0 50px;
-	height: 100%;
-	text-align: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  @media screen and (max-width: 991px){
+    padding: 0 5px;
+  }
 }
 
 .inputForm {
@@ -212,7 +228,7 @@ form {
 }
 
 .container {
-	background-color: #fff;
+	background-color: $white;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 	0 10px 10px rgba(0,0,0,0.22);
 	position: relative;
 	overflow: hidden;
