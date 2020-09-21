@@ -20,9 +20,12 @@
     @media screen and (max-width: 500px){
       top: 10%;
     }
-    @media screen and (max-width: 380px){
-      top: 20%;
+    @media screen and (max-width: 414px){
+      top: 33%;
     }
+    @media screen and (max-width: 375px){
+      top: 40%;
+  }
     .homeText{
       height: 120px;
       margin: 5px 0 5px;
@@ -33,7 +36,7 @@
         height: 80px;
       }
       @media screen and (max-width: 768px){
-        height: 20px;
+        height: 30px;
       }
 
       h1{
@@ -46,7 +49,13 @@
           font-size: 30px;
         }
         @media screen and (max-width: 768px){
-          font-size: 18px;
+          font-size: 24px;
+        }
+        @media screen and (max-width: 659px){
+          font-size: 22px;
+        }
+        @media screen and (max-width: 549px){
+          font-size: 22px;
         }
       }
     }
@@ -180,8 +189,17 @@
   }
   .titleDisplay{
     display: none;
+    font-family: $mainFont;
+    font-size: 20px;
+    margin-top:10px;
     @media screen and (max-width: 768px){
      display: block;
+    }
+    @media screen and (max-width: 659px){
+      margin-top:15px;
+    }
+    @media screen and (max-width: 549px){
+      margin-top:20px;
     }
   }
   .buttonTitle{

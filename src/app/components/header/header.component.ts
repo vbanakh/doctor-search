@@ -89,9 +89,8 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  // burger():void {
-  //   const element = document.getElementById("menu");
-  //   element.classList.toggle("menu");
-  //   element.classList.toggle("hidden");
-  // }
+  openNav(): void{
+    document.getElementById("menu").classList.toggle('styleWidth');
+  }
+ 
 }

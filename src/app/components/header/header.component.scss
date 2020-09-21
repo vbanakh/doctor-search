@@ -1,5 +1,6 @@
 @import '../../../mixins';
 @import '../../../variables';
+
 *{
   margin: 0;
   padding: 0;
@@ -7,7 +8,6 @@
 }
 
 .header {
-  // overflow-x: hidden;
     position: sticky;
     top: 0;
     left: 0;
@@ -96,7 +96,7 @@
     padding: 0 20px;
   }
 
-  header nav li span{
+  header nav li .staticSpan{
     @include transition(color .250s linear);
     font-family: $mainFont;
     display: inline-block;
@@ -242,7 +242,6 @@ form {
 	top: 0;
   height: 100%;
   @include transition(all 0.6s ease-in-out);
-  // transition: all 0.6s ease-in-out;
 }
 
 .sign-in-container {
@@ -346,10 +345,7 @@ form {
 	transform: translateX(20%);
 }
 
-
-
-
- /* humburger menu */
+ /* burger menu */
 
  #menuToggle{
    display: block;
@@ -361,7 +357,7 @@ form {
    user-select: none;
  }
  
- #menuToggle .menuLink{
+ #menuToggle{
    text-decoration: none;
    color: #232323;
    transition: color 0.3s ease;
@@ -413,11 +409,12 @@ form {
  #menuToggle #checkbox:checked ~ .toggleBtn{
    opacity: 1;
    transform: rotate(45deg) translate(-2px, -1px);
-   background: #232323;
+   background: #4b4949;
+   z-index: 3;
  }
  
  /*
-  * But let's hide the middle one.
+  * hide the middle one.
   */
  #menuToggle #checkbox:checked ~ .toggleBtn:nth-last-child(3){
    opacity: 0;
@@ -428,35 +425,53 @@ form {
    transform: rotate(-45deg) translate(0, -1px);
  }
 
- #menu{
-   position: absolute;
-   top: 40px;
-   right: -50px;
-   width: 250px;
-  //  margin: 0 -170px 0;
-   padding: 50px;   
-   background: #ededed;
-   list-style-type: none;
-   -webkit-font-smoothing: antialiased;
-   transform-origin: 0% 0%;
-   transform: translate(100%, 0);
-   transition: transform 0.4s cubic-bezier(.21,.44,.67,.71);
+ #menu li{
+  text-decoration: none;
+  color: white;
+  display: block; 
+  transition: 0.3s; 
  }
- 
- #menu li
- {
-   padding: 10px 0;
-   font-size: 22px;
- }
- 
- /*
-  * And let's slide it in from the left
-  */
- #menuToggle #checkbox:checked ~ ul
- {
+
+ #menuToggle #checkbox:checked ~ ul{
    transform: none;
  }
 
-//  .hidden{
-//    display: none;
-//  }
+ .menuLink{
+  text-decoration: none;
+  color: #f1f1f1;
+  transition: color 0.3s ease;
+
+ }
+ .menuLink .burgerSpan{
+  text-decoration: none;
+  color: #f1f1f1;
+  @include transition(color .3s ease);
+  font-family: $mainFont;
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 20px 0 10px 50px ;
+ } 
+
+.menuList{
+  height: 100%;
+  width: 0;
+  position: fixed; 
+  z-index: 1; 
+  right: 0;
+  top: 70px;
+  background-color: rgb(129, 129, 129); 
+  background-color: rgb(129, 129, 129, 0.9); 
+  overflow-x: hidden;
+  transition: 0.5s; 
+}
+
+ .styleWidth{
+   width: 30%;
+     @media screen and (max-width: 768px){
+      width: 50%; 
+    }
+    @media screen and (max-width: 415px){
+      width: 100%; 
+  }
+ }
