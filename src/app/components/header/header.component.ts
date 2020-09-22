@@ -48,6 +48,10 @@ export class HeaderComponent implements OnInit {
     document.getElementById('container').classList.remove('right-panel-active');
   }
 
+  switchForm(): void{
+    this.switch = !this.switch;
+  }
+
   registerUser(): void{
     this.authService.signUp(this.userEmail, this.userPassword, this.firstName, this.lastName);
     this.resetForm();

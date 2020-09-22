@@ -861,5 +861,17 @@
       "status": "новий",
       "id": 2
     }
+  ],
+  "feedbacks": [
+    {
+      "nameUA": "Петро Петрів",
+      "email": "pp@gmail.com",
+      "phone": "0938887766",
+      "theme": " спроба 1",
+      "message": "текст",
+      "dateFB": "2020-09-22T23:06:10.291Z",
+      "status": "нове",
+      "id": 1
+    }
   ]
 }

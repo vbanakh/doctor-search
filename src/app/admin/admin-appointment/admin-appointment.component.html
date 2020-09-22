@@ -21,7 +21,7 @@
                     <td>{{ app.id }}</td>
                     <td>{{ app.firstName }} {{ app.lastName }}</td>
                     <td>{{ app.phone }}</td>
-                    <td>{{ app.doctorApp.nameUA }} {{app.doctorApp.lastnameUA}}</td>
+                    <td>{{ app.doctorApp.nameUA |titlecase }} {{app.doctorApp.lastnameUA | titlecase}}</td>
                     <td>{{ app.dateApp | date:' dd.MM.yyyy, HH:mm' }}</td>
                     <td>{{ app.status }}</td>
                     <td>
@@ -64,7 +64,7 @@
                 </tr>
                 <tr>
                     <th scope="row">Пацієнт</th>
-                    <td>{{ app.firstName }} {{ app.lastName }}</td>
+                    <td>{{ app.firstName |titlecase  }} {{ app.lastName |titlecase  }}</td>
                 </tr>
                 <tr>
                     <th scope="row">Телефон пацієнта</th>
@@ -89,7 +89,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>{{ app.doctorApp.nameUA}}</td>
+                    <td>{{ app.doctorApp.nameUA |titlecase }} {{app.doctorApp.lastnameUA | titlecase}}</td>
                     <td>{{ app.doctorApp.speciality.nameUA}}</td>
                     <td>{{ app.doctorApp.clinic.nameUA }}</td>
                     <td>{{ app.doctorApp.city.nameUA  }}</td>

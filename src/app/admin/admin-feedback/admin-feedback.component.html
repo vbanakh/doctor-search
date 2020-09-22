@@ -1,0 +1,33 @@
+<div class="card mt-2">
+    <div class="card-header bg-transparent">
+        <div class="pt-2">Appointment</div>
+    </div>
+    <div class="card-body bg-transparent">
+        <table class="table  table-bordered">
+            <thead>
+                <tr class="table-primary">
+                    <th scope="col">ID</th>
+                    <th scope="col">П.І.П.</th>
+                    <th scope="col">Телефон</th>
+                    <th scope="col">Тема звернення</th>
+                    <th scope="col">Дата звернення</th>
+                    <th scope="col">Статус</th>
+                    <th scope="col">Детальніше</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let fb of adminFeedback">
+                    <td>{{ fb.id }}</td>
+                    <td>{{ fb.nameUA}}</td>
+                    <td>{{ fb.phone }}</td>
+                    <td>{{ fb.theme }}</td>
+                    <td>{{ fb.dateFB | date: 'dd.MM.yyyy, HH:mm' }}</td>
+                    <td>{{ fb.status }}</td>
+                    <td>
+                        <input type="button" value="details" class="btn btn-info" >
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

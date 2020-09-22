@@ -23,7 +23,7 @@ import { AppointmentComponent } from './pages/profile/appointment/appointment.co
 import { SearchComponent } from './components/search/search.component';
 import { ClinicDoctorsComponent } from './pages/clinic-doctors/clinic-doctors.component';
 import { UserComponent } from './pages/profile/user/user.component';
-
+import { AdminFeedbackComponent } from './admin/admin-feedback/admin-feedback.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -49,7 +49,8 @@ const routes: Routes = [
     { path: 'admin-clinic', component: AdminClinicComponent},
     { path: 'admin-speciality', component: AdminSpecialityComponent},
     { path: 'admin-doctor', component: AdminDoctorsComponent },
-    { path: 'admin-appointment', component: AdminAppointmentComponent }
+    { path: 'admin-appointment', component: AdminAppointmentComponent },
+    { path: 'admin-feedback', component: AdminFeedbackComponent }
   ] },
   
 ];

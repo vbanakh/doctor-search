@@ -53,6 +53,7 @@ import { ClinicDoctorsComponent } from './pages/clinic-doctors/clinic-doctors.co
 import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { UserComponent } from './pages/profile/user/user.component';
+import { AdminFeedbackComponent } from './admin/admin-feedback/admin-feedback.component';
 
 
 
@@ -88,6 +89,7 @@ import { UserComponent } from './pages/profile/user/user.component';
     SearchComponent,
     ClinicDoctorsComponent,
     UserComponent,
+    AdminFeedbackComponent,
   ],
   imports: [
     BrowserModule,

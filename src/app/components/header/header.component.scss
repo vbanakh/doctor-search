@@ -166,6 +166,9 @@ h2 {
   @media screen and (max-width: 991px){
    font-size: 24px;
   }
+  @media screen and (max-width: 320px){
+    font-size: 21px;
+   }
 }
 
 p {
@@ -181,6 +184,10 @@ p {
   @include login-btn;
   background-color:  #67C3F3;
   border: 1px solid #67C3F3;
+  @media screen and (max-width: 320px){
+    padding: 12px 25px;
+    margin-top: 20px;
+   }
 }
 
 .signIN:active, .ghost:active{
@@ -212,10 +219,11 @@ form {
 	flex-direction: column;
 	padding: 0 50px;
   height: 100%;
-  width: 100%;
+  // width: 100%;
   text-align: center;
   @media screen and (max-width: 991px){
-    padding: 0 5px;
+    padding: 10px 50px;
+    height: 80%;
   }
 }
 
@@ -234,31 +242,61 @@ form {
 	overflow: hidden;
 	width: 100%;
 	max-width: 100%;
-	min-height: 480px;
+  min-height: 480px;
+  @media screen and (max-width: 991px){
+    display: none;
+  }
+}
+.containerAdaptive {
+  display: none;
+	background-color: $white;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 	0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	max-width: 100%;
+  min-height: 480px;
+  @media screen and (max-width: 991px){
+    display: block;
+  }
 }
 
 .form-container {
 	position: absolute;
 	top: 0;
   height: 100%;
-  @include transition(all 0.6s ease-in-out);
+  // @include transition(all 0.6s ease-in-out);
+  transition: all 0.6s ease-in-out;
+  @media screen and (max-width: 991px){
+    @include transition(all .1s ease-in-out);
+  }
 }
 
 .sign-in-container {
 	left: 0;
 	width: 50%;
-	z-index: 2;
+  z-index: 2;
+  // @media screen and (max-width: 991px){
+  //   width: 100%;
+  // }
+}
+
+.sign-in-container-adaptive, .sign-up-container-adaptive {
+	left: 0;
+	width: 100%;
+  z-index: 2;
+  // opacity: 1;
 }
 
 .container.right-panel-active .sign-in-container {
-	transform: translateX(100%);
+  transform: translateX(100%);
 }
 
 .sign-up-container {
 	left: 0;
 	width: 50%;
 	opacity: 0;
-	z-index: 1;
+  z-index: 1;
 }
 
 .container.right-panel-active .sign-up-container {
@@ -288,7 +326,7 @@ form {
 	height: 100%;
   overflow: hidden;
   @include transition(transform 0.6s ease-in-out);
-	z-index: 100;
+  z-index: 100;
 }
 
 .container.right-panel-active .overlay-container{
@@ -297,7 +335,6 @@ form {
 
 .overlay {
   @include background-image; 
-  @include transition( transform 0.6s ease-in-out);
 	background: -webkit-linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
 	background:  linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
 	background-position: 0 0;
@@ -307,6 +344,7 @@ form {
 	height: 100%;
 	width: 200%;
   transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
 }
 
 .container.right-panel-active .overlay {
@@ -314,18 +352,18 @@ form {
 }
 
 .overlay-panel {
+  position: absolute;
   display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-  position: absolute;
 	padding: 0 40px;
 	text-align: center;
 	top: 0;
 	height: 100%;
 	width: 50%;
   transform: translateX(0);
-   @include transition( transform 0.6s ease-in-out);
+  transition: transform 0.6s ease-in-out;
 }
 
 .overlay-left {
@@ -343,6 +381,33 @@ form {
 
 .container.right-panel-active .overlay-right {
 	transform: translateX(20%);
+}
+
+.adaptiveStyle{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: #000000;
+}
+.adaptiveBtn{
+  display: none;
+  color: #000000;
+  border: none;
+  font-size: 11px;
+  margin-top: 30px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  cursor: pointer;
+  -webkit-appearance: none;
+    -moz-appearance: none;
+  background-color: transparent;
+  outline: none;
+  @media screen and (max-width: 991px){
+    display: block;
+  }
 }
 
  /* burger menu */
