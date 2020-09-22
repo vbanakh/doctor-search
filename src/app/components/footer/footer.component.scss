@@ -21,6 +21,10 @@
   margin: 109px 0;
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 970px){
+    width: 320px;
+    padding-left: 0;
+  }
   @media screen and (max-width: 768px){
     margin: 50px 0;
   }
@@ -31,6 +35,13 @@
   margin: 109px 109px 0 0;
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 970px){
+    margin: 109px 50px 0 0;
+  }
+ 
+  @media screen and (max-width:840px){
+    margin: 109px 20px 0 0;
+  }
   @media screen and (max-width:768px){
     margin: 50px 20px 0 0;
   }
@@ -41,7 +52,7 @@
   width: 400px;
   margin: 0 auto;
   display: block;
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 794px){
     display: none;
   }
 }
@@ -54,10 +65,17 @@
   font-weight: bold;
   text-align: left;
   text-decoration: none;
+  @media screen and (max-width: 440px){
+    font-size: 12px;
+    line-height: 24px;
+  }
 }
 
 ul {
   list-style: none;
+  @media screen and (max-width: 320px){
+    padding-left: 10px;
+  }
   li{
     mix-blend-mode: normal;
     display: flex;
@@ -81,8 +99,35 @@ ul {
 .workTime{
   font-size: 14px;
   line-height: 20px;
+  @media screen and (max-width: 910px){
+    font-size: 12px;
+    line-height: 18px;
+  }
+  @media screen and (max-width: 768px){
+    font-size: 14px;
+    line-height: 20px;
+  }
+  @media screen and (max-width: 440px){
+    font-size: 10px;
+    line-height: 16px;
+  }
 }
-
+.wrapperService{
+  font-size: 14px;
+  line-height: 20px;
+  @media screen and (max-width: 853px){
+    font-size: 13px;
+    line-height: 18px;
+  }
+  @media screen and (max-width: 768px){
+    font-size: 14px;
+    line-height: 20px;
+  }
+  @media screen and (max-width: 440px){
+    font-size: 10px;
+    line-height: 16px;
+  }
+}
 .phone{
   display: flex;
   height: 30px;
@@ -92,6 +137,18 @@ ul {
     @media screen and (max-width: 500px){
       margin-left: 0;
     }
+    @media screen and (max-width: 853px){
+      font-size: 12px;
+      line-height: 18px;
+    }
+    @media screen and (max-width: 768px){
+      font-size: 14px;
+      line-height: 20px;
+    }
+    @media screen and (max-width: 440px){
+      font-size: 10px;
+      line-height: 26px;
+    }
   }
   
 }
@@ -100,6 +157,18 @@ ul {
   margin-right: 10px;
   line-height: 30px;
   vertical-align: middle;
+  @media screen and (max-width: 853px){
+    font-size: 12px;
+    line-height: 18px;
+  }
+  @media screen and (max-width: 768px){
+    font-size: 16px;
+    line-height: 30px;
+  }
+  @media screen and (max-width: 440px){
+    font-size: 12px;
+    line-height: 18px;
+  }
 }
 
 
