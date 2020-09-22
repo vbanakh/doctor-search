@@ -42,7 +42,7 @@
                                 notFoundText="Не знайдено">
                             </ng-autocomplete>
                             <button type="button" class="searchButton" [routerLink]="[ '/doctors', param, searchWord]" (click)="getSearchDoc()">
-                                <fa-icon [icon]="iconSearch"></fa-icon> знайти лікаря
+                                <fa-icon [icon]="iconSearch"></fa-icon><span class="ml-3 btnSrc">знайти лікаря</span>  
                             </button>
                         </div>
                         <ng-template #itemTemplate let-item>

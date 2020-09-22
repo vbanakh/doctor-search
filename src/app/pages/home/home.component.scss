@@ -2,31 +2,43 @@
 @import '../../../mixins';
 @import '../../../variables';
 .sectionOne{
-    height:80vh;
-    width: 100vw; 
-    @media screen and (max-width: 1200px){
-      height: 66vh;
-    } 
-    @media screen and (max-width: 970px){
-      height: 57.5vh;
-    } 
-    @media screen and (max-width: 768px){
-    height: 100vh;
+  height:80vh;
+  width: 100vw; 
+  @media screen and (max-width: 1200px){
+    height: 66vh;
+  } 
+  @media screen and (max-width: 1024px){
+    height: 440px;
+  } 
+  @media screen and (max-width: 970px){
+    height: 57.5vh;
+  } 
+  @media screen and (max-width: 768px){
+    height: 795px;
+  }
+  @media screen and (max-width: 650px) {
+    height: 648px;
+  }
+  @media screen and (max-width: 600px){
+    height: 582px;
   }
   @media screen and (max-width: 540px){
-    // min-height: 440px;
-    height: 84vh;
-    // height: 147vh;
+    height: 510px;
   }
-  @media screen and (max-width: 415px){
-    // height: 80vh;
-    height: 56vh;
-}
+  @media screen and (max-width: 500px){
+    height: 465px;
+  }
+  @media screen and (max-width: 413px){
+    height: 423px;
+  }
   @media screen and (max-width: 375px){
-      height: 60vh;
+      height: 380px;
   }
-
+  @media screen and (max-width: 320px){
+    height: 330px;
+  }
 }
+
 .sectionWraper img{    
     position: absolute;
     top: 0;
@@ -56,7 +68,6 @@
       top: -20px;
     }
     @media screen and (max-width: 375px){
-      // height: 60vh;
       top: 0;
   }
 }
@@ -69,17 +80,26 @@
 
   //-----------------third section
   .sectionThree{
-      width: 100vw;
-      height: 300px;
-      @media screen and (max-width: 970px) {
-        height: 600px;
-      }
-      @media screen and (max-width: 500px) {
-        min-height: 680px;
-      }
-      @media screen and (max-width: 414px){
-        min-height: 740px;
-      }
+    width: 100vw;
+    height: 300px;
+    @media screen and (max-width: 970px) {
+      height: 600px;
+    }
+    @media screen and (max-width: 600px){
+      min-height: 800px;
+    }
+    @media screen and (max-width: 500px) {
+      height: 680px;
+    }
+    @media screen and (max-width: 414px){
+      height: 740px;
+    }
+    @media screen and (max-width: 413px){
+      height: 1200px;
+    }
+    @media screen and (max-width: 320px){
+      height: 1100px;
+    }
   }
   .containerStep{
     display: -ms-flexbox;
@@ -129,6 +149,9 @@
           width: 140px;
           margin: 15px;
         }
+        @media screen and (max-width: 413px){
+          width: 186px;
+        }
         .stepImage{
             width: 145px;
             height: 145px;
@@ -137,12 +160,10 @@
             background-repeat: no-repeat;
             background-size: 130px auto;
             @media screen and (max-width: 1200px) {
-            // background-size: 120px auto;
             width: 120px;
             height: 120px;
            }
             @media screen and (max-width: 500px){
-              // background-size: 90px 90px;
               width: 110px;
               height: 110px;
             }
@@ -158,14 +179,12 @@
             background-repeat: no-repeat;
             background-size: 130px auto;
             @media screen and (max-width: 1200px) {
-            // background-size: 120px auto;
-            width: 120px;
-            height: 120px;
+              width: 120px;
+              height: 120px;
            }
             @media screen and (max-width: 500px){
-                // background-size: 90px 90px;
-                width: 110px;
-                height: 110px;
+              width: 110px;
+              height: 110px;
             }
             @media screen and (max-width: 375px){
               width: 90px;
@@ -174,20 +193,20 @@
         }
         } 
         .stepText{
-            font-family: $mainFont, sans-serif;
-            display: inline-block;
-            max-width: 170px;
-            font-size: 16px;
-            text-align: center;
-            @media screen and (max-width: 600px){
-              max-width: 150px;
-            }
-            @media screen and (max-width: 375px){
-              max-width: 140px;
-            }
+          font-family: $mainFont, sans-serif;
+          display: inline-block;
+          max-width: 170px;
+          font-size: 16px;
+          text-align: center;
+          @media screen and (max-width: 600px){
+            max-width: 150px;
+          }
+          @media screen and (max-width: 375px){
+            max-width: 140px;
+          }
         }
         p{
-            text-align: center;
+          text-align: center;
         }
     }
     :nth-child(odd){
@@ -224,7 +243,7 @@
 
 
 
-  //-------------------four section
+  //---four section-------
 
   .sectionFour{
     display: -ms-flexbox;
@@ -241,6 +260,7 @@
     font-size: 24px;
     font-weight: 400;
   }
+
   .rightPart{
     display: -webkit-box;
     display: flex;
@@ -257,10 +277,11 @@
       align-items: center;
    }
   }
+
   .rightPartBox{
     height: 100%;
     width: 100%;
-   display: flex;
+    display: flex;
     -ms-flex-direction: column;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -270,25 +291,38 @@
     justify-content: center;
     padding: 0 60px;
     background-color: #63aeff;
-    @media screen and (max-width: 1124px) {
-    padding: 0 30px;
-}
+    @media screen and (max-width: 1124px){
+      padding: 0 30px;
+    }
     @media screen and (max-width: 1024px){
-    padding: 30px;
-  }
+      padding: 30px;
+    }
     @media screen and (max-width: 970px){
       width: 60%;
-   }
-   @media screen and (max-width: 768px){
-    width: 65%;
-    @media screen and (max-width: 500px){
+    }
+    @media screen and (max-width: 785px){
+      width: 65%;
+    }
+    @media screen and (max-width: 725px){
+      width: 75%;
+    }
+    @media screen and (max-width: 630px){
       width: 90%;
+    }
+    @media screen and (max-width: 525px){
+      width: 90%;
+      font-size: 16px;
+    }
+    @media screen and (max-width: 500px){
       padding: 30px 20px;
       font-size: 16px;
     }
+    @media screen and (max-width: 320px){
+      padding: 20px 10px;
+      font-size: 14px;
+    }
 }
 
-  }
   .leftPart{
     min-height: 500px;
     -ms-flex: 1 1 50%;
@@ -299,7 +333,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     @media screen and (max-width: 970px){
-       display: none;
+      display: none;
     }
   }
 
@@ -309,13 +343,13 @@
     font-size: 36px;
     text-transform: uppercase;
     @media screen and (max-width: 1200px){
-        font-size: 32px;
+      font-size: 32px;
     }
-    @media screen and (max-width: 500px){
-    // padding: 30px 20px;
-    font-size: 16px;
-}
-}
+    @media screen and (max-width: 525px){
+      font-size: 16px;
+    }
+  }
+
 .item{
     margin-bottom: 30px;
     font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -328,10 +362,10 @@
     font-size: 22px;
     @media screen and (max-width: 500px){
       font-size: 16px;
-  }
-  @media screen and (max-width: 375px){
-    margin-right: 25px;
-  }
+    }
+    @media screen and (max-width: 375px){
+      margin-right: 25px;
+    }
 }
 
 
