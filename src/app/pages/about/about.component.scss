@@ -7,6 +7,12 @@
     @media screen and (max-width: 1200px){
         width: 991px;
     }
+    @media screen and (max-width: 1024px) {
+        width: 100%;
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+
 }
 
 .textTitle h1{
@@ -22,6 +28,11 @@
     margin: 0 auto 50px;
     font-size: 14px;
     text-align: justify;
+    @media screen and (max-width: 1024px) {
+        width: 100%;
+        padding-right: 25px;
+        padding-left: 25px;
+    }
 }
 .aboutContent h2{
     font-weight: 600;
