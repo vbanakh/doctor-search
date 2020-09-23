@@ -7,18 +7,64 @@
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    @media screen and (max-width: 1024px){
+      top: 250px;
+    }
+    @media screen and (max-width: 970px){
+      width: 90%;
+      top: 35%;
+    }
+    @media screen and (max-width: 768px){
+      top: 40%;
+    }
+    @media screen and (max-width: 600px){
+      top: 300px;
+    }
+    @media screen and (max-width: 500px){
+      top: 235px;
+    }
+    @media screen and (max-width: 375px){
+      top: 216px;
+  }
+    // @media screen and (max-width: 320px){
+    //   top: 216px;
+    // }
     .homeText{
-      height: 200px;
+      height: 120px;
       margin: 5px 0 5px;
       display: flex;
       flex-direction: column;
       opacity: .7;
+      @media screen and (max-width: 1024px){
+        height: 80px;
+      }
+      @media screen and (max-width: 768px){
+        height: 30px;
+      }
+      @media screen and (max-width: 310px){
+        height: 20px;
+      }
       h1{
         font-size: 40px;
         font-family: $mainFont;
         font-weight: bolder;
         text-align: center;
         margin-top: 0px;
+        @media screen and (max-width: 1024px){
+          font-size: 30px;
+        }
+        @media screen and (max-width: 768px){
+          font-size: 24px;
+        }
+        @media screen and (max-width: 659px){
+          font-size: 22px;
+        }
+        @media screen and (max-width: 549px){
+          font-size: 22px;
+        }
+        @media screen and (max-width: 310px){
+          font-size: 18px;
+        }
       }
     }
   }
@@ -32,7 +78,6 @@
     flex-direction: row;
     justify-content: center;
     align-content: center;
-
     width: 100%;
     z-index: 2;
   }
@@ -60,8 +105,10 @@
     border-radius: 0 5px 5px 0;
     font-size: 14px;
     cursor: pointer;
+    @media screen and (max-width: 768px){
+      width: 50px;
+    }
   }
-
 
    .radioChoose {
     @include transition(all .15s ease 0s);
@@ -70,10 +117,35 @@
     justify-content: center;
     align-content: center;
     width: 100%;
+    @media screen and (max-width: 768px){
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
  
   .radioChoose .item {
     width: 20%;
+    @media screen and (max-width: 1300px){
+      width: 23%;
+    } 
+     @media screen and (max-width: 1200px){
+      width: 25%;
+    } 
+    @media screen and (max-width: 1024px){
+      width: 23%;
+    } 
+    @media screen and (max-width: 970px){
+      width: 20%;
+    } 
+    @media screen and (max-width: 768px){
+      width: 80%;
+      margin-left: 20px;
+    }
+    @media screen and (max-width: 375px){
+      width: 88%;
+      margin-left: 6px;
+    }
   }
   p{
     @include search-btn;
@@ -82,8 +154,13 @@
     line-height: 20px;
     font-size: 16px;
     padding-top: .75em;
-  }
-  
+    @media screen and (max-width: 1200px){
+      height: 30px;
+      line-height: 16px;
+      font-size: 12px;
+    }
+    }
+
   .radioChoose label {
     @include transition(all 100ms ease);
     @include grey-box-shadow;
@@ -98,6 +175,12 @@
     border-radius: 5px;
     color: #00B4CC;
     padding-top: 8px;
+    @media screen and (max-width: 1200px){
+      height: 30px;
+      line-height: 16px;
+      font-size: 12px;
+      padding-top: 7px;
+    }
   }
 
   .radioChoose .item label:hover {
@@ -114,9 +197,33 @@
     outline: 0;
   }
   .radioChoose .item label:active,   .radioChoose .item label:focus{
-    // color: rgb(137, 134, 134);
     color: #fff;
     text-shadow: 0 1px rgba(255, 255, 255, 0.3);
     transform: translate(0, 0.15em);
     -webkit-transform: translate3d(0, 0.15em, 0);
+  }
+  .titleDisplay{
+    display: none;
+    font-family: $mainFont;
+    font-size: 20px;
+    margin-top:10px;
+    @media screen and (max-width: 768px){
+     display: block;
+    }
+    @media screen and (max-width: 659px){
+      margin-top:15px;
+    }
+    @media screen and (max-width: 549px){
+      margin-top:20px;
+    }
+  }
+  .buttonTitle{
+    @media screen and (max-width: 768px){
+      display: none;
+    }
+  }
+  .btnSrc{
+    @media screen and (max-width: 768px){
+      display: none;
+    }
   }

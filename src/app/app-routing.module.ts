@@ -22,7 +22,8 @@ import { ProfileGuard } from './shared/guards/profile.guard';
 import { AppointmentComponent } from './pages/profile/appointment/appointment.component';
 import { SearchComponent } from './components/search/search.component';
 import { ClinicDoctorsComponent } from './pages/clinic-doctors/clinic-doctors.component';
-
+import { UserComponent } from './pages/profile/user/user.component';
+import { AdminFeedbackComponent } from './admin/admin-feedback/admin-feedback.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path: 'login-admin', component: LoginComponent},
   { path: 'profile', component: ProfileComponent, canActivate: [ProfileGuard], children:[
     { path: '', redirectTo: 'appointment', pathMatch: 'full' },
+    { path: 'user', component: UserComponent},
     { path: 'appointment', component: AppointmentComponent}
   ]},
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], children: [
@@ -47,7 +49,8 @@ const routes: Routes = [
     { path: 'admin-clinic', component: AdminClinicComponent},
     { path: 'admin-speciality', component: AdminSpecialityComponent},
     { path: 'admin-doctor', component: AdminDoctorsComponent },
-    { path: 'admin-appointment', component: AdminAppointmentComponent }
+    { path: 'admin-appointment', component: AdminAppointmentComponent },
+    { path: 'admin-feedback', component: AdminFeedbackComponent }
   ] },
   
 ];

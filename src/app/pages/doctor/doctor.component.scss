@@ -8,6 +8,9 @@ $btnColorHover: #4281df;
     display: flex;  
     flex-grow: 1;
     background-color: #fafbfb;
+    @media screen and (max-width: 1200px){
+        height: 220vh;
+      }
 }
 .container{
     width: 100vw;

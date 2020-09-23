@@ -1,5 +1,6 @@
 @import '../../../mixins';
 @import '../../../variables';
+
 *{
   margin: 0;
   padding: 0;
@@ -25,31 +26,48 @@
     align-content: space-between;
     margin: 0 auto;
   }
+
+  /* header logo*/
   .leftSide{
     height: 100%;
     width: 20%;
     display: flex; 
     font-family: $mainFont;
+    @media screen and (max-width: 1200px){
+      width:100%;
+      justify-content: center;
+    }
   }
-
-  .rightSide{
-    height: 100%;
-    width: 80%;
+  header #logo {
+    margin-left: 35px;
   }
-
+  header #logo img {
+    width: 80px;
+    height: 60px;
+    display: block;
+  }
+/* header navigation*/
   .navigation{
     height: 100%;
+    width: 70%;
     display: flex;
     justify-content: right;
+    @media screen and (max-width: 1200px){
+      display: none;
+    }
+  }
+  .navigationAdaptive{
+    display: none;
+    @media screen and (max-width: 1200px){
+      display: block;
+    }
   }
 
   header::after {
     content: "";
     display: block;
   }
-  header #logo {
-    margin-left: 35px;
-  }
+
   header nav {
     padding: 0 1rem;
     height: 100%;
@@ -59,29 +77,26 @@
     flex-flow: row;
     justify-content: space-between;  
  }
-  header #logo img {
-    width: 80px;
-    height: 60px;
-    display: block;
-  }
-   li a {
+
+   li .headerLink {
     display: block;
     color: rgb(137, 134, 134);
     text-align: center;
     text-decoration: none;
   }
- ul {
+ #headerList {
     list-style: none;
     display: flex;
     justify-content: space-between;
   }
-  ul li{
+
+  #headerList li{
     font-size: 20px;
     margin: 10px;
     padding: 0 20px;
-
   }
-  header nav li {
+
+  header nav li .staticSpan{
     @include transition(color .250s linear);
     font-family: $mainFont;
     display: inline-block;
@@ -91,6 +106,12 @@
     color: gray;
     font-weight: 700;
     padding: 21px 0;
+    @media screen and (max-width: 1200px){
+      display: block;
+      font-size: 15px;
+      line-height: 18px;
+      padding: 10px 0;
+    }
   }
   
   a:active,
@@ -126,20 +147,28 @@
 nav ul li a:hover {
   color: #E0461B;
   @include transition( color 400ms ease-out);
-  // transition: color 400ms ease-out;
 }
 
-// --------
+//-- form logIn/signIn
 
 h1 {
 	font-weight: bold;
-	margin: 0;
+  margin: 0;
+  @media screen and (max-width: 991px){
+    font-size: 1.5rem;
+   }
 }
 
 h2 {
   text-align: center;
   font-weight: bold;
-	margin: 0;
+  margin: 0;
+  @media screen and (max-width: 991px){
+   font-size: 24px;
+  }
+  @media screen and (max-width: 320px){
+    font-size: 21px;
+   }
 }
 
 p {
@@ -155,6 +184,10 @@ p {
   @include login-btn;
   background-color:  #67C3F3;
   border: 1px solid #67C3F3;
+  @media screen and (max-width: 320px){
+    padding: 12px 25px;
+    margin-top: 20px;
+   }
 }
 
 .signIN:active, .ghost:active{
@@ -167,20 +200,34 @@ p {
 
 button.ghost {
   @include login-btn;
+  cursor: pointer;
+  -webkit-appearance: none;
+    -moz-appearance: none;
   background-color: transparent;
   outline: none;
-  border-color: #FFFFFF;
+  border: 2px solid $white;
+  @media screen and (max-width: 991px){
+    padding: 8px 20px;
+  }
 }
 
 form {
-  @include flex-center(column); 
-	background-color: #FFFFFF;
+	background-color: $white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 	padding: 0 50px;
-	height: 100%;
-	text-align: center;
+  height: 100%;
+  // width: 100%;
+  text-align: center;
+  @media screen and (max-width: 991px){
+    padding: 10px 50px;
+    height: 80%;
+  }
 }
 
-input {
+.inputForm {
 	background-color: #eee;
 	border: none;
 	padding: 12px 15px;
@@ -189,38 +236,67 @@ input {
 }
 
 .container {
-	background-color: #fff;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
-			0 10px 10px rgba(0,0,0,0.22);
+	background-color: $white;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 	0 10px 10px rgba(0,0,0,0.22);
 	position: relative;
 	overflow: hidden;
 	width: 100%;
 	max-width: 100%;
-	min-height: 480px;
+  min-height: 480px;
+  @media screen and (max-width: 991px){
+    display: none;
+  }
+}
+.containerAdaptive {
+  display: none;
+	background-color: $white;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 	0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	max-width: 100%;
+  min-height: 480px;
+  @media screen and (max-width: 991px){
+    display: block;
+  }
 }
 
 .form-container {
 	position: absolute;
 	top: 0;
   height: 100%;
-  @include transition(all 0.6s ease-in-out);
+  // @include transition(all 0.6s ease-in-out);
+  transition: all 0.6s ease-in-out;
+  @media screen and (max-width: 991px){
+    @include transition(all .1s ease-in-out);
+  }
 }
 
 .sign-in-container {
 	left: 0;
 	width: 50%;
-	z-index: 2;
+  z-index: 2;
+  // @media screen and (max-width: 991px){
+  //   width: 100%;
+  // }
+}
+
+.sign-in-container-adaptive, .sign-up-container-adaptive {
+	left: 0;
+	width: 100%;
+  z-index: 2;
+  // opacity: 1;
 }
 
 .container.right-panel-active .sign-in-container {
-	transform: translateX(100%);
+  transform: translateX(100%);
 }
 
 .sign-up-container {
 	left: 0;
 	width: 50%;
 	opacity: 0;
-	z-index: 1;
+  z-index: 1;
 }
 
 .container.right-panel-active .sign-up-container {
@@ -250,7 +326,7 @@ input {
 	height: 100%;
   overflow: hidden;
   @include transition(transform 0.6s ease-in-out);
-	z-index: 100;
+  z-index: 100;
 }
 
 .container.right-panel-active .overlay-container{
@@ -259,7 +335,6 @@ input {
 
 .overlay {
   @include background-image; 
-  @include transition( transform 0.6s ease-in-out);
 	background: -webkit-linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
 	background:  linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
 	background-position: 0 0;
@@ -269,6 +344,7 @@ input {
 	height: 100%;
 	width: 200%;
   transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
 }
 
 .container.right-panel-active .overlay {
@@ -276,15 +352,18 @@ input {
 }
 
 .overlay-panel {
-  @include transition( transform 0.6s ease-in-out);
-  @include flex-center(column); 
   position: absolute;
+  display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 	padding: 0 40px;
 	text-align: center;
 	top: 0;
 	height: 100%;
 	width: 50%;
-	transform: translateX(0);
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
 }
 
 .overlay-left {
@@ -303,3 +382,161 @@ input {
 .container.right-panel-active .overlay-right {
 	transform: translateX(20%);
 }
+
+.adaptiveStyle{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: #000000;
+}
+.adaptiveBtn{
+  display: none;
+  color: #000000;
+  border: none;
+  font-size: 11px;
+  margin-top: 30px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  cursor: pointer;
+  -webkit-appearance: none;
+    -moz-appearance: none;
+  background-color: transparent;
+  outline: none;
+  @media screen and (max-width: 991px){
+    display: block;
+  }
+}
+
+ /* burger menu */
+
+ #menuToggle{
+   display: block;
+   position: absolute;
+   top: 35px;
+   right: 50px;
+   z-index: 1;
+   -webkit-user-select: none;
+   user-select: none;
+ }
+ 
+ #menuToggle{
+   text-decoration: none;
+   color: #232323;
+   transition: color 0.3s ease;
+ }
+ 
+ #menuToggle .menuLink:hover{
+   color: tomato;
+ }
+ 
+ 
+ #menuToggle #checkbox{
+   display: block;
+   width: 40px;
+   height: 32px;
+   position: absolute;
+   top: -7px;
+   right: -5px;
+   cursor: pointer;
+   opacity: 0;
+   z-index: 2; 
+   -webkit-touch-callout: none;
+ }
+ 
+ 
+ #menuToggle .toggleBtn{
+   display: block;
+   width: 33px;
+   height: 4px;
+   margin-bottom: 5px;
+   position: relative;
+   background: #cdcdcd;
+   border-radius: 3px;
+   z-index: 1;
+   transform-origin: 4px 0px;
+   @include transition(transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0));
+   @include transition(background-color 0.5s cubic-bezier(0.77,0.2,0.05,1.0));
+   @include transition(opacity 0.55s ease);
+ }
+ 
+ #menuToggle .toggleBtn:first-child{
+   transform-origin: 0% 0%;
+ }
+ 
+ #menuToggle .toggleBtn:nth-last-child(2){
+   transform-origin: 0% 100%;
+ }
+ 
+ /*  Transform all the slices of hamburger */
+ #menuToggle #checkbox:checked ~ .toggleBtn{
+   opacity: 1;
+   transform: rotate(45deg) translate(-2px, -1px);
+   background: #4b4949;
+   z-index: 3;
+ }
+ 
+ /*
+  * hide the middle one.
+  */
+ #menuToggle #checkbox:checked ~ .toggleBtn:nth-last-child(3){
+   opacity: 0;
+   transform: rotate(0deg) scale(0.2, 0.2);
+ }
+ 
+ #menuToggle #checkbox:checked ~ .toggleBtn:nth-last-child(2){
+   transform: rotate(-45deg) translate(0, -1px);
+ }
+
+ #menu li{
+  text-decoration: none;
+  color: white;
+  display: block; 
+  transition: 0.3s; 
+ }
+
+ #menuToggle #checkbox:checked ~ ul{
+   transform: none;
+ }
+
+ .menuLink{
+  text-decoration: none;
+  color: #f1f1f1;
+  transition: color 0.3s ease;
+
+ }
+ .menuLink .burgerSpan{
+  text-decoration: none;
+  color: #f1f1f1;
+  @include transition(color .3s ease);
+  font-family: $mainFont;
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 20px 0 10px 50px ;
+ } 
+
+.menuList{
+  height: 100%;
+  width: 0;
+  position: fixed; 
+  z-index: 1; 
+  right: 0;
+  top: 70px;
+  background-color: rgb(129, 129, 129); 
+  background-color: rgb(129, 129, 129, 0.9); 
+  overflow-x: hidden;
+  transition: 0.5s; 
+}
+
+ .styleWidth{
+   width: 30%;
+     @media screen and (max-width: 768px){
+      width: 50%; 
+    }
+    @media screen and (max-width: 415px){
+      width: 100%; 
+  }
+ }

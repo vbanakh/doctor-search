@@ -9,9 +9,9 @@
       <div class="userName">
         <span>{{  firstName  }} {{ lastName }} </span>
       </div>
-      <div class="userEmail">
+      <!-- <div class="userEmail">
         <span>{{  email  }}</span>
-      </div>
+      </div> -->
     </div>
   </article>
   <article class="userDate">
@@ -23,10 +23,10 @@
       <aside class="aside">
         <ul class="asideList">
           <li class="asideItem">
-            <a  class="asideLink">Ваші дані</a>
+            <a class="asideLink" [routerLink]="[ 'user']">Ваші дані</a>
           </li>
           <li class="asideItem">
-            <a [routerLink]="[ '/appointment']" class="asideLink">Візити</a>
+            <a [routerLink]="[ 'appointment']" class="asideLink">Візити</a>
           </li>
           <li class="asideItem">
             <a class="asideLink"  (click)="signOut()">Вийти</a>

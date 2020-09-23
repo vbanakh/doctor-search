@@ -1,9 +1,10 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { DoctorService } from '../../shared/services/doctor.service';
 import { IDoctor } from '../../shared/interfaces/doctor.interfsce';
 import { ISpeciality } from '../../shared/interfaces/speciality.interface';
 import { SpecialityService } from '../../shared/services/speciality.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -17,10 +18,7 @@ export class SearchComponent implements OnInit {
   doctors: Array<IDoctor>;
   param: string = 'speciality.nameUA';
   paramSetting: string = 'Вкажіть спеціальність лікаря';
-
-
-  // data:Array<ISpeciality>;
-  public keyword = 'name';
+  keyword = 'name';
   specialities = ['педіатр',
     'терапевт',
     'хірург',
@@ -51,24 +49,17 @@ export class SearchComponent implements OnInit {
     'ортопед'
   ]
   search: string;
-
-
+  @Input() toParam: string;
+  @Input() toWord: string;
   @Output() fromChild = new EventEmitter<Array<IDoctor>>();
+  
   constructor(private docService: DoctorService,
-    private specService: SpecialityService) { }
+              private specService: SpecialityService,
+              private actRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-
+    this.setting();
   }
-
-  // getSearchDoc(): void{
-  //   this.docService.getJSONDoctorSearch(this.param, this.searchWord).subscribe(data => {
-  //     this.doctors = data;
-  //     this.fromChild.emit(this.doctors);
-  //     this.searchWord = '';
-  //   });
-
-  // }
 
   checkWork() {
     if (this.param === 'speciality.nameUA') {
@@ -82,16 +73,19 @@ export class SearchComponent implements OnInit {
     }
   }
 
-
-  // --------------------------
-
   getSearchDoc(): void {
     this.docService.getJSONDoctorSearch(this.param, this.searchWord).subscribe(data => {
       this.doctors = data;
       this.fromChild.emit(this.doctors);
     });
-
   }
+
+  setting():void{
+    this.searchWord = this.toWord;
+    this.param = this.toParam;
+    // console.log(this.param);
+  }
+  
 
 
 

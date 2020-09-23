@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { DoctorService } from 'src/app/shared/services/doctor.service';
 import { IDoctor } from 'src/app/shared/interfaces/doctor.interfsce';
 import { ActivatedRoute } from '@angular/router';
@@ -11,14 +11,17 @@ import { ActivatedRoute } from '@angular/router';
 export class DoctorComponent implements OnInit {
   doctors: Array<IDoctor> = [];
   speciality: string;
-  searchWord = '';
+  fromParent: string;
+  fromParentParam: string;
   p: number = 1;
   mr = "50px";
+
   constructor(private docService: DoctorService,
               private actRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-   this.getViewDoctor();
+    this.getViewDoctor();
+    this.settingWord();
   }
 
   private getDoctors(): void {
@@ -27,14 +30,13 @@ export class DoctorComponent implements OnInit {
     });
   }
 
-
-  parentGetDoctors(doc: Array<IDoctor>):void{
-    if(doc.length == 0){
-      this.getDoctors(); 
+  parentGetDoctors(doc: Array<IDoctor>): void {
+    if (doc.length == 0) {
+      this.getDoctors();
     }
-   else{
-    this.doctors = doc;
-   }
+    else {
+      this.doctors = doc;
+    }
   }
 
   private getViewDoctor(): void {
@@ -45,7 +47,15 @@ export class DoctorComponent implements OnInit {
     });
   }
 
+  settingWord(): void {
+    const word = this.actRoute.snapshot.paramMap.get('word');
+    this.fromParent = word;
+    const param = this.actRoute.snapshot.paramMap.get('param');
+    this.fromParentParam = param;
+    console.log(this.fromParentParam);
   }
+
+}
 
 
 

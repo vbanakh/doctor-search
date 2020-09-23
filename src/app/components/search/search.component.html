@@ -2,15 +2,17 @@
     <article class="searchContainer">
         <div class="wrap">
             <div class="homeText">
-                <!-- Cервіс пошуку лікарів. <br> -->
                 <h1> Знайдіть свого лікаря та запишіться на прийом</h1>
             </div>
             <div class="searchBox">
                 <form>
+                    <div class="titleDisplay">
+                        <p>Пошук за: </p>
+                    </div>
                     <div class="radioChoose">
-                        <div class="item">
+                        <div class="item buttonTitle">
                             <p>Пошук за: </p>
-                        </div>
+                        </div> 
                         <div class="item">
                             <label for="speciality"
                                 [ngStyle]="{'border-color': param === 'speciality.nameUA' ? '#ffff': '#00B4CC'}">спеціальністю
@@ -32,13 +34,6 @@
                                     (change)="checkWork()">
                             </label></div>
                     </div>
-                    <!-- <div class="search">
-                        <input type="text" class="searchTerm" [(ngModel)]="searchWord" name="searchWord"
-                            [attr.placeholder]="paramSetting">
-                        <button type="submit" class="searchButton" [routerLink]="[ '/doctors', param, searchWord]" (click)="getSearchDoc()">
-                            <fa-icon [icon]="iconSearch"></fa-icon>
-                        </button>
-                    </div> -->
                     <div class="ng-autocomplete">
                         <div class="search">
                             <ng-autocomplete   class="searchTerm" [data]="specialities" [placeHolder]="paramSetting"
@@ -46,9 +41,8 @@
                                 [itemTemplate]="itemTemplate" [notFoundTemplate]="notFoundTemplate"
                                 notFoundText="Не знайдено">
                             </ng-autocomplete>
-                            <button type="button" class="searchButton" [routerLink]="[ '/doctors', param, searchWord]"
-                                (click)="getSearchDoc()">
-                                <fa-icon [icon]="iconSearch"></fa-icon> знайти лікаря
+                            <button type="button" class="searchButton" [routerLink]="[ '/doctors', param, searchWord]" (click)="getSearchDoc()">
+                                <fa-icon [icon]="iconSearch"></fa-icon><span class="ml-3 btnSrc">знайти лікаря</span>  
                             </button>
                         </div>
                         <ng-template #itemTemplate let-item>

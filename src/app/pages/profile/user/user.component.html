@@ -1,0 +1,34 @@
+<article class="container">
+    <h2>Особиста інформація</h2>
+    <div class="box">
+        <div class="userImage">
+            <div class="userIcon">
+                <img src="assets/images/userIcon.png" alt="" style="width: 150px;height: 150px;">
+              </div>
+        </div>
+        <div class="data">
+            <div class="lastname">
+                <label for="lasttName">
+                    <span>Прізвище</span>
+                    <input class="form-control" type="text" name="lastName" [(ngModel)]="lastName">
+                </label>
+            </div>
+            <div class="email">
+                <label for="emeil">
+                    <span>Емейл</span>
+                    <input class="form-control-plaintext" type="text" name="email" readonly [(ngModel)]="email">
+                </label>
+            </div>
+        </div>
+        <div class="data">
+            <div class="name">
+                <label for="name">
+                    <span>Ім'я</span>
+                    <input class="form-control" type="text" name="name" [(ngModel)]="firstName">
+                    <hr>
+                </label>
+            </div>
+            <div class="sex"></div>
+        </div>
+    </div>
+</article>

@@ -8,77 +8,163 @@
   </div>
   <div class="navigation">
     <nav>
-      <ul>
+      <ul id="headerList">
         <li>
-          <a [routerLink]="[ '/clinic']">
-            <span>Клініки</span>
+          <a class="headerLink" [routerLink]="[ '/clinic']">
+            <span class="staticSpan">Клініки</span>
           </a>
         </li>
         <li>
-          <a [routerLink]="[ '/reform']">
-            <span>Медична реформа</span>
+          <a class="headerLink" [routerLink]="[ '/reform']">
+            <span class="staticSpan">Медична реформа</span>
           </a>
 
         </li>
         <li>
-          <a [routerLink]="[ '/about']">
-            <span>Про нас</span>
+          <a class="headerLink" [routerLink]="[ '/about']">
+            <span class="staticSpan">Про нас</span>
           </a>
         </li>
         <li>
-          <a [routerLink]="[ '/contacts']">
-            <span>Контакти</span>
+          <a class="headerLink" [routerLink]="[ '/contacts']">
+            <span class="staticSpan">Контакти</span>
           </a>
         </li>
       </ul>
       <div *ngIf="!loginStatus" class="headerBtn">
         <a (click)="loginModal(loginForm)" >
-            <span>Увійти</span> </a>
+            <span class="staticSpan">Увійти</span> </a>
       </div>
       <div *ngIf="loginStatus" class="headerBtn">
         <a  [routerLink]="[ '/'+loginUrl ]" >
-          <span>{{ loginName | titlecase }}</span> </a>
+          <span class="staticSpan">{{ loginName | titlecase }}</span> </a>
+      </div>
+    </nav> 
+  </div>
+  <div class="navigationAdaptive">
+    <nav role="navigation" >
+      <div id="menuToggle">
+        <input id="checkbox" type="checkbox" (click)="openNav()"/>
+        <span class="toggleBtn"></span>
+        <span class="toggleBtn"></span>
+        <span class="toggleBtn"></span>
+        <ul id="menu"  class="menuList">
+          <li>
+            <a class="menuLink" [routerLink]="[ '/clinic']">
+              <span class="burgerSpan">Клініки</span>
+            </a>
+          </li>
+          <li>
+            <a class="menuLink" [routerLink]="[ '/reform']">
+              <span class="burgerSpan">Медична реформа</span>
+            </a>
+  
+          </li>
+          <li>
+            <a class="menuLink" [routerLink]="[ '/about']">
+              <span class="burgerSpan">Про нас</span>
+            </a>
+          </li>
+          <li>
+            <a class="menuLink" [routerLink]="[ '/contacts']">
+              <span class="burgerSpan">Контакти</span>
+            </a>
+          </li>
+          <li *ngIf="!loginStatus">
+            <a class="menuLink" (click)="loginModal(loginForm)">
+              <span class="burgerSpan">Увійти</span> </a>
+          </li>
+          <li *ngIf="loginStatus">
+            <a class="menuLink" [routerLink]="[ '/'+loginUrl ]">
+              <span class="burgerSpan" >{{ loginName | titlecase }}</span> </a>
+          </li>
+        </ul>
       </div>
     </nav>
   </div>
 </header>
 
-<ng-template #loginForm>
-    <div class="modal-body">
-      <div class="container" id="container">
-  <div class="form-container sign-up-container">
-    <form novalidate (ngSubmit)="registerUser()">
-      <h2>Створити акаунт</h2>
-      <input type="text" placeholder="Ім'я*" id="firstName" #userFirstName="ngModel"[(ngModel)]="firstName" name="firstName" required/>
-      <input type="text" placeholder="Прізвище*" id="lastName" #userLastName="ngModel" [(ngModel)]="lastName" name="lastName" required>
-      <input type="email" placeholder="Емейл*" id="userEmail" #emailUser="ngModel" [(ngModel)]="userEmail" name="userEmail" required/>
-      <input type="password" placeholder="Пароль*" id="userPassword" #passUser="ngModel" [(ngModel)]="userPassword" name="userPassword" required />
-      <button class="signIN" type="submit" [disabled]="userFirstName.invalid || userLastName.invalid || emailUser.invalid || passUser.invalid">Зареєструватися</button>
-    </form>
-  </div>
-  <div class="form-container sign-in-container">
-    <form novalidate (ngSubmit)="loginUser()">
-      <h2>Увійти</h2>
-      <input type="email" placeholder="Емейл*" id="userEmail" #emailUser="ngModel" [(ngModel)]="userEmail" name="userEmail" required />
-      <input type="password" placeholder="Пароль*" id="userPassword" #passUser="ngModel" [(ngModel)]="userPassword" name="userPassword" required/>
-      <button class="signIN" [disabled]="emailUser.invalid || passUser.invalid">Увійти</button>
-    </form>
-  </div>
-  <div class="overlay-container">
-    <div class="overlay">
-      <div class="overlay-panel overlay-left">
-        <h1>З поверненням!</h1>
-        <p>Щоб підтримувати зв’язок з нами, увійдіть, ввівши свої особисті дані</p>
-        <button type="submit" class="ghost" id="signIn" (click)="signInClick()">Увійти</button>
-      </div>
-      <div class="overlay-panel overlay-right">
-        <h1>Доброго дня!</h1>
-        <p>Введіть свої особисті дані</p>
-        <button class="ghost" id="signUp" (click)="signUpClick()">Зареєструватися</button>
-      </div>
-    </div>
-  </div>
-</div>
-    </div>
-  </ng-template>
 
+<ng-template #loginForm>
+  <div class="modal-body">
+    <div class="container" id="container">
+      <div class="form-container sign-up-container">
+        <form novalidate (ngSubmit)="registerUser()" >
+          <h2>Створити акаунт</h2>
+          <input class="inputForm" type="text" placeholder="Ім'я*" id="firstName" #userFirstName="ngModel"
+            [(ngModel)]="firstName" name="firstName" required />
+          <input class="inputForm" type="text" placeholder="Прізвище*" id="lastName" #userLastName="ngModel"
+            [(ngModel)]="lastName" name="lastName" required>
+          <input class="inputForm" type="email" placeholder="Емейл*" id="userEmail" #emailUser="ngModel"
+            [(ngModel)]="userEmail" name="userEmail" required />
+          <input class="inputForm" type="password" placeholder="Пароль*" id="userPassword" #passUser="ngModel"
+            [(ngModel)]="userPassword" name="userPassword" required />
+          <button class="signIN" type="submit"
+            [disabled]="userFirstName.invalid || userLastName.invalid || emailUser.invalid || passUser.invalid">Зареєструватися</button>
+        </form>
+      </div>
+      <div class="form-container sign-in-container">
+        <form novalidate (ngSubmit)="loginUser()">
+          <h2>Увійти</h2>
+          <input class="inputForm" type="email" placeholder="Емейл*" id="userEmail" #emailUser="ngModel"
+            [(ngModel)]="userEmail" name="userEmail" required />
+          <input class="inputForm" type="password" placeholder="Пароль*" id="userPassword" #passUser="ngModel"
+            [(ngModel)]="userPassword" name="userPassword" required />
+          <button class="signIN" [disabled]="emailUser.invalid || passUser.invalid">Увійти</button>
+        </form>
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>З поверненням!</h1>
+            <p>Щоб підтримувати зв’язок з нами, увійдіть, ввівши свої особисті дані</p>
+            <button class="ghost" id="signIn" (click)="signInClick()">Увійти</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Доброго дня!</h1>
+            <p>Введіть свої особисті дані</p>
+            <button class="ghost" id="signUp" (click)="signUpClick()">Зареєструватися</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+
+
+
+    <div class="containerAdaptive">
+      <div class="form-container sign-up-container-adaptive" *ngIf="switch">
+        <form novalidate (ngSubmit)="registerUser()" >
+          <h2>Створити акаунт</h2>
+          <input class="inputForm" type="text" placeholder="Ім'я*" id="firstName" #userFirstName="ngModel"
+            [(ngModel)]="firstName" name="firstName" required />
+          <input class="inputForm" type="text" placeholder="Прізвище*" id="lastName" #userLastName="ngModel"
+            [(ngModel)]="lastName" name="lastName" required>
+          <input class="inputForm" type="email" placeholder="Емейл*" id="userEmail" #emailUser="ngModel"
+            [(ngModel)]="userEmail" name="userEmail" required />
+          <input class="inputForm" type="password" placeholder="Пароль*" id="userPassword" #passUser="ngModel"
+            [(ngModel)]="userPassword" name="userPassword" required />
+          <button class="signIN" type="submit"
+            [disabled]="userFirstName.invalid || userLastName.invalid || emailUser.invalid || passUser.invalid">Зареєструватися</button>
+        </form>
+        <div class="adaptiveStyle">
+          <button type="button" class="adaptiveBtn" (click)="switchForm()">Увійти</button>
+        </div>
+      </div>
+      <div class="form-container sign-in-container-adaptive" *ngIf="!switch">
+        <form novalidate (ngSubmit)="loginUser()">
+          <h2>Увійти</h2>
+          <input class="inputForm" type="email" placeholder="Емейл*" id="userEmail" #emailUser="ngModel"
+            [(ngModel)]="userEmail" name="userEmail" required />
+          <input class="inputForm" type="password" placeholder="Пароль*" id="userPassword" #passUser="ngModel"
+            [(ngModel)]="userPassword" name="userPassword" required />
+          <button class="signIN" [disabled]="emailUser.invalid || passUser.invalid">Увійти</button>
+        </form>
+       <div class="adaptiveStyle">
+        <button type="button" class="adaptiveBtn" (click)="switchForm()">Зареєструватися</button>
+       </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

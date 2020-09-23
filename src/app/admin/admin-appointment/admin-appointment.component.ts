@@ -33,7 +33,6 @@ export class AdminAppointmentComponent implements OnInit {
   openDetailsModal(template: TemplateRef<any>, appointment: IAppointment): void {
     this.modalRef = this.modalService.show(template, { class: 'modal-lg' });
     this.app = appointment;
-    console.log(this.app)
   }
   updateStatus(){
     const appUpdate = new Appointment(this.app.id,
