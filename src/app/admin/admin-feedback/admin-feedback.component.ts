@@ -32,7 +32,6 @@ export class AdminFeedbackComponent implements OnInit {
   openDetailsModal(template: TemplateRef<any>, fb: IFeedback): void {
     this.modalRef = this.modalService.show(template, { class: 'modal-lg' });
     this.feedback = fb;
-    console.log(this.feedback);
   }
 
   updateStatus(): void{
