@@ -1,7 +1,7 @@
 
 <div class="card mt-2">
     <div class="card-header bg-transparent">
-        <div class="pt-2">Appointment</div>
+        <div class="pt-2">Записи</div>
     </div>
     <div class="card-body bg-transparent">
         <table class="table  table-bordered">
@@ -54,7 +54,7 @@
                 <tr>
                     <th scope="row">Змінити cтатус запису</th>
                     <td>
-                        <select name="appStatus" [(ngModel)]="appStatus" (change)= updateStatus() class="custom-select custom-select-sm">
+                        <select name="appStatus" [(ngModel)]="appStatus" (change)="updateStatus()" class="custom-select custom-select-sm">
                             <option selected disabled hidden [ngValue]="undefined">змінити статус...</option>
                             <option value="новий">новий</option>
                             <option value="в очікуванні">в очікуванні</option>

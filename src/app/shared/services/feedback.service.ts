@@ -20,7 +20,7 @@ export class FeedbackService {
     return this.http.get<Array<IFeedback>>(this.url);
   }
 
-  updateAppointment(fb: IFeedback): Observable<IFeedback>{
+  updateFeedback(fb: IFeedback): Observable<IFeedback>{
     return this.http.put<IFeedback>(`${this.url}/${fb.id}`, fb)
   }
 }

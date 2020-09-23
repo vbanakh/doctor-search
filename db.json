@@ -818,6 +818,7 @@
       "id": 1
     },
     {
+      "id": 2,
       "firstName": "Petro",
       "lastName": "Petriv",
       "email": "pp@gmail.com",
@@ -858,20 +859,19 @@
         "photo": "https://firebasestorage.googleapis.com/v0/b/doctorsearch-b3561.appspot.com/o/images%2Fdoc-5.jpeg?alt=media&token=376058d1-4579-4239-a31e-efe89ba5577d"
       },
       "dateApp": "2020-09-19T18:38:49.928Z",
-      "status": "новий",
-      "id": 2
+      "status": "виконано"
     }
   ],
   "feedbacks": [
     {
+      "id": 1,
       "nameUA": "Петро Петрів",
       "email": "pp@gmail.com",
       "phone": "0938887766",
       "theme": " спроба 1",
       "message": "текст",
       "dateFB": "2020-09-22T23:06:10.291Z",
-      "status": "нове",
-      "id": 1
+      "status": "новий"
     }
   ]
 }

@@ -1,6 +1,6 @@
 <div class="card mt-2">
     <div class="card-header bg-transparent">
-        <div class="pt-2">Appointment</div>
+        <div class="pt-2">Звернення</div>
     </div>
     <div class="card-body bg-transparent">
         <table class="table  table-bordered">
@@ -16,7 +16,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let fb of adminFeedback">
+                <tr *ngFor="let fb of adminFeedback | sortDate">
                     <td>{{ fb.id }}</td>
                     <td>{{ fb.nameUA}}</td>
                     <td>{{ fb.phone }}</td>
@@ -24,10 +24,79 @@
                     <td>{{ fb.dateFB | date: 'dd.MM.yyyy, HH:mm' }}</td>
                     <td>{{ fb.status }}</td>
                     <td>
-                        <input type="button" value="details" class="btn btn-info" >
+                        <input type="button" value="details" class="btn btn-info" (click)="openDetailsModal(detailsForm, fb)">
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
+
+
+<ng-template #detailsForm>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Звернення № {{ feedback.id}}</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <table class="table table-borderless table-light table-sm">
+            <tbody>
+                <tr>
+                    <th scope="row">Номер звернення</th>
+                    <td>{{feedback.id}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Статус звернення</th>
+                    <td>{{ feedback.status}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Змінити cтатус звернення</th>
+                    <td>
+                        <select name="fbStatus" [(ngModel)]="fbStatus" (change)="updateStatus()" class="custom-select custom-select-sm">
+                            <option selected disabled hidden [ngValue]="undefined">змінити статус...</option>
+                            <option value="новий">нове</option>
+                            <option value="в очікуванні">в очікуванні</option>
+                            <option value="виконано">оброблене</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Автор звернення</th>
+                    <td>{{ feedback.nameUA | titlecase  }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Телефон</th>
+                    <td>{{ feedback.phone  }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Емейл</th>
+                    <td>{{  feedback.email  }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <table class="table  table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Тема</th>
+                    <th scope="col">Текст звернення</th>
+                    <th scope="col">Дата</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ feedback.theme }}</td>
+                    <td>{{ feedback.message }}</td>
+                    <td>{{ feedback.dateFB | date: 'dd.MM.yyyy, HH:mm'}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-dark" type="button" (click)="modalRef.hide()">Close</button>
+        <button  class="btn btn-success" type="button" (click)="confirmFB()">Confirm</button>
+    </div>
+</ng-template>
