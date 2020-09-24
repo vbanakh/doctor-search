@@ -1,6 +1,6 @@
-$btnBoxColor: linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
-$btnColorHover: #4281df;
-$mainFont: "Montserrat-Regular";
+@import '../../../mixins';
+@import '../../../variables';
+
 
 .text-center {
     width: 100%;
@@ -38,10 +38,34 @@ $mainFont: "Montserrat-Regular";
     -ms-flex-pack: center;
     -webkit-box-pack: center;
     justify-content: center;
+    @media screen and (max-width: 1069px) and (min-width: 768px){
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
-.wrapperImg, .feedbackForm{
+}
+.wrapperImg{
     width: 50%;
     padding: 0 20px 0 calc(8.33333% + 20px);
+    @media screen and (max-width: 1069px) and (min-width: 768px){
+        width: 50%;
+        padding: 0 20px;
+        margin-bottom: 20px;
+    }
+    @media screen and (max-width: 767px){
+        display: none;
+    }
+}
+.feedbackForm{
+    width: 50%;
+    padding: 0 20px 0 calc(8.33333% + 20px);
+    @media screen and (max-width: 1069px) and (min-width: 768px){
+        width: 100%;
+        padding: 0 20px;
+    }
+    @media screen and (max-width: 767px){
+        width: 100%;
+        padding: 0 20px;
+    }
 }
 .formContainer{
     position: relative;
@@ -89,6 +113,11 @@ $mainFont: "Montserrat-Regular";
     display: inline-block;
     width: calc(50% - 10px);
     vertical-align: top;
+    @media screen and (max-width: 767px){
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+    }
 }
 
 button, input, optgroup, select, textarea {
@@ -182,6 +211,11 @@ button, input, optgroup, select, textarea {
 .pageContactsContent{
     width: 900px;
     margin: 50px auto;
+    @media screen and (max-width: 991px){
+        width: 100%;
+        padding-right: 25px;
+        padding-left: 25px;
+    }
 }
 .phoneContainer{
     display: -ms-flexbox;
@@ -226,12 +260,21 @@ button, input, optgroup, select, textarea {
     flex-flow: column wrap;
     height: 110px;
     justify-content: center;
-}
-@media screen and (min-width: 970px){
-    .phones__list{
+    @media screen and (min-width: 992px){
         padding: 15px 230px 5px;
     }
+    @media screen and (max-width: 991px) and (min-width: 768px){
+        padding: 15px 100px 5px;
+    }
+    @media screen and (max-width: 767px) and (min-width: 440px){
+        padding: 15px 30px 5px;
+    }
+    @media screen and (max-width: 439px){
+        height: 200px;
+    } 
 }
+
+
 .phones__item {
     display: flex;
     flex-direction: row;
@@ -245,9 +288,11 @@ button, input, optgroup, select, textarea {
     font-size: 16px;
     white-space: nowrap;
     @media screen and (min-width: 600px){
-    width: 50%;
-   
-}
+        width: 50%; 
+    }
+    @media screen and (max-width: 439px){
+        width: 100%;
+    } 
 }
 
 .phoneIcon{
@@ -255,4 +300,7 @@ font-size: 16px;
 margin-right: 20px;
 line-height: 30px;
 vertical-align: middle;
+@media screen and (max-width: 768px){
+    margin-right: 10px;
+}
 }
