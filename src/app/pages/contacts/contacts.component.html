@@ -18,7 +18,7 @@
                                             <div class="box">Ваше ім'я та прізвище</div>
                                             <div class="inputBox">
                                                 <input type="text" class="input" id="customerName" name="customerName"
-                                                    placeholder="Вкажіть ваше ім'я та прізвище" [(ngModel)]="customerName">
+                                                    placeholder="Вкажіть ваше ім'я та прізвище" #nameCustomer="ngModel" [(ngModel)]="customerName" required> 
                                             </div>
                                         </div>
                                     </div>
@@ -29,7 +29,7 @@
                                                     Електронна пошта</div>
                                                 <div class="inputBox">
                                                     <input type="email" class="input" id="customerEmail"
-                                                        name="customerEmail" placeholder="Вкажіть ваш Email" [(ngModel)]="customerEmail">
+                                                        name="customerEmail" placeholder="Вкажіть ваш Email" [(ngModel)]="customerEmail" required #emailCustomer="ngModel">
                                                 </div>
                                             </div>
                                         </div>
@@ -38,8 +38,8 @@
                                                 <div class="box">
                                                     Ваш телефон</div>
                                                 <div class="inputBox">
-                                                    <input type="tel" class="input" id="customerPhone" required
-                                                        name="customerPhone" autocomplete="off" [(ngModel)]="customerPhone">
+                                                    <input type="tel" class="input" id="customerPhone"
+                                                        name="customerPhone" autocomplete="off" [(ngModel)]="customerPhone" required #phoneCustomer="ngModel">
                                                 </div>
                                             </div>
                                         </div>
@@ -50,7 +50,7 @@
                                             </div>
                                             <div class="inputBox">
                                                 <input type="text" class="input" id="summary" name="summary"
-                                                    placeholder="Вкажіть тему звернення" [(ngModel)]="summary">
+                                                    placeholder="Вкажіть тему звернення" [(ngModel)]="summary" required #themeCustomer="ngModel">
                                             </div>
                                         </div>
                                     </div>
@@ -61,14 +61,14 @@
                                             <div>
                                                 <textarea class="textareaText" id="description" name="description" [(ngModel)]="description"
                                                     placeholder="Текст Вашого звернення"
-                                                    style="height: 162px;"></textarea>
+                                                    style="height: 162px;" required #messageCustomer="ngModel"></textarea>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="allFields">* Всі поля, позначені зірочкою,
                                         обов’язкові до заповнення.</div>
                                     <div class="buttonDoc">
-                                        <button type="submit" class="docButton">НАДІСЛАТИ</button>
+                                        <button type="submit" class="docButton" [disabled]="nameCustomer.invalid || emailCustomer.invalid || phoneCustomer.invalid || themeCustomer.invalid || messageCustomer.invalid" >НАДІСЛАТИ</button>
                                     </div>
                                 </div>
                             </form>
