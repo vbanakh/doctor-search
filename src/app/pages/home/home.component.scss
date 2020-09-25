@@ -61,8 +61,15 @@
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
-    @media screen and (max-width: 768px){
-      display: block;
+    // @media screen and (max-width: 768px){
+    //   display: block;
+      @media screen and (max-width: 768px) {
+        display: block;
+        min-height: 440px;
+        padding-bottom: 15px;
+    // background-position: 50%;
+    // background-size: cover;
+// }
     }
     @media screen and (max-width: 414px){
       top: -20px;
