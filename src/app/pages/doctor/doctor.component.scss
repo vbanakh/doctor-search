@@ -20,6 +20,15 @@ $btnColorHover: #4281df;
     @media screen and (max-width: 768px){ 
         height: 1540px;
     }
+    @media screen and (max-width: 540px){ 
+        height: 2450px;
+    }
+    @media screen and (max-width: 375px){
+        height: 2355px;
+    }
+    @media screen and (max-width: 320px){
+        height: 2125px;
+    }
 }
 .container{
     width: 100vw;
@@ -47,7 +56,7 @@ $btnColorHover: #4281df;
     @media screen and (max-width: 512px){
         margin-top: 235px;
     }
-    @media screen and (max-width: 414px){
+    @media screen and (max-width: 500px){
         margin-top: 290px;
     }
     @media screen and (max-width: 375px){
@@ -82,10 +91,19 @@ $btnColorHover: #4281df;
         min-height: 250px;
         max-height: 300px;
     }
+    @media screen and (max-width: 320px){
+        min-width: 250px;
+        max-width: 260px;
+        min-height: 250px;
+        max-height: 250px;
+    }
 }
 .card-doctor:hover{
     transform:scale(1.1);
-    transition: 0.2s;  
+    transition: 0.2s;
+    @media screen and (max-width: 375px){
+        transform: none;
+    }  
 }
 .up{
     display: flex;
@@ -111,9 +129,15 @@ $btnColorHover: #4281df;
     @media screen and (max-width: 990px){ 
         margin-top: 0px;
     }
+    @media screen and (max-width: 320px){
+        font-size: 10px;
+    }
 }
 .address{
     font-size: 11px;  
+    @media screen and (max-width: 320px){
+        font-size: 10px;
+    }
 }
 .clinicLocation{
     display: flex;
@@ -139,6 +163,10 @@ $btnColorHover: #4281df;
     @media screen and (max-width: 990px){ 
         height: 120px;
         width: 120px;
+    }
+    @media screen and (max-width: 320px){
+        height: 100px;
+        width: 100px;
     }
     .docImage{
         position: absolute;
@@ -255,6 +283,9 @@ a{
     @media screen and (max-width: 990px){ 
         margin: 15px 2px;
     }
+    @media screen and (max-width: 990px){ 
+        margin: 15px 0;
+    }
 }
 .nameDoctor{
     font-size: 16px;
@@ -266,6 +297,9 @@ a{
     @media screen and (max-width: 990px){ 
         font-size: 14px;
     }
+    @media screen and (max-width: 320px){ 
+        font-size: 12px;
+    } 
 }
 
 .icon {
@@ -304,5 +338,8 @@ a{
     height: 100%;
     display: flex;
     justify-content: flex-end;
-    background-color: #fafbfb;;
+    background-color: #fafbfb;
+    @media screen and (max-width: 375px){ 
+        font-size: 10px;
+    }
 }

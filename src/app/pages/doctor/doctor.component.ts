@@ -52,7 +52,6 @@ export class DoctorComponent implements OnInit {
     this.fromParent = word;
     const param = this.actRoute.snapshot.paramMap.get('param');
     this.fromParentParam = param;
-    console.log(this.fromParentParam);
   }
 
 }
