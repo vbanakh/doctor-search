@@ -45,8 +45,8 @@
                                 <fa-icon [icon]="iconSearch"></fa-icon><span class="ml-3 btnSrc">знайти лікаря</span>  
                             </button>
                         </div>
-                        <ng-template #itemTemplate let-item>
-                            <a [innerHTML]="item" [style.z-index]="5"></a>
+                        <ng-template #itemTemplate let-item >
+                            <a [innerHTML]="item"></a>
                         </ng-template>
                         <ng-template #notFoundTemplate let-notFound>
                             <div [innerHTML]="notFound"></div>
