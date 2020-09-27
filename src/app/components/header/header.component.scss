@@ -276,16 +276,12 @@ form {
 	left: 0;
 	width: 50%;
   z-index: 2;
-  // @media screen and (max-width: 991px){
-  //   width: 100%;
-  // }
 }
 
 .sign-in-container-adaptive, .sign-up-container-adaptive {
 	left: 0;
 	width: 100%;
   z-index: 2;
-  // opacity: 1;
 }
 
 .container.right-panel-active .sign-in-container {
@@ -505,8 +501,8 @@ form {
   text-decoration: none;
   color: #f1f1f1;
   transition: color 0.3s ease;
-
  }
+ 
  .menuLink .burgerSpan{
   text-decoration: none;
   color: #f1f1f1;
@@ -540,3 +536,6 @@ form {
       width: 100%; 
   }
  }
+.closeMenu{
+  width: 0%;
+}

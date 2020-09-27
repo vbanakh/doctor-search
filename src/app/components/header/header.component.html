@@ -44,38 +44,38 @@
   <div class="navigationAdaptive">
     <nav role="navigation" >
       <div id="menuToggle">
-        <input id="checkbox" type="checkbox" (click)="openNav()"/>
+        <input id="checkbox" type="checkbox" (click)="openNav()" [checked]="isChecked"/>
         <span class="toggleBtn"></span>
         <span class="toggleBtn"></span>
         <span class="toggleBtn"></span>
         <ul id="menu"  class="menuList">
           <li>
-            <a class="menuLink" [routerLink]="[ '/clinic']">
+            <a class="menuLink" [routerLink]="[ '/clinic']" (click)="closeNav()">
               <span class="burgerSpan">Клініки</span>
             </a>
           </li>
           <li>
-            <a class="menuLink" [routerLink]="[ '/reform']">
+            <a class="menuLink" [routerLink]="[ '/reform']" (click)="closeNav()">
               <span class="burgerSpan">Медична реформа</span>
             </a>
   
           </li>
           <li>
-            <a class="menuLink" [routerLink]="[ '/about']">
+            <a class="menuLink" [routerLink]="[ '/about']" (click)="closeNav()">
               <span class="burgerSpan">Про нас</span>
             </a>
           </li>
           <li>
-            <a class="menuLink" [routerLink]="[ '/contacts']">
+            <a class="menuLink" [routerLink]="[ '/contacts']" (click)="closeNav()">
               <span class="burgerSpan">Контакти</span>
             </a>
           </li>
           <li *ngIf="!loginStatus">
-            <a class="menuLink" (click)="loginModal(loginForm)">
+            <a class="menuLink" (click)="loginModal(loginForm)" (click)="closeNav()">
               <span class="burgerSpan">Увійти</span> </a>
           </li>
           <li *ngIf="loginStatus">
-            <a class="menuLink" [routerLink]="[ '/'+loginUrl ]">
+            <a class="menuLink" [routerLink]="[ '/'+loginUrl ]" (click)="closeNav()">
               <span class="burgerSpan" >{{ loginName | titlecase }}</span> </a>
           </li>
         </ul>
