@@ -1,8 +1,6 @@
-$mainFont: "Montserrat-Regular";
-$navHover :#FFD54F;
-$verticalnavlinkcolor :#ffff;
-$verticalnavlinkcolor-hover :#ffff;;
 
+@import '../../../mixins';
+@import '../../../variables';
 .aside {
   vertical-align: top;
   display: flex;
@@ -45,16 +43,23 @@ li:last-child a{
         opacity: .7;
         position: relative;
         z-index: 1;
+        @media (max-width: 1024px){
+          height: 10vh;
+      }
         .imageProfile{
-            height: 200px;
-            width: 200px;
+            height: 150px;
+            width: 150px;
             border-radius: 50%;
             position: absolute;
-            top: 20%;
-            left:2%;
+            top: 40%;
+            left: 4%;
             background-color: snow;
             opacity: 1;
             z-index: 2;
+            @media screen and (max-width: 600px){ 
+              top: 15%;
+          }
+
         }
         .dataUser{
            height: 100px;
@@ -67,6 +72,21 @@ li:last-child a{
             display: flex;
             flex-direction: column;
             padding-left: 10px;
+            @media screen and (max-width: 1200px){
+              height: 70px;
+              top: 90%;
+              left: 20%;
+          } 
+          @media screen and (max-width: 768px){ 
+            left: 25%;
+          }
+          @media screen and (max-width: 600px){ 
+            left: 35%;
+          }
+          @media screen and (max-width: 414px){ 
+            left: 45%;
+            width: 200px;
+          }
         }
     }
 }
@@ -79,6 +99,9 @@ li:last-child a{
   display: flex;
   justify-content: start;
   align-items: center;
+  @media screen and (max-width: 600px){ 
+    font-size: 22px; 
+}
 }
 .userEmail{
   height:30px;
@@ -90,15 +113,40 @@ li:last-child a{
     z-index: 1;
     display: flex;
     justify-content: center;
+    @media screen and (max-width: 375px){ 
+      height: 15vh;
+  }
 }
 .profileData{
     height: 100vh;
     width:80vw;
+    @media (max-width: 1024px){
+      height: 65vh;
+    }
+    @media (max-width: 768px){
+      height: 85vh;
+    }
+    @media screen and (max-width: 600px){ 
+      width:540px;
+      height: 900px;
+    }
+    @media screen and (max-width: 414px){ 
+      // width:400px;
+      width:100vw;
+      height: 900px;
+    }
+    @media screen and (max-width: 375px){ 
+        width:300px;
+        height: 900px;
+      }
 }
+
 .rowAlign{
     display: flex;
     flex-direction: row;
-    @media screen and (max-width: 990px){ 
-      min-height: 100px;
-  }
+    width: 100vw;
+    @media (max-width: 600px){
+      flex-direction: column;
+    }
 }
+

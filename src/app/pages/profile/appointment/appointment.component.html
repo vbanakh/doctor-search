@@ -1,7 +1,7 @@
 
     <article class="container">
         <div class="card-grid">
-            <div class="card-doctor" *ngFor="let app of appointment">
+            <div class="card-doctor" *ngFor="let app of appointment | paginate: { itemsPerPage: 2, currentPage: p }">
                 <div class="docInfo">
                     <div class="up">
                         <div class="photoDoctor">
@@ -35,6 +35,21 @@
                             </div>
                         </div>
                     </div>
+                    <div class="downResponsive">
+                        <div class="clinic">
+                            <div class="clinicImage">
+                                <img src="assets/images/lacation-logo.png" alt="" style="height: 25px; width: 25px;">
+                            </div>
+                            <dic class="clinicLocation">
+                                <div class="clinicName">
+                                    {{ app.doctorApp.clinic.nameUA }}
+                                </div>
+                                <div class="address">
+                                    <div> {{ app.doctorApp.clinic.address }}, каб.{{ app.doctorApp.office }}</div>
+                                </div>
+                            </dic> 
+                        </div>
+                    </div>
                     <div class="appTimeStatus">
                         <div class="appInfo">
                             <span>Дата візиту</span>
@@ -56,3 +71,9 @@
             </div>
         </div>
     </article>
+    <article class="pagContainer">
+        <div class="pag">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </article>
+   

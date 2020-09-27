@@ -11,6 +11,7 @@ import { IAppointment } from '../../../shared/interfaces/ appointment.interface'
 export class AppointmentComponent implements OnInit {
   appointment: Array<IAppointment>= [];
   email: string;
+  p: number = 1;
   constructor( private appService: AppointmentService,
     private actRoute: ActivatedRoute) { }
 
