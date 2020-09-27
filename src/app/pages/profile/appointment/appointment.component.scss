@@ -1,14 +1,27 @@
-$mainFont: "Montserrat-Regular";
-$btnBoxColor: linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
-$btnColorHover: #4281df;
-
+@import '../../../../mixins';
+@import '../../../../variables';
 
 .container{
     width: 100%;
-    min-height: 100%;
+    height: 100%;
     display: flex;  
     flex-direction: row;
-    justify-content: flex-start;
+    @media (max-width: 1024px){
+     width: 100%;
+     height: 800px;
+    }
+    @media (max-width: 600px){
+        height: 1000px;
+        flex-direction: column;
+    }
+    @media (max-width: 414px){
+        height: 800px;
+        flex-direction: column;
+    }
+    @media (max-width: 375px){
+        height: 800px;
+        flex-direction: column;
+    }
     .card-grid {
         height: 100vh;
         display: -ms-flexbox;
@@ -22,13 +35,28 @@ $btnColorHover: #4281df;
         flex-wrap: wrap;
         padding: 5px 0;
         justify-content: flex-start;
+        @media screen and (max-width: 1205px){
+            -ms-flex-pack: start;
+            -webkit-box-pack: start;
+            justify-content: flex-start;   
+        }
+        @media (max-width: 1024px){
+            flex-direction: column;
+        }
+        @media (max-width: 600px){
+            flex-direction: column;
+        }
+        @media (max-width: 375px){
+            height: auto;
+            flex-direction: column;
+        }
     }
 }
 .card-doctor{
     display: flex;
     width: calc(30% - 15px);
     min-width: 450px;
-    max-width: 4800px;
+    max-width: 480px;
     min-height: 350px;
     max-height: 380px;
     -webkit-box-orient: vertical;
@@ -40,6 +68,24 @@ $btnColorHover: #4281df;
     background-color: rgb(250, 251, 251);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px 0px;
     transition: box-shadow 0.1s linear 0s;
+    @media screen and (max-width: 1200px){ 
+        min-width: 350px;
+        max-width: 380px;
+        min-height: 300px;
+        max-height: 340px;
+    }
+    @media screen and (max-width: 990px){ 
+        min-width: 300px;
+        max-width: 340px;
+        min-height: 300px;
+        max-height: 340px;
+    }
+    @media screen and (max-width: 320px){
+        min-width: 260px;
+        max-width: 280px;
+        min-height: 300px;
+        max-height: 340px;
+    }
     .docInfo{
         display: flex;
         flex-direction: column;
@@ -49,6 +95,9 @@ $btnColorHover: #4281df;
 .card-doctor:hover{
     transform:scale(1.1);
     transition: 0.2s;  
+    @media screen and (max-width: 375px){
+        transform: none;
+    } 
 }
 .up{
     display: flex;
@@ -60,7 +109,19 @@ $btnColorHover: #4281df;
     width: inherit;
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: 1200px){ 
+        display: none;
+    }
 }
+.downResponsive{
+    @media screen and (max-width: 1200px){ 
+        display: block;
+    }
+    @media screen and (min-width: 1200px){ 
+        display: none;
+    }
+}
+
 .clinic{
     font-size: 12px; 
     height: 100%;
@@ -68,6 +129,9 @@ $btnColorHover: #4281df;
     flex-direction: row;
     margin-top: 15px;
     width: inherit;
+    @media (max-width: 1200px){
+        margin-top: 5px;
+    }
 }
 .address{
     font-size: 10px;  
@@ -79,6 +143,9 @@ $btnColorHover: #4281df;
     padding: 0 5px;
     overflow: hidden;
     text-align: start;
+    @media (max-width: 375px){
+        padding: 0 20px;
+    }
 }
 .photoDoctor{
     height: 150px;
@@ -111,13 +178,7 @@ $btnColorHover: #4281df;
     margin-right: -5px;
     margin-left: -5px;
 }
-@media screen and (max-width: 1205px){
-    .card-grid {
-        -ms-flex-pack: start;
-        -webkit-box-pack: start;
-        justify-content: flex-start;
-    }
-}
+
 
 .doctor-card__wrapper {
     -ms-flex: 1 1 auto;
@@ -170,14 +231,24 @@ $btnColorHover: #4281df;
 }
 .doctorInfo{
     margin: 15px;
+    @media (max-width: 375px){
+        margin: 15px 5px 5px 0px;
+    }
+
 }
 .nameDoctor{
     font-size: 16px;
     font-family: "Montserrat-extra-bold";
+    @media (max-width: 375px){
+        font-size: 12px;
+    }
 }
 .speciality{
     font-size: 14px;
     text-align: center; 
+    @media (max-width: 375px){
+        font-size: 10px;
+    }
 }
 
 .clinicImage {
@@ -193,15 +264,26 @@ $btnColorHover: #4281df;
     align-items: center;
     flex-shrink: 0;
     color: #67C3F3;
-    @media (min-width: 1024px){
+    @media (min-width: 1201px){
         width: 48px;
         height: 48px;
         margin-right: 1.5rem; 
         .icon {
             height: 1.5rem;
             width: 1.5rem;
-        }
-        
+        } 
+    }
+    @media (max-width: 1200px){
+        width: 40px;
+        height: 40px;
+        margin-right: .5rem; 
+        .icon {
+            height: 1.5rem;
+            width: 1.5rem;
+        } 
+    }
+    @media (max-width: 375px){
+       display: none;
     }
 }
 
@@ -217,4 +299,27 @@ $btnColorHover: #4281df;
 .appTimeStatus{
     display: flex;
     flex-direction: row;
+    @media (max-width: 1200px){
+        font-size: 12px;
+        margin-top: 10px;
+    }
+    @media (max-width: 768px){
+        font-size: 10px;
+    }
 }
+
+.pag{
+    width: 70vw;
+    // margin-top: 10vh;
+    display: flex;
+    justify-content: flex-end;
+    @media screen and (max-width: 768px){ 
+        width: 60vw;
+    }
+    @media screen and (max-width: 375px){ 
+      font-size: 10px;
+  }
+  }
+  .pagContainer{
+      height: 70px;
+  }

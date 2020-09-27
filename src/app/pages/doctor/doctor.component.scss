@@ -10,7 +10,25 @@ $btnColorHover: #4281df;
     background-color: #fafbfb;
     @media screen and (max-width: 1200px){
         height: 220vh;
-      }
+    }
+    @media screen and (max-width: 1024px){
+    height: 118vh;
+}
+    @media screen and (max-width: 990px){ 
+        height: 1300px;
+    }
+    @media screen and (max-width: 768px){ 
+        height: 1540px;
+    }
+    @media screen and (max-width: 540px){ 
+        height: 2450px;
+    }
+    @media screen and (max-width: 375px){
+        height: 2355px;
+    }
+    @media screen and (max-width: 320px){
+        height: 2125px;
+    }
 }
 .container{
     width: 100vw;
@@ -19,6 +37,31 @@ $btnColorHover: #4281df;
     display: flex;  
     flex-direction: row;
     justify-content: center;
+    @media screen and (max-width: 1205px){
+        margin-top: 320px
+    }
+    @media screen and (max-width: 1024px){
+        margin-top: 250px;
+      }
+    @media screen and (max-width: 970px){
+        margin-top: 35%;
+      }
+    @media screen and (max-width: 768px){
+        margin-top: 460px
+        // margin-top: 335px;
+    }
+    @media screen and (max-width: 540px){
+        margin-top: 360px;
+    }
+    @media screen and (max-width: 512px){
+        margin-top: 235px;
+    }
+    @media screen and (max-width: 500px){
+        margin-top: 290px;
+    }
+    @media screen and (max-width: 375px){
+        margin-top: 275px;
+    }
 }
 
 .docInfo{
@@ -40,13 +83,27 @@ $btnColorHover: #4281df;
     justify-content: space-between;
     margin: 25px 15px;
     background-color: #fff;
-    // background-color: rgb(250, 251, 251);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px 0px;
     transition: box-shadow 0.1s linear 0s;
+    @media screen and (max-width: 990px){ 
+        min-width: 300px;
+        max-width: 340px;
+        min-height: 250px;
+        max-height: 300px;
+    }
+    @media screen and (max-width: 320px){
+        min-width: 250px;
+        max-width: 260px;
+        min-height: 250px;
+        max-height: 250px;
+    }
 }
 .card-doctor:hover{
     transform:scale(1.1);
-    transition: 0.2s;  
+    transition: 0.2s;
+    @media screen and (max-width: 375px){
+        transform: none;
+    }  
 }
 .up{
     display: flex;
@@ -58,6 +115,9 @@ $btnColorHover: #4281df;
     width: inherit;
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: 990px){ 
+        min-height: 100px;
+    }
 }
 .clinic{
     font-size: 12px; 
@@ -66,9 +126,18 @@ $btnColorHover: #4281df;
     flex-direction: row;
     margin-top: 15px;
     width: inherit;
+    @media screen and (max-width: 990px){ 
+        margin-top: 0px;
+    }
+    @media screen and (max-width: 320px){
+        font-size: 10px;
+    }
 }
 .address{
-    font-size: 10px;  
+    font-size: 11px;  
+    @media screen and (max-width: 320px){
+        font-size: 10px;
+    }
 }
 .clinicLocation{
     display: flex;
@@ -91,6 +160,14 @@ $btnColorHover: #4281df;
     border: 1px solid #fafbfb;
     margin: 15px;
     z-index: 1;
+    @media screen and (max-width: 990px){ 
+        height: 120px;
+        width: 120px;
+    }
+    @media screen and (max-width: 320px){
+        height: 100px;
+        width: 100px;
+    }
     .docImage{
         position: absolute;
         left: 0;
@@ -118,21 +195,14 @@ $btnColorHover: #4281df;
     flex-wrap: wrap;
     padding: 15px 0;
     justify-content: flex-start;
-
+    @media screen and (max-width: 1205px) {
+        justify-content: center;
+    }
 }
 .card:not(.card-grid_column) {
     margin-right: -5px;
     margin-left: -5px;
 }
-@media screen and (max-width: 1205px){
-    .card-grid {
-        -ms-flex-pack: start;
-        -webkit-box-pack: start;
-        justify-content: flex-start;
-    }
-}
-
-
 
 ::selection {
     background: #b3d4fc;
@@ -210,6 +280,12 @@ a{
 }
 .doctorInfo{
     margin: 15px;
+    @media screen and (max-width: 990px){ 
+        margin: 15px 2px;
+    }
+    @media screen and (max-width: 990px){ 
+        margin: 15px 0;
+    }
 }
 .nameDoctor{
     font-size: 16px;
@@ -218,6 +294,12 @@ a{
 .speciality{
     font-size: 14px;
     text-align: center; 
+    @media screen and (max-width: 990px){ 
+        font-size: 14px;
+    }
+    @media screen and (max-width: 320px){ 
+        font-size: 12px;
+    } 
 }
 
 .icon {
@@ -254,8 +336,10 @@ a{
 .pag{
     width: 100vw;
     height: 100%;
-    // margin-top: 10px;
     display: flex;
     justify-content: flex-end;
-    background-color: #fafbfb;;
+    background-color: #fafbfb;
+    @media screen and (max-width: 375px){ 
+        font-size: 10px;
+    }
 }
