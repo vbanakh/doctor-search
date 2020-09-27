@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   iconLocation = faMapMarkerAlt;
   modalRef: BsModalRef;
   switch: boolean;
-
+  isChecked: boolean;
   userEmail: string;
   userPassword: string;
   firstName: string;
@@ -95,6 +95,14 @@ export class HeaderComponent implements OnInit {
 
   openNav(): void{
     document.getElementById("menu").classList.toggle('styleWidth');
+    this.isChecked = true;
+    document.getElementById("menu").classList.remove('closeMenu');
+  }
+
+  closeNav(): void{
+    document.getElementById("menu").classList.add('closeMenu');
+    document.getElementById("menu").classList.remove('styleWidth');
+    this.isChecked = false;
   }
  
 }
