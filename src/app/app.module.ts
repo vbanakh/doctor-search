@@ -50,10 +50,12 @@ import { UpButtonComponent } from './components/up-button/up-button.component';
 import { AppointmentComponent } from './pages/profile/appointment/appointment.component';
 import { SearchComponent } from './components/search/search.component';
 import { ClinicDoctorsComponent } from './pages/clinic-doctors/clinic-doctors.component';
-import {AutocompleteLibModule} from 'angular-ng-autocomplete';
-import {NgxPaginationModule} from 'ngx-pagination';
 import { UserComponent } from './pages/profile/user/user.component';
 import { AdminFeedbackComponent } from './admin/admin-feedback/admin-feedback.component';
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from 'ngx-ui-loader';
+import { loaderConfig } from './preloader-config';
 
 
 
@@ -107,7 +109,9 @@ import { AdminFeedbackComponent } from './admin/admin-feedback/admin-feedback.co
     AngularFireStorageModule,
     TimepickerModule.forRoot(),
     NgxPaginationModule,
-    AutocompleteLibModule
+    AutocompleteLibModule,
+    NgxUiLoaderModule.forRoot(loaderConfig),
+    NgxUiLoaderRouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
