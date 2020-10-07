@@ -32,23 +32,23 @@
         </li>
       </ul>
       <div *ngIf="!loginStatus" class="headerBtn">
-        <a (click)="loginModal(loginForm)" >
-            <span class="staticSpan">Увійти</span> </a>
+        <a (click)="loginModal(loginForm)">
+          <span class="staticSpan">Увійти</span> </a>
       </div>
       <div *ngIf="loginStatus" class="headerBtn">
-        <a  [routerLink]="[ '/'+loginUrl ]" >
+        <a [routerLink]="[ '/'+loginUrl ]">
           <span class="staticSpan">{{ loginName | titlecase }}</span> </a>
       </div>
-    </nav> 
+    </nav>
   </div>
   <div class="navigationAdaptive">
-    <nav role="navigation" >
+    <nav role="navigation">
       <div id="menuToggle">
-        <input id="checkbox" type="checkbox" (click)="openNav()" [checked]="isChecked"/>
+        <input id="checkbox" type="checkbox" (click)="openNav()" [checked]="isChecked" />
         <span class="toggleBtn"></span>
         <span class="toggleBtn"></span>
         <span class="toggleBtn"></span>
-        <ul id="menu"  class="menuList">
+        <ul id="menu" class="menuList">
           <li>
             <a class="menuLink" [routerLink]="[ '/clinic']" (click)="closeNav()">
               <span class="burgerSpan">Клініки</span>
@@ -58,7 +58,7 @@
             <a class="menuLink" [routerLink]="[ '/reform']" (click)="closeNav()">
               <span class="burgerSpan">Медична реформа</span>
             </a>
-  
+
           </li>
           <li>
             <a class="menuLink" [routerLink]="[ '/about']" (click)="closeNav()">
@@ -76,7 +76,7 @@
           </li>
           <li *ngIf="loginStatus">
             <a class="menuLink" [routerLink]="[ '/'+loginUrl ]" (click)="closeNav()">
-              <span class="burgerSpan" >{{ loginName | titlecase }}</span> </a>
+              <span class="burgerSpan">{{ loginName | titlecase }}</span> </a>
           </li>
         </ul>
       </div>
@@ -89,16 +89,52 @@
   <div class="modal-body">
     <div class="container" id="container">
       <div class="form-container sign-up-container">
-        <form novalidate (ngSubmit)="registerUser()" >
+        <form novalidate (ngSubmit)="registerUser()">
           <h2>Створити акаунт</h2>
           <input class="inputForm" type="text" placeholder="Ім'я*" id="firstName" #userFirstName="ngModel"
-            [(ngModel)]="firstName" name="firstName" required />
+            [(ngModel)]="firstName" name="firstName" required pattern="[a-zA-Z]{1,20}" />
+          <div class="text-danger" style="font-size: 12px;"
+            *ngIf="userFirstName.invalid && (userFirstName.dirty || userFirstName.touched)">
+            <div *ngIf="userFirstName.errors.required">
+              Всі поля обов'язкові до заповнення!
+            </div>
+            <div *ngIf="userFirstName.errors.pattern">
+              Не вірно введені дані
+            </div>
+          </div>
           <input class="inputForm" type="text" placeholder="Прізвище*" id="lastName" #userLastName="ngModel"
-            [(ngModel)]="lastName" name="lastName" required>
+            [(ngModel)]="lastName" name="lastName" required pattern="[a-zA-Z]{1,20}">
+          <div class="text-danger" style="font-size: 12px;"
+            *ngIf="userLastName.invalid && (userLastName.dirty || userLastName.touched)">
+            <div *ngIf="userLastName.errors.required">
+              Всі поля обов'язкові до заповнення!
+            </div>
+            <div *ngIf="userLastName.errors.pattern">
+              Не вірно введені дані
+            </div>
+          </div>
           <input class="inputForm" type="email" placeholder="Емейл*" id="userEmail" #emailUser="ngModel"
-            [(ngModel)]="userEmail" name="userEmail" required />
+            [(ngModel)]="userEmail" name="userEmail" required pattern="^[a-z0-9-.]+@[a-z]+\.((com)|(ua)|(net))$" />
+          <div class="text-danger" style="font-size: 12px;"
+            *ngIf="emailUser.invalid && (emailUser.dirty || emailUser.touched)">
+            <div *ngIf="emailUser.errors.required">
+              Всі поля обов'язкові до заповнення!
+            </div>
+            <div *ngIf="emailUser.errors.pattern">
+              Не вірно введені дані
+            </div>
+          </div>
           <input class="inputForm" type="password" placeholder="Пароль*" id="userPassword" #passUser="ngModel"
-            [(ngModel)]="userPassword" name="userPassword" required />
+            [(ngModel)]="userPassword" name="userPassword" required pattern="\w{8,15}" />
+          <div class="text-danger" style="font-size: 12px;"
+            *ngIf="passUser.invalid && (passUser.dirty || passUser.touched)">
+            <div *ngIf="passUser.errors.required">
+              Всі поля обов'язкові до заповнення!
+            </div>
+            <div *ngIf="passUser.errors.pattern">
+              Не вірно введені дані
+            </div>
+          </div>
           <button class="signIN" type="submit"
             [disabled]="userFirstName.invalid || userLastName.invalid || emailUser.invalid || passUser.invalid">Зареєструватися</button>
         </form>
@@ -106,11 +142,27 @@
       <div class="form-container sign-in-container">
         <form novalidate (ngSubmit)="loginUser()">
           <h2>Увійти</h2>
-          <input class="inputForm" type="email" placeholder="Емейл*" id="userEmail" #emailUser="ngModel"
-            [(ngModel)]="userEmail" name="userEmail" required />
-          <input class="inputForm" type="password" placeholder="Пароль*" id="userPassword" #passUser="ngModel"
-            [(ngModel)]="userPassword" name="userPassword" required />
-          <button class="signIN" [disabled]="emailUser.invalid || passUser.invalid">Увійти</button>
+          <input class="inputForm" type="email" placeholder="Емейл*" id="userEmail" #email="ngModel"
+            [(ngModel)]="userEmail" name="userEmail" required pattern="^[a-z0-9-.]+@[a-z]+\.((com)|(ua)|(net))$" />
+          <div class="text-danger" style="font-size: 12px;" *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div *ngIf="email.errors.required">
+              Всі поля обов'язкові до заповнення!
+            </div>
+            <div *ngIf="email.errors.pattern">
+              Не вірно введені дані
+            </div>
+          </div>
+          <input class="inputForm" type="password" placeholder="Пароль*" id="userPassword" #pass="ngModel"
+            [(ngModel)]="userPassword" name="userPassword" required pattern="\w{8,15}" />
+          <div class="text-danger" style="font-size: 12px;" *ngIf="pass.invalid && (pass.dirty || pass.touched)">
+            <div *ngIf="pass.errors.required">
+              Всі поля обов'язкові до заповнення!
+            </div>
+            <div *ngIf="pass.errors.pattern">
+              Не вірно введені дані
+            </div>
+          </div>
+          <button class="signIN" [disabled]="email.invalid || pass.invalid">Увійти</button>
         </form>
       </div>
       <div class="overlay-container">
@@ -128,23 +180,55 @@
         </div>
       </div>
     </div>
-    
-
-
-
 
     <div class="containerAdaptive">
       <div class="form-container sign-up-container-adaptive" *ngIf="switch">
-        <form novalidate (ngSubmit)="registerUser()" >
+        <form novalidate (ngSubmit)="registerUser()">
           <h2>Створити акаунт</h2>
           <input class="inputForm" type="text" placeholder="Ім'я*" id="firstName" #userFirstName="ngModel"
-            [(ngModel)]="firstName" name="firstName" required />
+            [(ngModel)]="firstName" name="firstName" required pattern="[a-zA-Z]{1,20}" />
+          <div class="text-danger" style="font-size: 12px;"
+            *ngIf="userFirstName.invalid && (userFirstName.dirty || userFirstName.touched)">
+            <div *ngIf="userFirstName.errors.required">
+              Всі поля обов'язкові до заповнення!
+            </div>
+            <div *ngIf="userFirstName.errors.pattern">
+              Не вірно введені дані
+            </div>
+          </div>
           <input class="inputForm" type="text" placeholder="Прізвище*" id="lastName" #userLastName="ngModel"
-            [(ngModel)]="lastName" name="lastName" required>
+            [(ngModel)]="lastName" name="lastName" required pattern="[a-zA-Z]{1,20}">
+          <div class="text-danger" style="font-size: 12px;"
+            *ngIf="userLastName.invalid && (userLastName.dirty || userLastName.touched)">
+            <div *ngIf="userLastName.errors.required">
+              Всі поля обов'язкові до заповнення!
+            </div>
+            <div *ngIf="userLastName.errors.pattern">
+              Не вірно введені дані
+            </div>
+          </div>
           <input class="inputForm" type="email" placeholder="Емейл*" id="userEmail" #emailUser="ngModel"
-            [(ngModel)]="userEmail" name="userEmail" required />
+            [(ngModel)]="userEmail" name="userEmail" required pattern="^[a-z0-9-.]+@[a-z]+\.((com)|(ua)|(net))$" />
+          <div class="text-danger" style="font-size: 12px;"
+            *ngIf="emailUser.invalid && (emailUser.dirty || emailUser.touched)">
+            <div *ngIf="emailUser.errors.required">
+              Всі поля обов'язкові до заповнення!
+            </div>
+            <div *ngIf="emailUser.errors.pattern">
+              Не вірно введені дані
+            </div>
+          </div>
           <input class="inputForm" type="password" placeholder="Пароль*" id="userPassword" #passUser="ngModel"
-            [(ngModel)]="userPassword" name="userPassword" required />
+            [(ngModel)]="userPassword" name="userPassword" required pattern="\w{8,15}" />
+          <div class="text-danger" style="font-size: 12px;"
+            *ngIf="passUser.invalid && (passUser.dirty || passUser.touched)">
+            <div *ngIf="passUser.errors.required">
+              Всі поля обов'язкові до заповнення!
+            </div>
+            <div *ngIf="passUser.errors.pattern">
+              Не вірно введені дані
+            </div>
+          </div>
           <button class="signIN" type="submit"
             [disabled]="userFirstName.invalid || userLastName.invalid || emailUser.invalid || passUser.invalid">Зареєструватися</button>
         </form>
@@ -155,15 +239,31 @@
       <div class="form-container sign-in-container-adaptive" *ngIf="!switch">
         <form novalidate (ngSubmit)="loginUser()">
           <h2>Увійти</h2>
-          <input class="inputForm" type="email" placeholder="Емейл*" id="userEmail" #emailUser="ngModel"
-            [(ngModel)]="userEmail" name="userEmail" required />
-          <input class="inputForm" type="password" placeholder="Пароль*" id="userPassword" #passUser="ngModel"
-            [(ngModel)]="userPassword" name="userPassword" required />
-          <button class="signIN" [disabled]="emailUser.invalid || passUser.invalid">Увійти</button>
+          <input class="inputForm" type="email" placeholder="Емейл*" id="userEmail" #email="ngModel"
+            [(ngModel)]="userEmail" name="userEmail" required pattern="^[a-z0-9-.]+@[a-z]+\.((com)|(ua)|(net))$" />
+          <div class="text-danger" style="font-size: 12px;" *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div *ngIf="email.errors.required">
+              Всі поля обов'язкові до заповнення!
+            </div>
+            <div *ngIf="email.errors.pattern">
+              Не вірно введені дані
+            </div>
+          </div>
+          <input class="inputForm" type="password" placeholder="Пароль*" id="userPassword" #pass="ngModel"
+            [(ngModel)]="userPassword" name="userPassword" required pattern="\w{8,15}" />
+          <div class="text-danger" style="font-size: 12px;" *ngIf="pass.invalid && (pass.dirty || pass.touched)">
+            <div *ngIf="pass.errors.required">
+              Всі поля обов'язкові до заповнення!
+            </div>
+            <div *ngIf="pass.errors.pattern">
+              Не вірно введені дані
+            </div>
+          </div>
+          <button class="signIN" [disabled]="email.invalid || pass.invalid">Увійти</button>
         </form>
-       <div class="adaptiveStyle">
-        <button type="button" class="adaptiveBtn" (click)="switchForm()">Зареєструватися</button>
-       </div>
+        <div class="adaptiveStyle">
+          <button type="button" class="adaptiveBtn" (click)="switchForm()">Зареєструватися</button>
+        </div>
       </div>
     </div>
   </div>

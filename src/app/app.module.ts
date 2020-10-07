@@ -56,7 +56,7 @@ import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from 'ngx-ui-loader';
 import { loaderConfig } from './preloader-config';
-
+import { ToastrModule, ToastNoAnimation, ToastNoAnimationModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -111,7 +111,9 @@ import { loaderConfig } from './preloader-config';
     NgxPaginationModule,
     AutocompleteLibModule,
     NgxUiLoaderModule.forRoot(loaderConfig),
-    NgxUiLoaderRouterModule
+    NgxUiLoaderRouterModule,
+    ToastNoAnimationModule.forRoot(),
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

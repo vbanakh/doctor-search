@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,8 @@ export class AuthService {
 
   constructor(private afAuth: AngularFireAuth,
               private afFirestore: AngularFirestore,
-              private router: Router) { }
+              private router: Router,
+              private toastr: ToastrService) { }
               
   login(email: string, password: string): void {
     this.afAuth.signInWithEmailAndPassword(email, password)
@@ -61,7 +63,7 @@ export class AuthService {
         };
         this.afFirestore.collection('users').add(user)
           .then(() => {
-            alert('Good register');
+            this.toastr.success('Good register!');
           })
           .catch(err => console.log(err));
       })
