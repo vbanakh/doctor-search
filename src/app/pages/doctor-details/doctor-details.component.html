@@ -1,5 +1,5 @@
 <section class="section">
-    <article  class="wrapperThanks" *ngIf="!isAppointment">
+    <article class="wrapperThanks" *ngIf="!isAppointment">
         <div class="thanksBox">
             <div class="thanks fadeIn">
                 <span>Дякуємо, що обрали наш сервіс!</span>
@@ -21,12 +21,14 @@
                     <div class="blok">
                         <div class="doctorCardHead">
                             <div class="doctorCardHead__main">
-                                <h3 class="doctorName">{{ doctor?.nameUA | titlecase }} {{ doctor?.lastnameUA | titlecase }}</h3>
+                                <h3 class="doctorName">{{ doctor?.nameUA | titlecase }}
+                                    {{ doctor?.lastnameUA | titlecase }}</h3>
                                 <div class="doctorSpeciality">
                                     <span>{{ doctor?.speciality.nameUA | titlecase }}</span>
                                 </div>
                             </div>
-                            <div class="doctorCardHead__button" *ngIf="doctor?.speciality.nameUA === 'сімейний лікар' ? true : false " >
+                            <div class="doctorCardHead__button"
+                                *ngIf="doctor?.speciality.nameUA === 'сімейний лікар' ? true : false ">
                                 <button type="button">ЗАПОВНИТИ ДЕКЛАРАЦІЮ</button>
                             </div>
                         </div>
@@ -67,26 +69,66 @@
                 <div>
                     <label for="firstName">
                         <span>Ваше ім'я*</span>
-                        <input type="text" name="firstName"  #nameUser="ngModel" id="firstName" [(ngModel)]="firstName" required>
+                        <input type="text" name="firstName" #nameUser="ngModel" id="firstName" [(ngModel)]="firstName"
+                            required pattern="[a-zA-Z]{1,20}">
                     </label>
+                    <div class="text-danger text-center" style="font-size: 12px;"
+                        *ngIf="nameUser.invalid && (nameUser.dirty || nameUser.touched)">
+                        <div *ngIf="nameUser.errors.required">
+                            Поле обов'язкове до заповнення!
+                        </div>
+                        <div *ngIf="nameUser.errors.pattern">
+                            Не вірно введені дані
+                        </div>
+                    </div>
                 </div>
                 <div>
                     <label for="lastName">
                         <span>Ваше прізвище*</span>
-                        <input type="text" name="lastName" id="lastName" [(ngModel)]="lastName" required #lastNameUser="ngModel">
+                        <input type="text" name="lastName" id="lastName" [(ngModel)]="lastName" required
+                            #lastNameUser="ngModel" pattern="[a-zA-Z]{1,20}">
                     </label>
+                    <div class="text-danger text-center" style="font-size: 12px;"
+                        *ngIf="lastNameUser.invalid && (lastNameUser.dirty || lastNameUser.touched)">
+                        <div *ngIf="lastNameUser.errors.required">
+                            Поле обов'язкове до заповнення!
+                        </div>
+                        <div *ngIf="lastNameUser.errors.pattern">
+                            Не вірно введені дані
+                        </div>
+                    </div>
                 </div>
                 <div>
-                    <label for="lastName">
+                    <label for="emeil">
                         <span>Ваш емейл*</span>
-                        <input type="email" name="email" id="email" [(ngModel)]="email" required #emailUser="ngModel">
+                        <input type="email" name="email" id="email" [(ngModel)]="email" required #emailUser="ngModel"
+                            pattern="^[a-z0-9-.]+@[a-z]+\.((com)|(ua)|(net))$">
                     </label>
+                    <div class="text-danger text-center" style="font-size: 12px;"
+                        *ngIf="emailUser.invalid && (emailUser.dirty || emailUser.touched)">
+                        <div *ngIf="emailUser.errors.required">
+                            Поле обов'язкове до заповнення!
+                        </div>
+                        <div *ngIf="emailUser.errors.pattern">
+                            Не вірно введені дані
+                        </div>
+                    </div>
                 </div>
                 <div>
-                    <label for="lastName">
+                    <label for="phone">
                         <span>Ваш телефон*</span>
-                        <input type="text" name="phone" id="phone" [(ngModel)]="phone" required #phoneUser="ngModel">
+                        <input type="text" name="phone" id="phone" [(ngModel)]="phone" autocomplete="off" required
+                            #phoneUser="ngModel" pattern="^0(([679]3)|([69][78]))\d{7}$">
                     </label>
+                    <div class="text-danger text-center" style="font-size: 12px;"
+                        *ngIf="phoneUser.invalid && (phoneUser.dirty || phoneUser.touched)">
+                        <div *ngIf="phoneUser.errors.required">
+                            Поле обов'язкове до заповнення!
+                        </div>
+                        <div *ngIf="phoneUser.errors.pattern">
+                            Не вірно введені дані
+                        </div>
+                    </div>
                 </div>
                 <div>
                     <label for="complaint">
@@ -97,37 +139,28 @@
                 <div>
                     <label for="dateChoose">
                         <span>Оберіть зручний для вас день*</span>
-                        <input type="text"
-                        autocomplete="off"
-                                placeholder="Клікніть, щоб обрати"
-                                bsDatepicker
-                                [bsConfig]="{ isAnimated: true,  dateInputFormat: 'DD/MM/YYYY', 
+                        <input type="text" autocomplete="off" placeholder="Клікніть, щоб обрати" bsDatepicker
+                            [bsConfig]="{ isAnimated: true,  dateInputFormat: 'DD/MM/YYYY', 
                                             containerClass: 'theme-dark-blue',  
                                             customTodayClass: 'custom-today-class', 
-                                            returnFocusToInput: true}"
-                                
-                                id="date"
-                                [minDate]="minDate"
-                                [maxDate]="maxDate"
-                                [daysDisabled]="[0]"
-                                [(ngModel)]="dateChoose"
-                                name="dateChoose"
-                                placement="top" 
-                                required
-                                 #dateUser="ngModel">
-                                
+                                            returnFocusToInput: true}" id="date" [minDate]="minDate"
+                            [maxDate]="maxDate" [daysDisabled]="[0]" [(ngModel)]="dateChoose" name="dateChoose"
+                            placement="top" required #dateUser="ngModel">
+
                     </label>
                 </div>
-                <div class="timepicker"> 
+                <div class="timepicker">
                     <label for="timeChoose">
                         <span>Оберіть зручний для вас час прийому*</span>
-                        <timepicker [(ngModel)]="timeChoose" name="timeChoose" [showSpinners]="showSpinners" required autocomplete="off"
-                        #timeUser="ngModel"></timepicker>
+                        <timepicker [(ngModel)]="timeChoose" name="timeChoose" [showSpinners]="showSpinners" required
+                            autocomplete="off" #timeUser="ngModel"></timepicker>
                     </label>
                 </div>
                 <div class="buttonAlign">
                     <div class="formButton">
-                        <button type="submit" [disabled]="nameUser.invalid || lastNameUser.invalid || emailUser.invalid || phoneUser.invalid || dateUser.invalid || timeUser.invalid">ЗАПИСАТИСЯ НА ПРИЙОМ</button>
+                        <button type="submit"
+                            [disabled]="nameUser.invalid || lastNameUser.invalid || emailUser.invalid || phoneUser.invalid || dateUser.invalid || timeUser.invalid">ЗАПИСАТИСЯ
+                            НА ПРИЙОМ</button>
                     </div>
                 </div>
             </form>
@@ -136,6 +169,6 @@
                 </div>
             </div>
         </div>
-        
+
     </article>
 </section>

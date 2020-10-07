@@ -17,15 +17,13 @@ export class HeaderComponent implements OnInit {
   userPassword: string;
   firstName: string;
   lastName: string;
-
   logIn: boolean;
   loginStatus: boolean;
   loginUrl: string;
   loginName: string;
-  
+ 
   constructor(private modalService: BsModalService,
               private authService: AuthService) { }
-
 
   ngOnInit(): void {
     this.checkLogin();
@@ -104,5 +102,4 @@ export class HeaderComponent implements OnInit {
     document.getElementById("menu").classList.remove('styleWidth');
     this.isChecked = false;
   }
- 
 }

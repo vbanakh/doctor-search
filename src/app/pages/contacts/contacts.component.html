@@ -6,7 +6,8 @@
             <div class="formWrapperTitle">Контактна форма звернення до Helsi</div>
             <div class="wrapper">
                 <div class="wrapperImg">
-                    <img class="imgLeftSide" src="assets/images/question.png"  style="width: 100%; height: 100%;" alt="doctor">
+                    <img class="imgLeftSide" src="assets/images/question.png" style="width: 100%; height: 100%;"
+                        alt="doctor">
                 </div>
                 <div class="feedbackForm">
                     <div>
@@ -18,7 +19,17 @@
                                             <div class="box">Ваше ім'я та прізвище</div>
                                             <div class="inputBox">
                                                 <input type="text" class="input" id="customerName" name="customerName"
-                                                    placeholder="Вкажіть ваше ім'я та прізвище" #nameCustomer="ngModel" [(ngModel)]="customerName" required> 
+                                                    placeholder="Вкажіть ваше ім'я та прізвище" #nameCustomer="ngModel"
+                                                    [(ngModel)]="customerName" required pattern="[a-zA-Z]{1,40}">
+                                            </div>
+                                            <div class="text-danger text-center" style="font-size: 12px;"
+                                                *ngIf="nameCustomer.invalid && (nameCustomer.dirty || nameCustomer.touched)">
+                                                <div *ngIf="nameCustomer.errors.required">
+                                                    Поле обов'язкове до заповнення!
+                                                </div>
+                                                <div *ngIf="nameCustomer.errors.pattern">
+                                                    Не вірно введені дані
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -29,7 +40,18 @@
                                                     Електронна пошта</div>
                                                 <div class="inputBox">
                                                     <input type="email" class="input" id="customerEmail"
-                                                        name="customerEmail" placeholder="Вкажіть ваш Email" [(ngModel)]="customerEmail" required #emailCustomer="ngModel">
+                                                        name="customerEmail" placeholder="Вкажіть ваш Email"
+                                                        [(ngModel)]="customerEmail" required #emailCustomer="ngModel"
+                                                        pattern="^[a-z0-9-.]+@[a-z]+\.((com)|(ua)|(net))$">
+                                                </div>
+                                                <div class="text-danger text-center" style="font-size: 12px;"
+                                                    *ngIf="emailCustomer.invalid && (emailCustomer.dirty || emailCustomer.touched)">
+                                                    <div *ngIf="emailCustomer.errors.required">
+                                                        Поле обов'язкове до заповнення!
+                                                    </div>
+                                                    <div *ngIf="emailCustomer.errors.pattern">
+                                                        Не вірно введені дані
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -39,7 +61,18 @@
                                                     Ваш телефон</div>
                                                 <div class="inputBox">
                                                     <input type="tel" class="input" id="customerPhone"
-                                                        name="customerPhone" autocomplete="off" [(ngModel)]="customerPhone" required #phoneCustomer="ngModel">
+                                                        name="customerPhone" autocomplete="off"
+                                                        [(ngModel)]="customerPhone" required #phoneCustomer="ngModel"
+                                                        pattern="^0(([679]3)|([69][78]))\d{7}$">
+                                                </div>
+                                                <div class="text-danger text-center" style="font-size: 12px;"
+                                                    *ngIf="phoneCustomer.invalid && (phoneCustomer.dirty || phoneCustomer.touched)">
+                                                    <div *ngIf="phoneCustomer.errors.required">
+                                                        Поле обов'язкове до заповнення!
+                                                    </div>
+                                                    <div *ngIf="phoneCustomer.errors.pattern">
+                                                        Не вірно введені дані
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -50,7 +83,14 @@
                                             </div>
                                             <div class="inputBox">
                                                 <input type="text" class="input" id="summary" name="summary"
-                                                    placeholder="Вкажіть тему звернення" [(ngModel)]="summary" required #themeCustomer="ngModel">
+                                                    placeholder="Вкажіть тему звернення" [(ngModel)]="summary" required
+                                                    #themeCustomer="ngModel">
+                                            </div>
+                                            <div class="text-danger text-center" style="font-size: 12px;"
+                                                *ngIf="themeCustomer.invalid && (themeCustomer.dirty || themeCustomer.touched)">
+                                                <div *ngIf="themeCustomer.errors.required">
+                                                    Поле обов'язкове до заповнення!
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -59,16 +99,24 @@
                                             <div class="labelTextArea">
                                                 Повідомлення</div>
                                             <div>
-                                                <textarea class="textareaText" id="description" name="description" [(ngModel)]="description"
-                                                    placeholder="Текст Вашого звернення"
-                                                    style="height: 162px;" required #messageCustomer="ngModel"></textarea>
+                                                <textarea class="textareaText" id="description" name="description"
+                                                    [(ngModel)]="description" placeholder="Текст Вашого звернення"
+                                                    style="height: 162px;" required
+                                                    #messageCustomer="ngModel"></textarea>
+                                            </div>
+                                            <div class="text-danger text-center" style="font-size: 12px;"
+                                                *ngIf="messageCustomer.invalid && (messageCustomer.dirty || messageCustomer.touched)">
+                                                <div *ngIf="messageCustomer.errors.required">
+                                                    Поле обов'язкове до заповнення!
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="allFields">* Всі поля, позначені зірочкою,
                                         обов’язкові до заповнення.</div>
                                     <div class="buttonDoc">
-                                        <button type="submit" class="docButton" [disabled]="nameCustomer.invalid || emailCustomer.invalid || phoneCustomer.invalid || themeCustomer.invalid || messageCustomer.invalid" >НАДІСЛАТИ</button>
+                                        <button type="submit" class="docButton"
+                                            [disabled]="nameCustomer.invalid || emailCustomer.invalid || phoneCustomer.invalid || themeCustomer.invalid || messageCustomer.invalid">НАДІСЛАТИ</button>
                                     </div>
                                 </div>
                             </form>
